@@ -1,1 +1,9 @@
 .vscode/
+
+dist/
+node_modules/
+
+exercise/**/*.md
+!exercise/*/readme.md
+!exercise/*/README.md
+script/*.js
