@@ -18,8 +18,7 @@ class Solution {
       i++;
       m++;
     }
-    for (int j = 0; j < i; j++, m--)
-      result += num[j] * pow(10, m - 1);
+    for (int j = 0; j < i; j++, m--) result += num[j] * pow(10, m - 1);
     if (result * flag > 2147483647 || result * flag < -2147483648)
       return 0;
     else

@@ -1,4 +1,3 @@
-
 /*
  * Runtime: 10 ms, faster than 41.97% of Java online submissions for Two Sum.
  * 

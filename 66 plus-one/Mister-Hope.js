@@ -1,3 +1,9 @@
+/*
+ * Runtime: 76 ms, faster than 74.71% of JavaScript online submissions for Plus One.
+ * 
+ * Memory Usage: 38.9 MB, less than 51.87% of JavaScript online submissions for Plus One.
+ */
+
 var plusOne = (digits) => {
   let x = digits.length,
     num;

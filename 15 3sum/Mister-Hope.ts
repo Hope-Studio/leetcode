@@ -1,5 +1,5 @@
 /**
- * Runtime: 164 ms, faster than 75.00% of TypeScript online submissions for 3Sum.
+ * Runtime: 156 ms, faster than 82.24% of TypeScript online submissions for 3Sum.
  *
  *  Memory Usage: 49.3 MB, less than 5.26% of TypeScript online submissions for 3Sum.
  */

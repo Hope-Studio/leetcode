@@ -17,8 +17,7 @@ class Solution {
         cnt++;
       }
       for (int i = 0; i <= (cnt - 1) / 2; i++) {
-        if (a[i] != a[cnt - i - 1])
-          return false;
+        if (a[i] != a[cnt - i - 1]) return false;
       }
       return true;
     }
