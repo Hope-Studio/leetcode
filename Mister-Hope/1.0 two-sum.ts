@@ -1,4 +1,4 @@
-const twoSum = (nums, target) => {
+const twoSum = (nums: number[], target: number): number[] => {
   const arr = [];
 
   for (let i = 0; i < nums.length; i++) {
