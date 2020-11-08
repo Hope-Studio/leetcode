@@ -12,7 +12,7 @@
 
 ### 样式指南
 
-为了更容易进行对比，我们建议在 Typescript 和 JavaScript 上使用 prettier，在 C 和C++ 上使用 clang-format 的 `Google` 样式。
+为了更容易进行对比，我们建议在 Typescript 和 JavaScript 上使用 prettier，在 C 和 C++ 上使用 clang-format 的 `Google` 样式。
 
 你可以通过安装 VSCode 插件 Prettier 与 C/C++ 来启用它们的格式化支持。
 
