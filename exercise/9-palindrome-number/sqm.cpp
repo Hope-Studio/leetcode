@@ -10,4 +10,4 @@ public:
         if(tmp==tmp2) return true;
         return false;
     }
-}; 
+};

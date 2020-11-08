@@ -21,5 +21,9 @@
 ## LeetCode 主页
 
 - Mister-Hope: <https://leetcode.com/Mister-Hope/>
+<<<<<<< HEAD
 
 - Virgil: <https://leetcode-cn.com/u/virgil-7/>
+=======
+- sqm:<https://leetcode-cn.com/u/mOAG9JqwNm/>
+>>>>>>> 8aad66bba350719cde38ec1ad556f706e48e1fa5
