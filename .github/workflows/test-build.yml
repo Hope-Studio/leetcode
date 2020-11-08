@@ -1,4 +1,4 @@
-name: Test blog build
+name: Test Website build
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
       - name: Generate Markdown
         run: yarn run md:generate
 
-      - name: Build Blog
+      - name: Build Website
         run: yarn run super:build
 
   linter-test:

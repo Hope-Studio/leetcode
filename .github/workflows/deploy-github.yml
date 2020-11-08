@@ -32,7 +32,7 @@ jobs:
       - name: Generate Markdown
         run: yarn run md:generate
 
-      - name: Build Blog
+      - name: Build Website
         run: yarn run super:build
 
       - name: Deploy
