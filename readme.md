@@ -6,13 +6,15 @@
 
 ### 提交练习
 
-请找到 `题目序号 题目名称` 的题目文件夹，如果没有则请你自行创建它。
+请找到 `题目序号-题目名称` 的题目文件夹，如果没有则请你自行创建它。
 
 之后创建 `Github账户名(.答案版本).扩展名` 的文件，存放你的提交结果。推荐在注释中添加排名信息。
 
 ### 样式指南
 
-为了更容易进行对比，我们建议在 Typescript 和 JavaScript 上使用 prettier，在 C 和 C++ 上使用 clang-format 的 `Google` 样式。
+为了更容易进行对比，我们建议是用格式化工具格式化你提交的文件。
+
+请使用 prettier 格式化 Typescript 和 JavaScript，使用 clang-format 的 `Google` 样式格式化 C 和 C++。
 
 你可以通过安装 VSCode 插件 Prettier 与 C/C++ 来启用它们的格式化支持。
 

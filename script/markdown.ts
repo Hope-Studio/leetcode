@@ -24,15 +24,30 @@ const genMarkdownList = (list: string[]): string =>
 const genContent = (
   fileInfoList: FileInfo[],
   key: "author" | "language"
-): string =>
-  fileInfoList
-    .map(
-      (fileInfo) =>
-        `## ${fileInfo[key]}\n\n${
-          fileInfo.version ? `### ${fileInfo.version}\n\n` : ""
-        }\`\`\`${fileInfo.ext}\n${fileInfo.content}\n\`\`\`\n`
-    )
-    .join("\n");
+): string => {
+  const content: string[] = [];
+  const groupResult = groupFiles(fileInfoList, key);
+
+  for (const keyName in groupResult) {
+    const fileInfos = groupResult[keyName];
+
+    content.push(
+      `## ${fileInfos[0][key]}\n\n${fileInfos
+        .sort((x, y) =>
+          x.version ? x.version.charCodeAt(0) - y.version.charCodeAt(0) : -1
+        )
+        .map(
+          (fileInfo) =>
+            `${fileInfo.version ? `### ${fileInfo.version}\n\n` : ""}\`\`\`${
+              fileInfo.ext
+            }\n${fileInfo.content}\n\`\`\`\n`
+        )
+        .join("\n")}`
+    );
+  }
+
+  return content.join("\n");
+};
 
 export const genPersonMarkdown = (
   folderPath: string,
