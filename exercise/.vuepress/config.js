@@ -1,4 +1,5 @@
 const { config } = require("vuepress-theme-hope");
+const sidebar = require("./sidebar");
 
 module.exports = config({
   title: "LeetCode",
@@ -23,11 +24,18 @@ module.exports = config({
     baseLang: "zh-CN",
     logo: "/logo.png",
 
-    nav: [{ text: "主页", link: "/", icon: "home" }],
-
-    sidebar: {
-      "/": [""],
-    },
+    nav: [
+      { text: "主页", link: "/", icon: "home" },
+      {
+        text: "LeetCode 主页",
+        icon: "leetcode",
+        items: [
+          { text: "Mister-Hope", link: "https://leetcode.com/Mister-Hope/" },
+          { text: "Virgil", link: "https://leetcode-cn.com/u/virgil-7/" },
+        ],
+      },
+    ],
+    sidebar,
 
     author: "Mr.Hope",
 
@@ -42,12 +50,14 @@ module.exports = config({
 
     comment: {
       type: "valine",
-      appId: "2jQJfhjStNwFWKa1YBL1XFSI-gzGzoHsz",
-      appKey: "UgkCbHl7agg9y2uRCAu0Pcwp",
+      appId: "44NUsQa5VeFGM7vFNKDUYX0n-gzGzoHsz",
+      appKey: "pMcnfFAhdbRLN73vpejJBxJc",
     },
 
     mdEnhance: {
-      enableAll: true,
+      sup: true,
+      sub: true,
+      tex: true,
     },
 
     pwa: {

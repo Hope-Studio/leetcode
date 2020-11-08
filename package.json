@@ -10,10 +10,10 @@
     "cleanServe": "vuepress dev exercise --no-cache",
     "build": "vuepress build exercise",
     "super:build": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js build exercise",
-    "generate": "tsc && node ./script/generate.js",
+    "md:generate": "ts-node ./script/generate.ts",
+    "md:clean": "ts-node ./script/clean.ts",
     "lint": "prettier --check --write . && markdownlint **/*.md --ignore node_modules --fix",
     "lint:check": "prettier --check . && markdownlint **/*.md --ignore node_modules",
-    "tsc": "tsc",
     "test": "echo \"Warning: no test specified\" && exit 0"
   },
   "dependencies": {
@@ -29,6 +29,7 @@
     "eslint-plugin-prettier": "3.1.4",
     "markdownlint-cli": "0.24.0",
     "prettier": "2.1.2",
+    "ts-node": "9.0.0",
     "typescript": "4.0.5"
   }
 }

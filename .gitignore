@@ -3,6 +3,7 @@
 dist/
 node_modules/
 
+exercise/.vuepress/sidebar.js
 exercise/**/*.md
 !exercise/*/readme.md
 !exercise/*/README.md

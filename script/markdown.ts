@@ -1,6 +1,7 @@
 import {
   readdirSync,
   statSync,
+  unlinkSync,
   writeFile,
   writeFileSync,
 } from "fs";
@@ -27,14 +28,16 @@ const genContent = (
   fileInfoList
     .map(
       (fileInfo) =>
-        `## ${fileInfo[key]}\n\n\`\`\`${fileInfo.ext}\n${fileInfo.content}\n\`\`\`\n`
+        `## ${fileInfo[key]}\n\n${
+          fileInfo.version ? `### ${fileInfo.version}\n\n` : ""
+        }\`\`\`${fileInfo.ext}\n${fileInfo.content}\n\`\`\`\n`
     )
     .join("\n");
 
 export const genPersonMarkdown = (
   folderPath: string,
   fileInfoList: FileInfo[]
-): Promise<void[]> => {
+): Promise<string[]> => {
   const authorList = groupFiles(fileInfoList, "author");
   const promises: Promise<void>[] = [];
   for (const author in authorList) {
@@ -53,13 +56,15 @@ export const genPersonMarkdown = (
     );
   }
 
-  return Promise.all(promises);
+  return Promise.all(promises).then(() =>
+    Promise.resolve(Object.keys(authorList))
+  );
 };
 
 export const genLanguageMarkdown = (
   folderPath: string,
   fileInfoList: FileInfo[]
-): Promise<void[]> => {
+): Promise<string[]> => {
   const languageList = groupFiles(fileInfoList, "language");
   const promises: Promise<void>[] = [];
   for (const language in languageList) {
@@ -79,21 +84,36 @@ export const genLanguageMarkdown = (
     );
   }
 
-  return Promise.all(promises);
+  return Promise.all(promises).then(() =>
+    Promise.resolve(Object.keys(languageList))
+  );
 };
 
-export const getExercise = (): string[] =>
-  readdirSync("exercise")
+export const getExercise = (dir: string): string[] =>
+  readdirSync(dir)
     .filter(
       (fileName) =>
-        statSync(resolve("exercise", fileName)).isDirectory() &&
+        statSync(resolve(dir, fileName)).isDirectory() &&
         fileName !== ".vuepress"
     )
     .sort((x, y) => Number(x.split("-")[0]) - Number(y.split("-")[0]));
 
-export const genExerciseList = (folder: string, folderList: string[]): void => {
+export const genExerciseList = (dir: string, folderList: string[]): void => {
   writeFileSync(
-    resolve(folder, "readme.md"),
+    resolve(dir, "readme.md"),
     "# 题目列表\n\n" + genMarkdownList(folderList)
   );
 };
+
+export const cleanMarkdown = (dir: string): void =>
+  getExercise(dir).forEach((folderName) => {
+    readdirSync(resolve(dir, folderName))
+      .filter(
+        (fileName) =>
+          statSync(resolve(dir, folderName, fileName)).isFile() &&
+          /^(?!.*readme).*\.md$/u.exec(fileName.toLowerCase())
+      )
+      .forEach((fileName) => {
+        unlinkSync(resolve(dir, folderName, fileName));
+      });
+  });

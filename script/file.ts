@@ -37,9 +37,7 @@ export const getFiles = (
 
           readFile(
             resolve(folderPath, fileName),
-            {
-              encoding: "utf-8",
-            },
+            { encoding: "utf-8" },
             (_err, content) => {
               resolve1({
                 author,
