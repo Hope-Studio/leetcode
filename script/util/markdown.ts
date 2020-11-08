@@ -7,28 +7,27 @@ import {
 } from "fs";
 import { basename, resolve } from "path";
 import { FileInfo, groupFiles } from "./file";
+import { capitalizeSentence } from "./string";
 
 export const getExerciseName = (title: string): string =>
-  title.includes("/") || title.includes("\\")
-    ? basename(title).replace(/-/u, ". ")
-    : title.replace(/-/u, ". ");
+  /(?:\/|\\)/u.exec(title)
+    ? capitalizeSentence(basename(title).replace(/-/u, ". ").replace(/-/g, " "))
+    : capitalizeSentence(title.replace(/-/u, ". ").replace(/-/g, " "));
 
-const genFrontMatter = (
-  title: string,
-  category = "",
-  tags: string[] = []
-): string =>
-  `---\ntitle: ${title}\n` +
-  (category ? `category: ${category}\n` : "") +
-  (tags.length
-    ? `tag:\n${Array.from(new Set(tags.map((tag) => `  - ${tag}\n`))).join("")}`
-    : "") +
-  "---\n\n";
+const genFrontMatter = (title: string, tags: string[], icon?: string): string =>
+  `---\ntitle: ${title}\n${icon ? `icon: ${icon}\n` : ""}category: ${title}\n${
+    tags.length
+      ? `tag:\n${Array.from(new Set(tags))
+          .map((tag) => `  - ${tag}\n`)
+          .join("")}`
+      : ""
+  }---\n\n`;
 
 const genMarkdownList = (list: string[]): string =>
   list
     .map(
-      (title) => `- [${getExerciseName(title)}](${decodeURI(title)}/readme.md)\n`
+      (title) =>
+        `- [${getExerciseName(title)}](${decodeURI(title)}/readme.md)\n`
     )
     .join("\n");
 
@@ -77,7 +76,7 @@ export const genPersonMarkdown = (
       new Promise((resolve2) => {
         writeFile(
           resolve(folderPath, `${author}.md`),
-          genFrontMatter(author, author, tags) +
+          genFrontMatter(author, tags) +
             genDescription(folderPath) +
             genContent(files, "language"),
           { encoding: "utf-8", flag: "w" },
@@ -106,7 +105,7 @@ export const genLanguageMarkdown = (
       new Promise((resolve2) => {
         writeFile(
           resolve(folderPath, `${language}.md`),
-          genFrontMatter(language, language, tags) +
+          genFrontMatter(language, tags, files[0].icon) +
             genDescription(folderPath) +
             genContent(files, "author"),
           { encoding: "utf-8", flag: "w" },
@@ -133,7 +132,7 @@ export const getExercise = (dir: string): string[] =>
 export const genExerciseList = (dir: string, folderList: string[]): void => {
   writeFileSync(
     resolve(dir, "readme.md"),
-    "# 题目列表\n\n" + genMarkdownList(folderList)
+    `---\ntitle: 题目列表\nicon: list\n---\n\n${genMarkdownList(folderList)}`
   );
 };
 

@@ -5,22 +5,48 @@ export interface FileInfo {
   author: string;
   version: string;
   ext: string;
+  icon: string;
   language: string;
-  fileName: string;
   content: string;
 }
 
 const extMap: Record<string, string> = {
   js: "JavaScript",
   ts: "TypeScript",
-  cpp: "C++",
   c: "C",
+  cpp: "C++",
+  cs: "C#",
   java: "Java",
   py: "Python3",
   kt: "kotlin",
+  rs: "Rust",
+  rb: "Ruby",
+  go: "Go",
+  swift: "Swift",
+  scala: "scala",
+  php: "PHP",
+};
+
+const iconMap: Record<string, string> = {
+  js: "javascript",
+  ts: "typescript",
+  c: "c",
+  cpp: "cpp",
+  cs: "c-sharp",
+  java: "java",
+  py: "python",
+  kt: "kotlin",
+  rs: "rust",
+  rb: "ruby",
+  go: "go",
+  swift: "swift",
+  scala: "scala",
+  php: "php",
 };
 
 export const getLanguage = (ext: string): string => extMap[ext];
+
+export const getIcon = (ext: string): string => iconMap[ext];
 
 export const getFiles = (
   folderPath: string,
@@ -44,7 +70,7 @@ export const getFiles = (
                 version,
                 ext,
                 content,
-                fileName,
+                icon: getIcon(ext),
                 language: getLanguage(ext),
               });
             }

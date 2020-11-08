@@ -1,3 +1,3 @@
-import { cleanMarkdown } from "./markdown";
+import { cleanMarkdown } from "./util/markdown";
 
 cleanMarkdown("exercise");
