@@ -138,13 +138,11 @@ export const genExerciseList = (dir: string, folderList: string[]): void => {
 
 export const cleanMarkdown = (dir: string): void =>
   getExercise(dir).forEach((folderName) => {
-    readdirSync(resolve(dir, folderName))
-      .filter(
-        (fileName) =>
-          statSync(resolve(dir, folderName, fileName)).isFile() &&
-          /^(?!.*readme).*\.md$/u.exec(fileName.toLowerCase())
+    readdirSync(resolve(dir, folderName)).forEach((fileName) => {
+      if (
+        statSync(resolve(dir, folderName, fileName)).isFile() &&
+        /^(?!.*readme).*\.md$/u.exec(fileName.toLowerCase())
       )
-      .forEach((fileName) => {
         unlinkSync(resolve(dir, folderName, fileName));
-      });
+    });
   });
