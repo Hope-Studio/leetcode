@@ -60,6 +60,8 @@ module.exports = config({
       tex: true,
     },
 
+    lastUpdate: false,
+
     pwa: {
       manifest: {
         icons: [

@@ -3,6 +3,7 @@ import { resolve } from "path";
 import { getFiles } from "./file";
 import {
   getExercise,
+  getExerciseName,
   genExerciseList,
   genLanguageMarkdown,
   genPersonMarkdown,
@@ -25,7 +26,7 @@ void Promise.all(
         genLanguageMarkdown(folderPath, fileInfoList),
       ]).then(([authors, languages]) =>
         Promise.resolve({
-          title: folderName,
+          title: getExerciseName(folderName),
           icon: "exercise",
           prefix: `${folderName}/`,
           children: [

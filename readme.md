@@ -1,14 +1,16 @@
 # Leetcode 练习合集
 
+本项目部署在 <https://leetcode.innenu.com>。使用 [VuePress](https://v1.vuepress.vuejs.org/zh/guide/) 和 [vuepress-theme-hope](https://vuepress-theme.mrhope.site/) 自动生成。
+
 ## 项目说明
 
-请定期将你编写的的 Leetcode 题目答案提交至本仓库。记得将你的 LeetCode 主页添加至下方列表中。
+请定期将你编写的的 Leetcode 题目答案提交至本仓库的 `exercise` 文件夹。不要忘了将你的 LeetCode 主页添加至下方列表中。
 
 ### 提交练习
 
-请找到 `题目序号-题目名称` 的题目文件夹，如果没有则请你自行创建它。
+1. 请找到 `题目序号-题目名称` 的题目文件夹，如果不存在请你自行创建它，同时创建 `readme.md` 存放题目信息。
 
-之后创建 `Github账户名(.答案版本).扩展名` 的文件，存放你的提交结果。推荐在注释中添加排名信息。
+2. 之后创建 `Github账户名(.答案版本).扩展名` 的文件，存放你的提交结果。推荐在注释中添加排名信息。
 
 ### 样式指南
 

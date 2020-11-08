@@ -5,8 +5,13 @@ import {
   writeFile,
   writeFileSync,
 } from "fs";
-import { resolve } from "path";
+import { basename, resolve } from "path";
 import { FileInfo, groupFiles } from "./file";
+
+export const getExerciseName = (title: string): string =>
+  title.includes("/") || title.includes("\\")
+    ? basename(title).replace(/-/u, ". ")
+    : title.replace(/-/u, ". ");
 
 const genFrontMatter = (
   title: string,
@@ -15,11 +20,20 @@ const genFrontMatter = (
 ): string =>
   `---\ntitle: ${title}\n` +
   (category ? `category: ${category}\n` : "") +
-  (tags.length ? `tag:\n${tags.map((tag) => `  - ${tag}\n`).join("")}` : "") +
+  (tags.length
+    ? `tag:\n${Array.from(new Set(tags.map((tag) => `  - ${tag}\n`))).join("")}`
+    : "") +
   "---\n\n";
 
 const genMarkdownList = (list: string[]): string =>
-  list.map((text) => `- [${text}](${decodeURI(text)}/readme.md)\n`).join("");
+  list
+    .map(
+      (title) => `- [${getExerciseName(title)}](${decodeURI(title)}/readme.md)\n`
+    )
+    .join("\n");
+
+const genDescription = (title: string): string =>
+  `> **题目**: [${getExerciseName(title)}](readme.md)\n\n<!-- more -->\n\n`;
 
 const genContent = (
   fileInfoList: FileInfo[],
@@ -63,7 +77,9 @@ export const genPersonMarkdown = (
       new Promise((resolve2) => {
         writeFile(
           resolve(folderPath, `${author}.md`),
-          genFrontMatter(author, author, tags) + genContent(files, "language"),
+          genFrontMatter(author, author, tags) +
+            genDescription(folderPath) +
+            genContent(files, "language"),
           { encoding: "utf-8", flag: "w" },
           () => resolve2()
         );
@@ -91,6 +107,7 @@ export const genLanguageMarkdown = (
         writeFile(
           resolve(folderPath, `${language}.md`),
           genFrontMatter(language, language, tags) +
+            genDescription(folderPath) +
             genContent(files, "author"),
           { encoding: "utf-8", flag: "w" },
           () => resolve2()
