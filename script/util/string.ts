@@ -9,6 +9,8 @@ export const capitalizeSentence = (sentence: string): string =>
     .split(" ")
     .map((word) =>
       [
+        "a",
+        "the",
         "in",
         "on",
         "of",
