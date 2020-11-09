@@ -7,6 +7,7 @@ import {
   genExerciseList,
   genLanguageMarkdown,
   genPersonMarkdown,
+  genProblemMarkdown,
 } from "./util/markdown";
 
 const folderList = getExercise("exercise");
@@ -56,3 +57,4 @@ void Promise.all(
 });
 
 genExerciseList("exercise", folderList);
+void genProblemMarkdown("exercise", folderList);

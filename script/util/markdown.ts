@@ -1,4 +1,5 @@
 import {
+  existsSync,
   readdirSync,
   statSync,
   unlinkSync,
@@ -6,8 +7,31 @@ import {
   writeFileSync,
 } from "fs";
 import { basename, resolve } from "path";
+import * as Turndown from "turndown";
+import { exec } from "child_process";
 import { FileInfo, groupFiles } from "./file";
 import { capitalizeSentence } from "./string";
+
+const turndown = new Turndown({
+  bulletListMarker: "-",
+  codeBlockStyle: "fenced",
+  emDelimiter: "*",
+});
+
+export const html2md = (html = ""): string =>
+  turndown
+    .turndown(html)
+    .replace(/\n- {3}/gu, "\n- ")
+    .replace(/\n(\d*?)\. {2}/gu, "\n$1. ")
+    .replace(/\n\*\*Output:\*\*/gu, "\n\n**Output:**")
+    .replace(/\n\*\*Explanation:\*\*/gu, "\n\n**Explanation:**")
+    .replace(/\n\*\*Explanation\*\*\*\*:\*\*/gu, "\n\n**Explanation:**")
+    .replace(/!\[\]\((.*?)\)/gu, "![LeetCode Image]($1)")
+    // eslint-disable-next-line no-irregular-whitespace
+    .replace(/ /gu, " ")
+    .replace(/ \n/gu, "\n")
+    .replace(/\*\*Constraints:\*\*/gu, "## Constraints")
+    .replace(/\n?$/u, "\n");
 
 export const getExerciseName = (title: string): string =>
   /(?:\/|\\)/u.exec(title)
@@ -146,3 +170,39 @@ export const cleanMarkdown = (dir: string): void =>
         unlinkSync(resolve(dir, folderName, fileName));
     });
   });
+
+export const getProblemMarkdown = (id: number): Promise<string> =>
+  new Promise((resolve1) => {
+    exec(`leetcode show ${id}`, (_err, output) => {
+      const [_output, serial, title, link, content] =
+        /^\[(.*?)\] (.*?) *?\n\n(.*?)description\/\n\n[\s\S]*?\n\n([\s\S]*)$/mu.exec(
+          output
+        ) || [];
+
+      if (content)
+        resolve1(`# [${serial}. ${title}](${link})\n\n${html2md(content)}`);
+      else {
+        console.warn(`${id} fail:`, output);
+        resolve1("");
+      }
+    });
+  });
+
+export const genProblemMarkdown = (
+  dir: string,
+  folderList: string[]
+): Promise<void[]> =>
+  Promise.all(
+    folderList.map((folderName) => {
+      const readmePath = resolve(dir, folderName, "readme.md");
+
+      if (existsSync(readmePath)) return Promise.resolve();
+
+      return getProblemMarkdown(Number(folderName.split("-").shift())).then(
+        (content) => {
+          if (content) writeFileSync(readmePath, content);
+          return Promise.resolve();
+        }
+      );
+    })
+  );

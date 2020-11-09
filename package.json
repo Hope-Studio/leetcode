@@ -14,7 +14,7 @@
     "md:clean": "ts-node ./script/clean.ts",
     "lint": "prettier --check --write . && markdownlint **/*.md --ignore node_modules --fix",
     "lint:check": "prettier --check . && markdownlint **/*.md --ignore node_modules",
-    "test": "echo \"Warning: no test specified\" && exit 0"
+    "test": "ts-node ./script/test.ts"
   },
   "dependencies": {
     "vuepress": "1.7.1",
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@types/node": "14.14.6",
+    "@types/turndown": "5.0.0",
     "@typescript-eslint/eslint-plugin": "4.6.1",
     "@typescript-eslint/parser": "4.6.1",
     "eslint": "7.12.1",
@@ -30,6 +31,7 @@
     "markdownlint-cli": "0.24.0",
     "prettier": "2.1.2",
     "ts-node": "9.0.0",
+    "turndown": "7.0.0",
     "typescript": "4.0.5"
   }
 }
