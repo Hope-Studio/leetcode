@@ -2,9 +2,9 @@
 
 Given an array of integers `nums`.
 
-A pair `(i,j)` is called *good* if `nums[i]` == `nums[j]` and `i` < `j`.
+A pair `(i,j)` is called _good_ if `nums[i]` == `nums[j]` and `i` < `j`.
 
-Return the number of *good* pairs.
+Return the number of _good_ pairs.
 
 **Example 1:**
 
@@ -20,7 +20,7 @@ Return the number of *good* pairs.
 
 **Output:** 6
 
-**Explanation:** Each pair in the array are *good*.
+**Explanation:** Each pair in the array are _good_.
 
 **Example 3:**
 
