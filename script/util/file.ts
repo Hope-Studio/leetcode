@@ -58,7 +58,7 @@ export const getFiles = (
         new Promise<FileInfo>((resolve1) => {
           const temp = fileName.split(".");
           const ext = temp.pop() || "";
-          const version = temp.length > 1 ? (temp.pop() as string) || "" : "";
+          const version = temp.length > 1 ? (temp.pop() as string) : "";
           const author = temp.join(".");
 
           readFile(
