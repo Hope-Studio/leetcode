@@ -1,7 +1,10 @@
 .vscode/
-
+.settings/
 dist/
 node_modules/
+target/
+
+.project
 
 exercise/.vuepress/sidebar.js
 exercise/**/*.md

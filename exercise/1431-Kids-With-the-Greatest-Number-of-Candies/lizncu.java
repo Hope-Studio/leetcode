@@ -3,7 +3,7 @@ class Solution {
 
     int max = candies[0];
 
-    List<Boolean> answer = new ArrayList<>();
+    List<Boolean> answer = new ArrayList<Boolean>();
 
     for (int i = 1; i < candies.length; i++) {
       if (max < candies[i]) {
