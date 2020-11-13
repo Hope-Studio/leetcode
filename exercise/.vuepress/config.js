@@ -32,6 +32,7 @@ module.exports = config({
         items: [
           { text: "Mister-Hope", link: "https://leetcode.com/Mister-Hope/" },
           { text: "Virgil", link: "https://leetcode-cn.com/u/virgil-7/" },
+          { text: "sqm", link: "https://leetcode-cn.com/u/mOAG9JqwNm/" },
         ],
       },
     ],

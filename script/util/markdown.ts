@@ -1,4 +1,5 @@
 import {
+  existsSync,
   readdirSync,
   statSync,
   unlinkSync,
@@ -6,29 +7,51 @@ import {
   writeFileSync,
 } from "fs";
 import { basename, resolve } from "path";
+import * as Turndown from "turndown";
+import { exec } from "child_process";
 import { FileInfo, groupFiles } from "./file";
+import { capitalizeSentence } from "./string";
+
+const turndown = new Turndown({
+  bulletListMarker: "-",
+  codeBlockStyle: "fenced",
+  emDelimiter: "*",
+});
+
+export const html2md = (html = ""): string =>
+  turndown
+    .turndown(html)
+    .replace(/\n- {3}/gu, "\n- ")
+    .replace(/\n(\d*?)\. {2}/gu, "\n$1. ")
+    .replace(/\n\*\*Output:\*\*/gu, "\n\n**Output:**")
+    .replace(/\n\*\*Explanation:\*\*/gu, "\n\n**Explanation:**")
+    .replace(/\n\*\*Explanation\*\*\*\*:\*\*/gu, "\n\n**Explanation:**")
+    .replace(/!\[\]\((.*?)\)/gu, "![LeetCode Image]($1)")
+    // eslint-disable-next-line no-irregular-whitespace
+    .replace(/ /gu, " ")
+    .replace(/ \n/gu, "\n")
+    .replace(/\*\*Constraints:\*\*/gu, "## Constraints")
+    .replace(/\n?$/u, "\n");
 
 export const getExerciseName = (title: string): string =>
-  title.includes("/") || title.includes("\\")
-    ? basename(title).replace(/-/u, ". ")
-    : title.replace(/-/u, ". ");
+  /(?:\/|\\)/u.exec(title)
+    ? capitalizeSentence(basename(title).replace(/-/u, ". ").replace(/-/g, " "))
+    : capitalizeSentence(title.replace(/-/u, ". ").replace(/-/g, " "));
 
-const genFrontMatter = (
-  title: string,
-  category = "",
-  tags: string[] = []
-): string =>
-  `---\ntitle: ${title}\n` +
-  (category ? `category: ${category}\n` : "") +
-  (tags.length
-    ? `tag:\n${Array.from(new Set(tags.map((tag) => `  - ${tag}\n`))).join("")}`
-    : "") +
-  "---\n\n";
+const genFrontMatter = (title: string, tags: string[], icon?: string): string =>
+  `---\ntitle: ${title}\n${icon ? `icon: ${icon}\n` : ""}category: ${title}\n${
+    tags.length
+      ? `tag:\n${Array.from(new Set(tags))
+          .map((tag) => `  - ${tag}\n`)
+          .join("")}`
+      : ""
+  }---\n\n`;
 
 const genMarkdownList = (list: string[]): string =>
   list
     .map(
-      (title) => `- [${getExerciseName(title)}](${decodeURI(title)}/readme.md)\n`
+      (title) =>
+        `- [${getExerciseName(title)}](${decodeURI(title)}/readme.md)\n`
     )
     .join("\n");
 
@@ -77,7 +100,7 @@ export const genPersonMarkdown = (
       new Promise((resolve2) => {
         writeFile(
           resolve(folderPath, `${author}.md`),
-          genFrontMatter(author, author, tags) +
+          genFrontMatter(author, tags) +
             genDescription(folderPath) +
             genContent(files, "language"),
           { encoding: "utf-8", flag: "w" },
@@ -106,7 +129,7 @@ export const genLanguageMarkdown = (
       new Promise((resolve2) => {
         writeFile(
           resolve(folderPath, `${language}.md`),
-          genFrontMatter(language, language, tags) +
+          genFrontMatter(language, tags, files[0].icon) +
             genDescription(folderPath) +
             genContent(files, "author"),
           { encoding: "utf-8", flag: "w" },
@@ -133,19 +156,53 @@ export const getExercise = (dir: string): string[] =>
 export const genExerciseList = (dir: string, folderList: string[]): void => {
   writeFileSync(
     resolve(dir, "readme.md"),
-    "# 题目列表\n\n" + genMarkdownList(folderList)
+    `---\ntitle: 题目列表\nicon: list\n---\n\n${genMarkdownList(folderList)}`
   );
 };
 
 export const cleanMarkdown = (dir: string): void =>
   getExercise(dir).forEach((folderName) => {
-    readdirSync(resolve(dir, folderName))
-      .filter(
-        (fileName) =>
-          statSync(resolve(dir, folderName, fileName)).isFile() &&
-          /^(?!.*readme).*\.md$/u.exec(fileName.toLowerCase())
+    readdirSync(resolve(dir, folderName)).forEach((fileName) => {
+      if (
+        statSync(resolve(dir, folderName, fileName)).isFile() &&
+        /^(?!.*readme).*\.md$/u.exec(fileName.toLowerCase())
       )
-      .forEach((fileName) => {
         unlinkSync(resolve(dir, folderName, fileName));
-      });
+    });
   });
+
+export const getProblemMarkdown = (id: number): Promise<string> =>
+  new Promise((resolve1) => {
+    exec(`leetcode show ${id}`, (_err, output) => {
+      const [_output, serial, title, link, content] =
+        /^\[(.*?)\] (.*?) *?\n\n(.*?)description\/\n\n[\s\S]*?\n\n([\s\S]*)$/mu.exec(
+          output
+        ) || [];
+
+      if (content)
+        resolve1(`# [${serial}. ${title}](${link})\n\n${html2md(content)}`);
+      else {
+        console.warn(`${id} fail:`, output);
+        resolve1("");
+      }
+    });
+  });
+
+export const genProblemMarkdown = (
+  dir: string,
+  folderList: string[]
+): Promise<void[]> =>
+  Promise.all(
+    folderList.map((folderName) => {
+      const readmePath = resolve(dir, folderName, "readme.md");
+
+      if (existsSync(readmePath)) return Promise.resolve();
+
+      return getProblemMarkdown(Number(folderName.split("-").shift())).then(
+        (content) => {
+          if (content) writeFileSync(readmePath, content);
+          return Promise.resolve();
+        }
+      );
+    })
+  );

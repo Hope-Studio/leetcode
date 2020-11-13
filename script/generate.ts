@@ -1,13 +1,14 @@
 import { statSync, readdirSync, writeFileSync } from "fs";
 import { resolve } from "path";
-import { getFiles } from "./file";
+import { getFiles } from "./util/file";
 import {
   getExercise,
   getExerciseName,
   genExerciseList,
   genLanguageMarkdown,
   genPersonMarkdown,
-} from "./markdown";
+  genProblemMarkdown,
+} from "./util/markdown";
 
 const folderList = getExercise("exercise");
 
@@ -56,3 +57,4 @@ void Promise.all(
 });
 
 genExerciseList("exercise", folderList);
+void genProblemMarkdown("exercise", folderList);

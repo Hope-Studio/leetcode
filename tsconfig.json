@@ -32,5 +32,5 @@
     "module": "commonjs",
     "target": "ESNext"
   },
-  "include": ["script/**/*.ts"],
+  "include": ["script/**/*.ts"]
 }
