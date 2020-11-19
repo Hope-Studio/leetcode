@@ -11,10 +11,9 @@ using namespace std;
  * };
  */
 class Solution {
-public:
-    int maxDepth(TreeNode* root) {
-        if(root==nullptr)
-        return 0;
-        return max(maxDepth(root->right),maxDepth(root->left))+1;
-    }
+ public:
+  int maxDepth(TreeNode* root) {
+    if (root == nullptr) return 0;
+    return max(maxDepth(root->right), maxDepth(root->left)) + 1;
+  }
 };
