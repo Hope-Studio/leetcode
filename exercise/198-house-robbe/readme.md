@@ -10,8 +10,11 @@ Given a list of non-negative integers representing the amount of money of each h
 
 **Output:** 4
 
-**Explanation:** Rob house 1 (money = 1) and then rob house 3 (money = 3).
-             Total amount you can rob = 1 + 3 = 4.
+**Explanation:**
+
+Rob house 1 (money = 1) and then rob house 3 (money = 3).
+
+Total amount you can rob = 1 + 3 = 4.
 
 **Example 2:**
 
@@ -19,8 +22,11 @@ Given a list of non-negative integers representing the amount of money of each h
 
 **Output:** 12
 
-**Explanation:** Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
-             Total amount you can rob = 2 + 9 + 1 = 12.
+**Explanation:**
+
+Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
+
+Total amount you can rob = 2 + 9 + 1 = 12.
 
 ## Constraints
 

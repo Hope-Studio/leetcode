@@ -171,21 +171,26 @@ export const cleanMarkdown = (dir: string): void =>
     });
   });
 
-export const getProblemMarkdown = (id: number): Promise<string> =>
+export const getProblemMarkdown = (exerciseName: string): Promise<string> =>
   new Promise((resolve1) => {
-    exec(`leetcode show ${id}`, (_err, output) => {
-      const [_output, serial, title, link, content] =
-        /^\[(.*?)\] (.*?) *?\n\n(.*?)description\/\n\n[\s\S]*?\n\n([\s\S]*)$/mu.exec(
-          output
-        ) || [];
+    const [, id] = /(.*?)[.|-].*/u.exec(exerciseName) || [];
 
-      if (content)
-        resolve1(`# [${serial}. ${title}](${link})\n\n${html2md(content)}`);
-      else {
-        console.warn(`${id} fail:`, output);
-        resolve1("");
-      }
-    });
+    if (isNaN(Number(id)))
+      console.error(`folderName ${exerciseName} is illigeal!`);
+    else
+      exec(`leetcode show ${id}`, (_err, output) => {
+        const [, serial, title, link, content] =
+          /^\[(.*?)\] (.*?) *?\n\n(.*?)description\/\n\n[\s\S]*?\n\n([\s\S]*)$/mu.exec(
+            output
+          ) || [];
+
+        if (content)
+          resolve1(`# [${serial}. ${title}](${link})\n\n${html2md(content)}`);
+        else {
+          console.warn(`${id} fail:`, output);
+          resolve1("");
+        }
+      });
   });
 
 export const genProblemMarkdown = (
@@ -198,11 +203,9 @@ export const genProblemMarkdown = (
 
       if (existsSync(readmePath)) return Promise.resolve();
 
-      return getProblemMarkdown(Number(folderName.split("-").shift())).then(
-        (content) => {
-          if (content) writeFileSync(readmePath, content);
-          return Promise.resolve();
-        }
-      );
+      return getProblemMarkdown(folderName).then((content) => {
+        if (content) writeFileSync(readmePath, content);
+        return Promise.resolve();
+      });
     })
   );
