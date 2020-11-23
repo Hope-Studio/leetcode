@@ -1,6 +1,5 @@
 class Solution {
   public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-
     int Length = nums1.length + nums2.length;
     boolean IsOne = false;
     int Location = Length / 2 + 1;
@@ -52,6 +51,5 @@ class Solution {
     else {
       return (double) (num[Location - 2] + num[Location - 1]) / 2;
     }
-
   }
 }

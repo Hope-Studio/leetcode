@@ -1,6 +1,5 @@
 class Solution {
   public int[] sortArrayByParity(int[] A) {
-
     int[] ans = new int[A.length];
     int front = 0, rear = A.length - 1;
 
@@ -10,7 +9,6 @@ class Solution {
       } else {
         ans[rear--] = A[i];
       }
-
     }
 
     return ans;

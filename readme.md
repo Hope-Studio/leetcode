@@ -16,7 +16,7 @@
 
 为了更容易进行对比，我们建议是用格式化工具格式化你提交的文件。
 
-请使用 prettier 格式化 Typescript 和 JavaScript，使用 clang-format 的 `Google` 样式格式化 C 和 C++。
+请使用 prettier 格式化 Typescript 和 JavaScript，使用 clang-format 的 `Google` 样式格式化 C、C++、C# 与 Java。
 
 你可以通过安装 VSCode 插件 Prettier 与 C/C++ 来启用它们的格式化支持。
 

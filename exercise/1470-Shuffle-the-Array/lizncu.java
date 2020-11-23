@@ -1,6 +1,5 @@
 class Solution {
   public int[] shuffle(int[] nums, int n) {
-
     int[] ans = new int[nums.length];
     int count = 0;
 
@@ -8,7 +7,6 @@ class Solution {
       ans[count++] = nums[i];
 
       ans[count++] = nums[i + n];
-
     }
 
     return ans;

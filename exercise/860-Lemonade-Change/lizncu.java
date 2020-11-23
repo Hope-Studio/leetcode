@@ -23,6 +23,5 @@ class Solution {
     }
 
     return true;
-
   }
 }

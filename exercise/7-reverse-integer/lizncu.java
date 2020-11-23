@@ -1,6 +1,5 @@
 class Solution {
   public int reverse(int x) {
-
     long n = 0;
 
     if (x < 0) {

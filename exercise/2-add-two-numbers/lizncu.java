@@ -8,7 +8,6 @@
  */
 class Solution {
   public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-
     ListNode s = new ListNode(-1);
 
     ListNode t = s;
@@ -16,7 +15,6 @@ class Solution {
     int num = 0;
 
     while ((l1 != null) || (l2 != null) || (num != 0)) {
-
       if (l1 != null) {
         num += l1.val;
         l1 = l1.next;
@@ -32,7 +30,6 @@ class Solution {
       num = num / 10;
 
       t = t.next;
-
     }
 
     return s.next;

@@ -1,6 +1,6 @@
 /*
  * Runtime: 10 ms, faster than 41.97% of Java online submissions for Two Sum.
- * 
+ *
  * Memory Usage: 56.5 MB, less than 6.02% of Java online submissions for Two Sum.
  */
 
@@ -13,7 +13,7 @@ class Solution {
       int j = target - nums[i];
 
       if (map.containsKey(j))
-        return new int[] { map.get(j), i };
+        return new int[] {map.get(j), i};
 
       map.put(nums[i], i);
     }

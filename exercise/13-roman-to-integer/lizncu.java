@@ -1,6 +1,5 @@
 class Solution {
   public int romanToInt(String s) {
-
     int n = s.length();
     int number = 0;
 

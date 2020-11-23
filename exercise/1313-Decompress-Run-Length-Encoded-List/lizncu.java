@@ -17,6 +17,5 @@ class Solution {
     }
 
     return ans;
-
   }
 }
