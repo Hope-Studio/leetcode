@@ -27,3 +27,5 @@
 - Virgil: <https://leetcode-cn.com/u/virgil-7/>
 
 - sqm: <https://leetcode-cn.com/u/mOAG9JqwNm/>
+
+- lizncu: <https://leetcode-cn.com/u/lizncu/>
