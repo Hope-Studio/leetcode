@@ -33,6 +33,7 @@ module.exports = config({
           { text: "Mister-Hope", link: "https://leetcode.com/Mister-Hope/" },
           { text: "Virgil", link: "https://leetcode-cn.com/u/virgil-7/" },
           { text: "sqm", link: "https://leetcode-cn.com/u/mOAG9JqwNm/" },
+          { text: "lizncu", link: "https://leetcode-cn.com/u/lizncu/" },
         ],
       },
     ],
