@@ -29,3 +29,8 @@
 - sqm: <https://leetcode-cn.com/u/mOAG9JqwNm/>
 
 - lizncu: <https://leetcode-cn.com/u/lizncu/>
+
+## TODO
+
+- 加入自动格式化
+- 加入构建测试
