@@ -21,10 +21,12 @@ void Promise.all(
         !fileName.includes(".md")
     );
 
-    return getFiles(folderPath, fileList).then((fileInfoList) =>
-      Promise.all([
-        genPersonMarkdown(folderPath, fileInfoList),
-        genLanguageMarkdown(folderPath, fileInfoList),
+    return getFiles(folderPath, fileList).then((files) => {
+      const title = getExerciseName(folderName);
+
+      return Promise.all([
+        genPersonMarkdown({ path: folderPath, files, title }),
+        genLanguageMarkdown({ path: folderPath, files, title }),
       ]).then(([authors, languages]) =>
         Promise.resolve({
           title: getExerciseName(folderName),
@@ -46,8 +48,8 @@ void Promise.all(
             },
           ],
         })
-      )
-    );
+      );
+    });
   })
 ).then((sidebarList) => {
   writeFileSync(
