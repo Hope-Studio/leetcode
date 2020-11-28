@@ -38,8 +38,23 @@ export const getExerciseName = (title: string): string =>
     ? capitalizeSentence(basename(title).replace(/-/u, ". ").replace(/-/g, " "))
     : capitalizeSentence(title.replace(/-/u, ". ").replace(/-/g, " "));
 
-const genFrontMatter = (title: string, tags: string[], icon?: string): string =>
-  `---\ntitle: ${title}\n${icon ? `icon: ${icon}\n` : ""}category: ${title}\n${
+interface FrontMatterOption {
+  title: string;
+  icon?: string;
+  author?: string;
+  category: string;
+  tags: string[];
+}
+
+const genFrontMatter = ({
+  title,
+  category,
+  tags,
+  icon,
+}: FrontMatterOption): string =>
+  `---\ntitle: ${title}\n${
+    icon ? `icon: ${icon}\n` : ""
+  }category: ${category}\n${
     tags.length
       ? `tag:\n${Array.from(new Set(tags))
           .map((tag) => `  - ${tag}\n`)
@@ -86,11 +101,18 @@ const genContent = (
   return content.join("\n");
 };
 
-export const genPersonMarkdown = (
-  folderPath: string,
-  fileInfoList: FileInfo[]
-): Promise<string[]> => {
-  const authorList = groupFiles(fileInfoList, "author");
+interface GenerateInfo {
+  title: string;
+  path: string;
+  files: FileInfo[];
+}
+
+export const genPersonMarkdown = ({
+  title,
+  path,
+  files,
+}: GenerateInfo): Promise<string[]> => {
+  const authorList = groupFiles(files, "author");
   const promises: Promise<void>[] = [];
   for (const author in authorList) {
     const files = authorList[author];
@@ -99,9 +121,14 @@ export const genPersonMarkdown = (
     promises.push(
       new Promise((resolve2) => {
         writeFile(
-          resolve(folderPath, `${author}.md`),
-          genFrontMatter(author, tags) +
-            genDescription(folderPath) +
+          resolve(path, `${author}.md`),
+          genFrontMatter({
+            title: author,
+            author,
+            category: title,
+            tags,
+          }) +
+            genDescription(path) +
             genContent(files, "language"),
           { encoding: "utf-8", flag: "w" },
           () => resolve2()
@@ -115,11 +142,12 @@ export const genPersonMarkdown = (
   );
 };
 
-export const genLanguageMarkdown = (
-  folderPath: string,
-  fileInfoList: FileInfo[]
-): Promise<string[]> => {
-  const languageList = groupFiles(fileInfoList, "language");
+export const genLanguageMarkdown = ({
+  title,
+  path,
+  files,
+}: GenerateInfo): Promise<string[]> => {
+  const languageList = groupFiles(files, "language");
   const promises: Promise<void>[] = [];
   for (const language in languageList) {
     const files = languageList[language];
@@ -128,9 +156,14 @@ export const genLanguageMarkdown = (
     promises.push(
       new Promise((resolve2) => {
         writeFile(
-          resolve(folderPath, `${language}.md`),
-          genFrontMatter(language, tags, files[0].icon) +
-            genDescription(folderPath) +
+          resolve(path, `${language}.md`),
+          genFrontMatter({
+            title: language,
+            icon: files[0].icon,
+            category: title,
+            tags,
+          }) +
+            genDescription(path) +
             genContent(files, "author"),
           { encoding: "utf-8", flag: "w" },
           () => resolve2()
@@ -171,21 +204,38 @@ export const cleanMarkdown = (dir: string): void =>
     });
   });
 
-export const getProblemMarkdown = (id: number): Promise<string> =>
+export const getProblemMarkdown = (exerciseName: string): Promise<string> =>
   new Promise((resolve1) => {
-    exec(`leetcode show ${id}`, (_err, output) => {
-      const [_output, serial, title, link, content] =
-        /^\[(.*?)\] (.*?) *?\n\n(.*?)description\/\n\n[\s\S]*?\n\n([\s\S]*)$/mu.exec(
-          output
-        ) || [];
+    const [, id] = /(.*?)[.|-].*/u.exec(exerciseName) || [];
 
-      if (content)
-        resolve1(`# [${serial}. ${title}](${link})\n\n${html2md(content)}`);
-      else {
-        console.warn(`${id} fail:`, output);
-        resolve1("");
-      }
-    });
+    if (isNaN(Number(id)))
+      console.error(`folderName ${exerciseName} is illigeal!`);
+    else {
+      let retryTimes = 0;
+
+      const getContent = (): void => {
+        exec(`leetcode show ${id}`, (_err, output) => {
+          const [, serial, title, link, content] =
+            /^\[(.*?)\] (.*?) *?\n\n(.*?)description\/\n\n[\s\S]*?\n\n([\s\S]*)$/mu.exec(
+              output
+            ) || [];
+
+          if (content)
+            resolve1(`# [${serial}. ${title}](${link})\n\n${html2md(content)}`);
+          else {
+            if (retryTimes === 3) {
+              console.warn(`${id} fail:`, output);
+              resolve1("");
+            } else {
+              retryTimes += 1;
+              getContent();
+            }
+          }
+        });
+      };
+
+      getContent();
+    }
   });
 
 export const genProblemMarkdown = (
@@ -198,11 +248,9 @@ export const genProblemMarkdown = (
 
       if (existsSync(readmePath)) return Promise.resolve();
 
-      return getProblemMarkdown(Number(folderName.split("-").shift())).then(
-        (content) => {
-          if (content) writeFileSync(readmePath, content);
-          return Promise.resolve();
-        }
-      );
+      return getProblemMarkdown(folderName).then((content) => {
+        if (content) writeFileSync(readmePath, content);
+        return Promise.resolve();
+      });
     })
   );
