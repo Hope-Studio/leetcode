@@ -1,20 +1,39 @@
 {
   "name": "leetcode-exercise",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:Hope-Studio/leetcode.git",
-  "author": "Mr.Hope <zhangbowang1998@gmail.com>",
   "license": "MIT",
+  "author": "Mr.Hope <zhangbowang1998@gmail.com>",
   "scripts": {
-    "serve": "vuepress dev exercise",
-    "cleanServe": "vuepress dev exercise --no-cache",
     "build": "vuepress build exercise",
-    "super:build": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js build exercise",
-    "md:generate": "ts-node ./script/generate.ts",
+    "cleanServe": "vuepress dev exercise --no-cache",
+    "lint": "prettier --check --write . && markdownlint **/*.md --ignore node_modules --fix && clang-format  -i --glob=**/*.cpp",
+    "lint:check": "prettier --check . && markdownlint **/*.md --ignore node_modules && clang-format  -i -n --glob=**/*.cpp",
     "md:clean": "ts-node ./script/clean.ts",
-    "lint": "prettier --check --write . && markdownlint **/*.md --ignore node_modules --fix",
-    "lint:check": "prettier --check . && markdownlint **/*.md --ignore node_modules",
+    "md:generate": "ts-node ./script/generate.ts",
+    "serve": "vuepress dev exercise",
+    "super:build": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js build exercise",
     "test": "ts-node ./script/test.ts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run md:generate && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.cpp": [
+      "clang-format  -i"
+    ],
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,json,yml}": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "sort-package-json"
+    ]
   },
   "dependencies": {
     "vuepress": "1.7.1",
@@ -23,13 +42,17 @@
   "devDependencies": {
     "@types/node": "14.14.8",
     "@types/turndown": "5.0.0",
-    "@typescript-eslint/eslint-plugin": "4.8.1",
-    "@typescript-eslint/parser": "4.8.1",
-    "eslint": "7.13.0",
+    "@typescript-eslint/eslint-plugin": "4.8.2",
+    "@typescript-eslint/parser": "4.8.2",
+    "clang-format": "1.4.0",
+    "eslint": "7.14.0",
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-prettier": "3.1.4",
+    "husky": "4.3.0",
+    "lint-staged": "10.5.2",
     "markdownlint-cli": "0.25.0",
-    "prettier": "2.1.2",
+    "prettier": "2.2.0",
+    "sort-package-json": "1.48.0",
     "ts-node": "9.0.0",
     "turndown": "7.0.0",
     "typescript": "4.0.5"
