@@ -1,16 +1,16 @@
 # [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 
-Given two strings *s* and *t* , write a function to determine if *t* is an anagram of *s*.
+Given two strings _s_ and _t_ , write a function to determine if _t_ is an anagram of _s_.
 
 **Example 1:**
 
-**Input:** *s* = "anagram", *t* = "nagaram"
+**Input:** _s_ = "anagram", _t_ = "nagaram"
 
 **Output:** true
 
 **Example 2:**
 
-**Input:** *s* = "rat", *t* = "car"
+**Input:** _s_ = "rat", _t_ = "car"
 
 **Output:** false
 

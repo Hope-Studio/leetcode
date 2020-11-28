@@ -1,10 +1,9 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-struct ListNode
-{
-    /* data */
-    int val;
-    ListNode* next;
+struct ListNode {
+  /* data */
+  int val;
+  ListNode* next;
 };
 
 /**
@@ -16,10 +15,9 @@ struct ListNode
  * };
  */
 class Solution {
-public:
-    void deleteNode(ListNode* node) {
-        node->val=node->next->val;
-        node->next=node->next->next;
-        
-    }
+ public:
+  void deleteNode(ListNode* node) {
+    node->val = node->next->val;
+    node->next = node->next->next;
+  }
 };
