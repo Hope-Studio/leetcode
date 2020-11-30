@@ -2,3 +2,6 @@ dist/
 node_modules/
 
 leetcode/.vuepress/sidebar.js
+leetcode/**/*.md
+!leetcode/*/readme.md
+!leetcode/*/README.md
