@@ -48,12 +48,13 @@ interface FrontMatterOption {
 
 const genFrontMatter = ({
   title,
+  author,
   category,
   tags,
   icon,
 }: FrontMatterOption): string =>
-  `---\ntitle: ${title}\n${
-    icon ? `icon: ${icon}\n` : ""
+  `---\ntitle: ${title}\n${icon ? `icon: ${icon}\n` : ""}${
+    author ? `author: ${author}\n` : ""
   }category: ${category}\n${
     tags.length
       ? `tag:\n${Array.from(new Set(tags))
@@ -69,9 +70,6 @@ const genMarkdownList = (list: string[]): string =>
         `- [${getExerciseName(title)}](${decodeURI(title)}/readme.md)\n`
     )
     .join("\n");
-
-const genDescription = (title: string): string =>
-  `> **题目**: [${getExerciseName(title)}](readme.md)\n\n<!-- more -->\n\n`;
 
 const genContent = (
   fileInfoList: FileInfo[],
@@ -124,12 +122,10 @@ export const genPersonMarkdown = ({
           resolve(path, `${author}.md`),
           genFrontMatter({
             title: author,
-            author,
-            category: title,
+            author: title,
+            category: author,
             tags,
-          }) +
-            genDescription(path) +
-            genContent(files, "language"),
+          }) + genContent(files, "language"),
           { encoding: "utf-8", flag: "w" },
           () => resolve2()
         );
@@ -160,11 +156,10 @@ export const genLanguageMarkdown = ({
           genFrontMatter({
             title: language,
             icon: files[0].icon,
-            category: title,
+            author: title,
+            category: language,
             tags,
-          }) +
-            genDescription(path) +
-            genContent(files, "author"),
+          }) + genContent(files, "author"),
           { encoding: "utf-8", flag: "w" },
           () => resolve2()
         );

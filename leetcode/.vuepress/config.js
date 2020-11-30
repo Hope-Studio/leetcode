@@ -39,7 +39,7 @@ module.exports = config({
     ],
     sidebar,
 
-    author: "Mr.Hope",
+    author: "LeetCode",
 
     footer: {
       copyright: "Copyright © 2017-present Hope Studio",
@@ -48,7 +48,7 @@ module.exports = config({
 
     hostname: "https://leetcode.innenu.com",
 
-    pageInfo: ["Visitor", "Category", "Tag"],
+    pageInfo: ["Author", "Visitor", "Category", "Tag"],
 
     comment: {
       type: "valine",
