@@ -11,6 +11,7 @@ extends:
 ignorePatterns:
   - "**/dist/**"
   - "**/node_modules/**"
+  - "leetcode/**"
 
 overrides:
   - files:

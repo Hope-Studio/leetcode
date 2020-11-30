@@ -1,4 +1,4 @@
 dist/
 node_modules/
 
-exercise/.vuepress/sidebar.js
+leetcode/.vuepress/sidebar.js

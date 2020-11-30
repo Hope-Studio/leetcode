@@ -5,14 +5,14 @@
   "license": "MIT",
   "author": "Mr.Hope <zhangbowang1998@gmail.com>",
   "scripts": {
-    "build": "vuepress build exercise",
-    "cleanServe": "vuepress dev exercise --no-cache",
+    "build": "vuepress build leetcode",
+    "cleanServe": "vuepress dev leetcode --no-cache",
     "lint": "prettier --check --write . && markdownlint **/*.md --ignore node_modules --fix && clang-format  -i --glob=**/*.{c,csharp,cpp,java}",
     "lint:check": "prettier --check . && markdownlint **/*.md --ignore node_modules && clang-format  -i -n --glob=**/*.{c,csharp,cpp,java}",
     "md:clean": "ts-node ./script/clean.ts",
     "md:generate": "ts-node ./script/generate.ts",
-    "serve": "vuepress dev exercise",
-    "super:build": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js build exercise",
+    "serve": "vuepress dev leetcode",
+    "super:build": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js build leetcode",
     "test": "ts-node ./script/test.ts"
   },
   "husky": {

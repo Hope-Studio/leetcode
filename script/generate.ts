@@ -10,11 +10,11 @@ import {
   genProblemMarkdown,
 } from "./util/markdown";
 
-const folderList = getExercise("exercise");
+const folderList = getExercise("leetcode");
 
 void Promise.all(
   folderList.map((folderName) => {
-    const folderPath = resolve("exercise", folderName);
+    const folderPath = resolve("leetcode", folderName);
     const fileList = readdirSync(folderPath).filter(
       (fileName) =>
         statSync(resolve(folderPath, fileName)).isFile() &&
@@ -53,10 +53,10 @@ void Promise.all(
   })
 ).then((sidebarList) => {
   writeFileSync(
-    "exercise/.vuepress/sidebar.js",
+    "leetcode/.vuepress/sidebar.js",
     `module.exports = ${JSON.stringify(["", ...sidebarList])};\n`
   );
 });
 
-genExerciseList("exercise", folderList);
-void genProblemMarkdown("exercise", folderList);
+genExerciseList("leetcode", folderList);
+void genProblemMarkdown("leetcode", folderList);

@@ -95,7 +95,7 @@ module.exports = config({
 
     repo: "https://github.com/Hope-Studio/leetcode.github.io",
     repoLabel: "Github",
-    docsDir: "exercise",
+    docsDir: "leetcode",
     editLinks: false,
   },
 });

@@ -6,8 +6,8 @@ target/
 
 .project
 
-exercise/.vuepress/sidebar.js
-exercise/**/*.md
-!exercise/*/readme.md
-!exercise/*/README.md
+leetcode/.vuepress/sidebar.js
+leetcode/**/*.md
+!leetcode/*/readme.md
+!leetcode/*/README.md
 script/*.js
