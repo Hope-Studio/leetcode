@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "vuepress": "1.7.1",
-    "vuepress-theme-hope": "1.7.8"
+    "vuepress-theme-hope": "1.7.9"
   },
   "devDependencies": {
     "@types/node": "14.14.13",
