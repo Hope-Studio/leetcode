@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://leetcode.innenu.comsitemap.xml
+Sitemap: https://leetcode.innenu.com/sitemap.xml
