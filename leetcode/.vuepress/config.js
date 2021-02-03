@@ -5,24 +5,19 @@ module.exports = config({
   title: "LeetCode",
   description: "LeetCode 练习",
 
-  headOption: {
-    icon: "/favicon.ico",
-    pwa: {
-      manifest: "/manifest.json",
-      themeColor: "#5c92d1",
-      appleStatusBarColor: "black",
-      appleIcon: "/assets/icon/apple-icon-152.png",
-      msTileImage: "/assets/icon/ms-icon-144.png",
-      msTileColor: "#ffffff",
-    },
-  },
-
-  temp: "./node_modules/.temp/doc/",
   dest: "./dist",
 
   themeConfig: {
     baseLang: "zh-CN",
     logo: "/logo.png",
+
+    hostname: "https://leetcode.innenu.com",
+    author: "LeetCode",
+
+    repo: "https://github.com/Hope-Studio/leetcode.github.io",
+    repoLabel: "Github",
+    docsDir: "leetcode",
+    editLinks: false,
 
     nav: [
       { text: "主页", link: "/", icon: "home" },
@@ -39,22 +34,18 @@ module.exports = config({
     ],
     sidebar,
 
-    author: "LeetCode",
-
     footer: {
       copyright: "Copyright © 2017-present Hope Studio",
       display: true,
     },
-
-    hostname: "https://leetcode.innenu.com",
-
-    pageInfo: ["Author", "Visitor", "Category", "Tag"],
 
     comment: {
       type: "valine",
       appId: "44NUsQa5VeFGM7vFNKDUYX0n-gzGzoHsz",
       appKey: "pMcnfFAhdbRLN73vpejJBxJc",
     },
+
+    pageInfo: ["Author", "Visitor", "Category", "Tag"],
 
     mdEnhance: {
       sup: true,
@@ -92,10 +83,5 @@ module.exports = config({
         ],
       },
     },
-
-    repo: "https://github.com/Hope-Studio/leetcode.github.io",
-    repoLabel: "Github",
-    docsDir: "leetcode",
-    editLinks: false,
   },
 });
