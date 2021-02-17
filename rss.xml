@@ -6,13 +6,13 @@
     <link>https://leetcode.innenu.com/</link>
     <description>LeetCode 练习</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 03 Feb 2021 13:37:41 GMT</pubDate>
-    <lastBuildDate>Wed, 03 Feb 2021 13:37:41 GMT</lastBuildDate>
+    <pubDate>Wed, 17 Feb 2021 16:16:54 GMT</pubDate>
+    <lastBuildDate>Wed, 17 Feb 2021 16:16:54 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright © 2017-present Hope Studio</copyright>
-    <category>Java</category>
     <category>C++</category>
+    <category>Java</category>
     <category>JavaScript</category>
     <category>Mister-Hope</category>
     <category>Python3</category>
@@ -22,72 +22,6 @@
     <category>lmy</category>
     <category>sqm</category>
     <category>PHP</category>
-    <item>
-      <title>Java</title>
-      <link>https://leetcode.innenu.com/1-two-sum/Java/</link>
-      <guid>https://leetcode.innenu.com/1-two-sum/Java/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">Java</source>
-      <category>Java</category>
-      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
-<div><pre><code><span>/*
- * Runtime: 10 ms, faster than 41.97% of Java online submissions for Two Sum.
- *
- * Memory Usage: 56.5 MB, less than 6.02% of Java online submissions for Two Sum.
- */</span>
-
-<span>import</span> <span>java<span>.</span>util<span>.</span></span><span>HashMap</span><span>;</span>
-
-<span>class</span> <span>Solution</span> <span>{</span>
-  <span>public</span> <span>int</span><span>[</span><span>]</span> <span>twoSum</span><span>(</span><span>int</span><span>[</span><span>]</span> nums<span>,</span> <span>int</span> target<span>)</span> <span>{</span>
-    <span>HashMap</span><span><span>&lt;</span><span>Integer</span><span>,</span> <span>Integer</span><span>></span></span> map <span>=</span> <span>new</span> <span>HashMap</span><span><span>&lt;</span><span>Integer</span><span>,</span> <span>Integer</span><span>></span></span><span>(</span><span>)</span><span>;</span>
-    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> nums<span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
-      <span>int</span> j <span>=</span> target <span>-</span> nums<span>[</span>i<span>]</span><span>;</span>
-
-      <span>if</span> <span>(</span>map<span>.</span><span>containsKey</span><span>(</span>j<span>)</span><span>)</span>
-        <span>return</span> <span>new</span> <span>int</span><span>[</span><span>]</span> <span>{</span>map<span>.</span><span>get</span><span>(</span>j<span>)</span><span>,</span> i<span>}</span><span>;</span>
-
-      map<span>.</span><span>put</span><span>(</span>nums<span>[</span>i<span>]</span><span>,</span> i<span>)</span><span>;</span>
-    <span>}</span>
-
-    <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"No solution"</span><span>)</span><span>;</span>
-  <span>}</span>
-<span>}</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div><h2 id="lizncu"> lizncu</h2>
-<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
-  <span>public</span> <span>int</span><span>[</span><span>]</span> <span>twoSum</span><span>(</span><span>int</span><span>[</span><span>]</span> nums<span>,</span> <span>int</span> target<span>)</span> <span>{</span>
-    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> nums<span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
-      <span>for</span> <span>(</span><span>int</span> j <span>=</span> i <span>+</span> <span>1</span><span>;</span> j <span>&lt;</span> nums<span>.</span>length<span>;</span> j<span>++</span><span>)</span> <span>{</span>
-        <span>if</span> <span>(</span>nums<span>[</span>i<span>]</span> <span>+</span> nums<span>[</span>j<span>]</span> <span>==</span> target<span>)</span> <span>{</span>
-          <span>return</span> <span>new</span> <span>int</span><span>[</span><span>]</span> <span>{</span>i<span>,</span> j<span>}</span><span>;</span>
-        <span>}</span>
-      <span>}</span>
-    <span>}</span>
-
-    <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"No two sum solution"</span><span>)</span><span>;</span>
-  <span>}</span>
-<span>}</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><h2 id="lmy"> lmy</h2>
-<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
-  <span>public</span> <span>int</span><span>[</span><span>]</span> <span>twoSum</span><span>(</span><span>int</span><span>[</span><span>]</span> nums<span>,</span> <span>int</span> target<span>)</span> <span>{</span>
-    <span>int</span> n <span>=</span> nums<span>.</span>length<span>;</span>
-    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> n<span>;</span> <span>++</span>i<span>)</span> <span>{</span>
-      <span>for</span> <span>(</span><span>int</span> j <span>=</span> i <span>+</span> <span>1</span><span>;</span> j <span>&lt;</span> n<span>;</span> <span>++</span>j<span>)</span> <span>{</span>
-        <span>if</span> <span>(</span>nums<span>[</span>i<span>]</span> <span>+</span> nums<span>[</span>j<span>]</span> <span>==</span> target<span>)</span> <span>{</span>
-          <span>return</span> <span>new</span> <span>int</span><span>[</span><span>]</span> <span>{</span>i<span>,</span> j<span>}</span><span>;</span>
-        <span>}</span>
-      <span>}</span>
-    <span>}</span>
-    <span>return</span> <span>new</span> <span>int</span><span>[</span><span>0</span><span>]</span><span>;</span>
-  <span>}</span>
-<span>}</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content:encoded>
-    </item>
     <item>
       <title>C++</title>
       <link>https://leetcode.innenu.com/1-two-sum/C++/</link>
@@ -165,6 +99,72 @@
 
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://leetcode.innenu.com/1-two-sum/Java/</link>
+      <guid>https://leetcode.innenu.com/1-two-sum/Java/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">Java</source>
+      <category>Java</category>
+      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
+<div><pre><code><span>/*
+ * Runtime: 10 ms, faster than 41.97% of Java online submissions for Two Sum.
+ *
+ * Memory Usage: 56.5 MB, less than 6.02% of Java online submissions for Two Sum.
+ */</span>
+
+<span>import</span> <span>java<span>.</span>util<span>.</span></span><span>HashMap</span><span>;</span>
+
+<span>class</span> <span>Solution</span> <span>{</span>
+  <span>public</span> <span>int</span><span>[</span><span>]</span> <span>twoSum</span><span>(</span><span>int</span><span>[</span><span>]</span> nums<span>,</span> <span>int</span> target<span>)</span> <span>{</span>
+    <span>HashMap</span><span><span>&lt;</span><span>Integer</span><span>,</span> <span>Integer</span><span>></span></span> map <span>=</span> <span>new</span> <span>HashMap</span><span><span>&lt;</span><span>Integer</span><span>,</span> <span>Integer</span><span>></span></span><span>(</span><span>)</span><span>;</span>
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> nums<span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
+      <span>int</span> j <span>=</span> target <span>-</span> nums<span>[</span>i<span>]</span><span>;</span>
+
+      <span>if</span> <span>(</span>map<span>.</span><span>containsKey</span><span>(</span>j<span>)</span><span>)</span>
+        <span>return</span> <span>new</span> <span>int</span><span>[</span><span>]</span> <span>{</span>map<span>.</span><span>get</span><span>(</span>j<span>)</span><span>,</span> i<span>}</span><span>;</span>
+
+      map<span>.</span><span>put</span><span>(</span>nums<span>[</span>i<span>]</span><span>,</span> i<span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"No solution"</span><span>)</span><span>;</span>
+  <span>}</span>
+<span>}</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div><h2 id="lizncu"> lizncu</h2>
+<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
+  <span>public</span> <span>int</span><span>[</span><span>]</span> <span>twoSum</span><span>(</span><span>int</span><span>[</span><span>]</span> nums<span>,</span> <span>int</span> target<span>)</span> <span>{</span>
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> nums<span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
+      <span>for</span> <span>(</span><span>int</span> j <span>=</span> i <span>+</span> <span>1</span><span>;</span> j <span>&lt;</span> nums<span>.</span>length<span>;</span> j<span>++</span><span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>nums<span>[</span>i<span>]</span> <span>+</span> nums<span>[</span>j<span>]</span> <span>==</span> target<span>)</span> <span>{</span>
+          <span>return</span> <span>new</span> <span>int</span><span>[</span><span>]</span> <span>{</span>i<span>,</span> j<span>}</span><span>;</span>
+        <span>}</span>
+      <span>}</span>
+    <span>}</span>
+
+    <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"No two sum solution"</span><span>)</span><span>;</span>
+  <span>}</span>
+<span>}</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><h2 id="lmy"> lmy</h2>
+<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
+  <span>public</span> <span>int</span><span>[</span><span>]</span> <span>twoSum</span><span>(</span><span>int</span><span>[</span><span>]</span> nums<span>,</span> <span>int</span> target<span>)</span> <span>{</span>
+    <span>int</span> n <span>=</span> nums<span>.</span>length<span>;</span>
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> n<span>;</span> <span>++</span>i<span>)</span> <span>{</span>
+      <span>for</span> <span>(</span><span>int</span> j <span>=</span> i <span>+</span> <span>1</span><span>;</span> j <span>&lt;</span> n<span>;</span> <span>++</span>j<span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>nums<span>[</span>i<span>]</span> <span>+</span> nums<span>[</span>j<span>]</span> <span>==</span> target<span>)</span> <span>{</span>
+          <span>return</span> <span>new</span> <span>int</span><span>[</span><span>]</span> <span>{</span>i<span>,</span> j<span>}</span><span>;</span>
+        <span>}</span>
+      <span>}</span>
+    <span>}</span>
+    <span>return</span> <span>new</span> <span>int</span><span>[</span><span>0</span><span>]</span><span>;</span>
+  <span>}</span>
+<span>}</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>JavaScript</title>
@@ -815,76 +815,6 @@
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>JavaScript</title>
-      <link>https://leetcode.innenu.com/12-integer-to-roman/JavaScript/</link>
-      <guid>https://leetcode.innenu.com/12-integer-to-roman/JavaScript/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">JavaScript</source>
-      <category>JavaScript</category>
-      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
-<div><pre><code><span>/*
- * Runtime: 176 ms, faster than 33.68% of JavaScript online submissions for Integer to Roman.
- *
- * Memory Usage: 45.2 MB, less than 6.38% of JavaScript online submissions for Integer to Roman.
- */</span>
-
-<span>const</span> <span>intToRoman</span> <span>=</span> <span>(</span><span>num</span><span>)</span> <span>=></span> <span>{</span>
-  <span>const</span> numerals <span>=</span> <span>[</span>
-    <span>"M"</span><span>,</span>
-    <span>"CM"</span><span>,</span>
-    <span>"D"</span><span>,</span>
-    <span>"CD"</span><span>,</span>
-    <span>"C"</span><span>,</span>
-    <span>"XC"</span><span>,</span>
-    <span>"L"</span><span>,</span>
-    <span>"XL"</span><span>,</span>
-    <span>"X"</span><span>,</span>
-    <span>"IX"</span><span>,</span>
-    <span>"V"</span><span>,</span>
-    <span>"IV"</span><span>,</span>
-    <span>"I"</span><span>,</span>
-  <span>]</span><span>;</span>
-  <span>const</span> weights <span>=</span> <span>[</span><span>1000</span><span>,</span> <span>900</span><span>,</span> <span>500</span><span>,</span> <span>400</span><span>,</span> <span>100</span><span>,</span> <span>90</span><span>,</span> <span>50</span><span>,</span> <span>40</span><span>,</span> <span>10</span><span>,</span> <span>9</span><span>,</span> <span>5</span><span>,</span> <span>4</span><span>,</span> <span>1</span><span>]</span><span>;</span>
-
-  <span>let</span> result <span>=</span> <span>""</span><span>;</span>
-
-  <span>for</span> <span>(</span><span>let</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> weights<span>.</span>length <span>&amp;&amp;</span> num <span>!==</span> <span>0</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
-    <span>for</span> <span>(</span><span>let</span> j <span>=</span> <span>1</span><span>;</span> j <span>&lt;=</span> num <span>/</span> weights<span>[</span>i<span>]</span><span>;</span> j<span>++</span><span>)</span> result <span>+=</span> numerals<span>[</span>i<span>]</span><span>;</span>
-
-    num <span>%=</span> weights<span>[</span>i<span>]</span><span>;</span>
-  <span>}</span>
-
-  <span>return</span> result<span>;</span>
-<span>}</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br></div></div><h3 id="_1"> 1</h3>
-<div><pre><code><span>/*
- * Runtime: 168 ms, faster than 53.26% of JavaScript online submissions for Integer to Roman.
- *
- * Memory Usage: 45.5 MB, less than 6.38% of JavaScript online submissions for Integer to Roman.
- */</span>
-
-<span>const</span> <span>intToRoman</span> <span>=</span> <span>(</span><span>num</span><span>)</span> <span>=></span> <span>{</span>
-  <span>const</span> thousands <span>=</span> <span>[</span><span>""</span><span>,</span> <span>"M"</span><span>,</span> <span>"MM"</span><span>,</span> <span>"MMM"</span><span>]</span><span>;</span>
-  <span>const</span> hundreds <span>=</span> <span>[</span><span>""</span><span>,</span> <span>"C"</span><span>,</span> <span>"CC"</span><span>,</span> <span>"CCC"</span><span>,</span> <span>"CD"</span><span>,</span> <span>"D"</span><span>,</span> <span>"DC"</span><span>,</span> <span>"DCC"</span><span>,</span> <span>"DCCC"</span><span>,</span> <span>"CM"</span><span>]</span><span>;</span>
-  <span>const</span> tens <span>=</span> <span>[</span><span>""</span><span>,</span> <span>"X"</span><span>,</span> <span>"XX"</span><span>,</span> <span>"XXX"</span><span>,</span> <span>"XL"</span><span>,</span> <span>"L"</span><span>,</span> <span>"LX"</span><span>,</span> <span>"LXX"</span><span>,</span> <span>"LXXX"</span><span>,</span> <span>"XC"</span><span>]</span><span>;</span>
-  <span>const</span> units <span>=</span> <span>[</span><span>""</span><span>,</span> <span>"I"</span><span>,</span> <span>"II"</span><span>,</span> <span>"III"</span><span>,</span> <span>"IV"</span><span>,</span> <span>"V"</span><span>,</span> <span>"VI"</span><span>,</span> <span>"VII"</span><span>,</span> <span>"VIII"</span><span>,</span> <span>"IX"</span><span>]</span><span>;</span>
-
-  <span>const</span> val1 <span>=</span> num <span>%</span> <span>1000</span><span>;</span>
-  <span>const</span> val2 <span>=</span> val1 <span>%</span> <span>100</span><span>;</span>
-  <span>const</span> val3 <span>=</span> val2 <span>%</span> <span>10</span><span>;</span>
-  <span>return</span> <span>(</span>
-    thousands<span>[</span><span>(</span>num <span>-</span> val1<span>)</span> <span>/</span> <span>1000</span><span>]</span> <span>+</span>
-    hundreds<span>[</span><span>(</span>val1 <span>-</span> val2<span>)</span> <span>/</span> <span>100</span><span>]</span> <span>+</span>
-    tens<span>[</span><span>(</span>val2 <span>-</span> val3<span>)</span> <span>/</span> <span>10</span><span>]</span> <span>+</span>
-    units<span>[</span>val3 <span>%</span> <span>10</span><span>]</span>
-  <span>)</span><span>;</span>
-<span>}</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>Mister-Hope</title>
       <link>https://leetcode.innenu.com/12-integer-to-roman/Mister-Hope/</link>
       <guid>https://leetcode.innenu.com/12-integer-to-roman/Mister-Hope/</guid>
@@ -1063,6 +993,76 @@
  */</span>
 
 <span>const</span> intToRoman <span>=</span> <span>(</span>num<span>:</span> <span>number</span><span>)</span><span>:</span> <span>string</span> <span>=></span> <span>{</span>
+  <span>const</span> thousands <span>=</span> <span>[</span><span>""</span><span>,</span> <span>"M"</span><span>,</span> <span>"MM"</span><span>,</span> <span>"MMM"</span><span>]</span><span>;</span>
+  <span>const</span> hundreds <span>=</span> <span>[</span><span>""</span><span>,</span> <span>"C"</span><span>,</span> <span>"CC"</span><span>,</span> <span>"CCC"</span><span>,</span> <span>"CD"</span><span>,</span> <span>"D"</span><span>,</span> <span>"DC"</span><span>,</span> <span>"DCC"</span><span>,</span> <span>"DCCC"</span><span>,</span> <span>"CM"</span><span>]</span><span>;</span>
+  <span>const</span> tens <span>=</span> <span>[</span><span>""</span><span>,</span> <span>"X"</span><span>,</span> <span>"XX"</span><span>,</span> <span>"XXX"</span><span>,</span> <span>"XL"</span><span>,</span> <span>"L"</span><span>,</span> <span>"LX"</span><span>,</span> <span>"LXX"</span><span>,</span> <span>"LXXX"</span><span>,</span> <span>"XC"</span><span>]</span><span>;</span>
+  <span>const</span> units <span>=</span> <span>[</span><span>""</span><span>,</span> <span>"I"</span><span>,</span> <span>"II"</span><span>,</span> <span>"III"</span><span>,</span> <span>"IV"</span><span>,</span> <span>"V"</span><span>,</span> <span>"VI"</span><span>,</span> <span>"VII"</span><span>,</span> <span>"VIII"</span><span>,</span> <span>"IX"</span><span>]</span><span>;</span>
+
+  <span>const</span> val1 <span>=</span> num <span>%</span> <span>1000</span><span>;</span>
+  <span>const</span> val2 <span>=</span> val1 <span>%</span> <span>100</span><span>;</span>
+  <span>const</span> val3 <span>=</span> val2 <span>%</span> <span>10</span><span>;</span>
+  <span>return</span> <span>(</span>
+    thousands<span>[</span><span>(</span>num <span>-</span> val1<span>)</span> <span>/</span> <span>1000</span><span>]</span> <span>+</span>
+    hundreds<span>[</span><span>(</span>val1 <span>-</span> val2<span>)</span> <span>/</span> <span>100</span><span>]</span> <span>+</span>
+    tens<span>[</span><span>(</span>val2 <span>-</span> val3<span>)</span> <span>/</span> <span>10</span><span>]</span> <span>+</span>
+    units<span>[</span>val3 <span>%</span> <span>10</span><span>]</span>
+  <span>)</span><span>;</span>
+<span>}</span><span>;</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>JavaScript</title>
+      <link>https://leetcode.innenu.com/12-integer-to-roman/JavaScript/</link>
+      <guid>https://leetcode.innenu.com/12-integer-to-roman/JavaScript/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">JavaScript</source>
+      <category>JavaScript</category>
+      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
+<div><pre><code><span>/*
+ * Runtime: 176 ms, faster than 33.68% of JavaScript online submissions for Integer to Roman.
+ *
+ * Memory Usage: 45.2 MB, less than 6.38% of JavaScript online submissions for Integer to Roman.
+ */</span>
+
+<span>const</span> <span>intToRoman</span> <span>=</span> <span>(</span><span>num</span><span>)</span> <span>=></span> <span>{</span>
+  <span>const</span> numerals <span>=</span> <span>[</span>
+    <span>"M"</span><span>,</span>
+    <span>"CM"</span><span>,</span>
+    <span>"D"</span><span>,</span>
+    <span>"CD"</span><span>,</span>
+    <span>"C"</span><span>,</span>
+    <span>"XC"</span><span>,</span>
+    <span>"L"</span><span>,</span>
+    <span>"XL"</span><span>,</span>
+    <span>"X"</span><span>,</span>
+    <span>"IX"</span><span>,</span>
+    <span>"V"</span><span>,</span>
+    <span>"IV"</span><span>,</span>
+    <span>"I"</span><span>,</span>
+  <span>]</span><span>;</span>
+  <span>const</span> weights <span>=</span> <span>[</span><span>1000</span><span>,</span> <span>900</span><span>,</span> <span>500</span><span>,</span> <span>400</span><span>,</span> <span>100</span><span>,</span> <span>90</span><span>,</span> <span>50</span><span>,</span> <span>40</span><span>,</span> <span>10</span><span>,</span> <span>9</span><span>,</span> <span>5</span><span>,</span> <span>4</span><span>,</span> <span>1</span><span>]</span><span>;</span>
+
+  <span>let</span> result <span>=</span> <span>""</span><span>;</span>
+
+  <span>for</span> <span>(</span><span>let</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> weights<span>.</span>length <span>&amp;&amp;</span> num <span>!==</span> <span>0</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
+    <span>for</span> <span>(</span><span>let</span> j <span>=</span> <span>1</span><span>;</span> j <span>&lt;=</span> num <span>/</span> weights<span>[</span>i<span>]</span><span>;</span> j<span>++</span><span>)</span> result <span>+=</span> numerals<span>[</span>i<span>]</span><span>;</span>
+
+    num <span>%=</span> weights<span>[</span>i<span>]</span><span>;</span>
+  <span>}</span>
+
+  <span>return</span> result<span>;</span>
+<span>}</span><span>;</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br></div></div><h3 id="_1"> 1</h3>
+<div><pre><code><span>/*
+ * Runtime: 168 ms, faster than 53.26% of JavaScript online submissions for Integer to Roman.
+ *
+ * Memory Usage: 45.5 MB, less than 6.38% of JavaScript online submissions for Integer to Roman.
+ */</span>
+
+<span>const</span> <span>intToRoman</span> <span>=</span> <span>(</span><span>num</span><span>)</span> <span>=></span> <span>{</span>
   <span>const</span> thousands <span>=</span> <span>[</span><span>""</span><span>,</span> <span>"M"</span><span>,</span> <span>"MM"</span><span>,</span> <span>"MMM"</span><span>]</span><span>;</span>
   <span>const</span> hundreds <span>=</span> <span>[</span><span>""</span><span>,</span> <span>"C"</span><span>,</span> <span>"CC"</span><span>,</span> <span>"CCC"</span><span>,</span> <span>"CD"</span><span>,</span> <span>"D"</span><span>,</span> <span>"DC"</span><span>,</span> <span>"DCC"</span><span>,</span> <span>"DCCC"</span><span>,</span> <span>"CM"</span><span>]</span><span>;</span>
   <span>const</span> tens <span>=</span> <span>[</span><span>""</span><span>,</span> <span>"X"</span><span>,</span> <span>"XX"</span><span>,</span> <span>"XXX"</span><span>,</span> <span>"XL"</span><span>,</span> <span>"L"</span><span>,</span> <span>"LX"</span><span>,</span> <span>"LXX"</span><span>,</span> <span>"LXXX"</span><span>,</span> <span>"XC"</span><span>]</span><span>;</span>
@@ -1340,6 +1340,37 @@
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div>]]></content:encoded>
     </item>
     <item>
+      <title>lizncu</title>
+      <link>https://leetcode.innenu.com/1221-Split-a-String-in-Balanced-Strings/lizncu/</link>
+      <guid>https://leetcode.innenu.com/1221-Split-a-String-in-Balanced-Strings/lizncu/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">lizncu</source>
+      <category>lizncu</category>
+      <content:encoded><![CDATA[<h2 id="java"> Java</h2>
+<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
+  <span>public</span> <span>int</span> <span>balancedStringSplit</span><span>(</span><span>String</span> s<span>)</span> <span>{</span>
+    <span>int</span> flag <span>=</span> <span>0</span><span>;</span>
+    <span>int</span> ans <span>=</span> <span>0</span><span>;</span>
+
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
+      <span>if</span> <span>(</span>s<span>.</span><span>charAt</span><span>(</span>i<span>)</span> <span>==</span> <span>'L'</span><span>)</span> <span>{</span>
+        flag<span>++</span><span>;</span>
+      <span>}</span> <span>else</span> <span>{</span>
+        flag<span>--</span><span>;</span>
+      <span>}</span>
+
+      <span>if</span> <span>(</span>flag <span>==</span> <span>0</span><span>)</span> <span>{</span>
+        ans<span>++</span><span>;</span>
+      <span>}</span>
+    <span>}</span>
+
+    <span>return</span> ans<span>;</span>
+  <span>}</span>
+<span>}</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>1221. Split a String in Balanced Strings</title>
       <link>https://leetcode.innenu.com/1221-Split-a-String-in-Balanced-Strings/</link>
       <guid>https://leetcode.innenu.com/1221-Split-a-String-in-Balanced-Strings/</guid>
@@ -1370,37 +1401,6 @@
 <li><code>s[i] = 'L' or 'R'</code></li>
 </ul>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>lizncu</title>
-      <link>https://leetcode.innenu.com/1221-Split-a-String-in-Balanced-Strings/lizncu/</link>
-      <guid>https://leetcode.innenu.com/1221-Split-a-String-in-Balanced-Strings/lizncu/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">lizncu</source>
-      <category>lizncu</category>
-      <content:encoded><![CDATA[<h2 id="java"> Java</h2>
-<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
-  <span>public</span> <span>int</span> <span>balancedStringSplit</span><span>(</span><span>String</span> s<span>)</span> <span>{</span>
-    <span>int</span> flag <span>=</span> <span>0</span><span>;</span>
-    <span>int</span> ans <span>=</span> <span>0</span><span>;</span>
-
-    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
-      <span>if</span> <span>(</span>s<span>.</span><span>charAt</span><span>(</span>i<span>)</span> <span>==</span> <span>'L'</span><span>)</span> <span>{</span>
-        flag<span>++</span><span>;</span>
-      <span>}</span> <span>else</span> <span>{</span>
-        flag<span>--</span><span>;</span>
-      <span>}</span>
-
-      <span>if</span> <span>(</span>flag <span>==</span> <span>0</span><span>)</span> <span>{</span>
-        ans<span>++</span><span>;</span>
-      <span>}</span>
-    <span>}</span>
-
-    <span>return</span> ans<span>;</span>
-  <span>}</span>
-<span>}</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>Java</title>
@@ -1636,65 +1636,6 @@ Only 1771 contains an even number of digits.</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>Java</title>
-      <link>https://leetcode.innenu.com/13-roman-to-integer/Java/</link>
-      <guid>https://leetcode.innenu.com/13-roman-to-integer/Java/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">Java</source>
-      <category>Java</category>
-      <content:encoded><![CDATA[<h2 id="lizncu"> lizncu</h2>
-<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
-  <span>public</span> <span>int</span> <span>romanToInt</span><span>(</span><span>String</span> s<span>)</span> <span>{</span>
-    <span>int</span> n <span>=</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span>
-    <span>int</span> number <span>=</span> <span>0</span><span>;</span>
-
-    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> n<span>;</span> i<span>++</span><span>)</span> <span>{</span>
-      <span>switch</span> <span>(</span>s<span>.</span><span>charAt</span><span>(</span>i<span>)</span><span>)</span> <span>{</span>
-        <span>case</span> <span>'I'</span><span>:</span>
-          number <span>=</span> number <span>+</span> <span>1</span><span>;</span>
-          <span>break</span><span>;</span>
-        <span>case</span> <span>'V'</span><span>:</span>
-          number <span>=</span> number <span>+</span> <span>5</span><span>;</span>
-          <span>break</span><span>;</span>
-        <span>case</span> <span>'X'</span><span>:</span>
-          number <span>=</span> number <span>+</span> <span>10</span><span>;</span>
-          <span>break</span><span>;</span>
-        <span>case</span> <span>'L'</span><span>:</span>
-          number <span>=</span> number <span>+</span> <span>50</span><span>;</span>
-          <span>break</span><span>;</span>
-        <span>case</span> <span>'C'</span><span>:</span>
-          number <span>=</span> number <span>+</span> <span>100</span><span>;</span>
-          <span>break</span><span>;</span>
-        <span>case</span> <span>'D'</span><span>:</span>
-          number <span>=</span> number <span>+</span> <span>500</span><span>;</span>
-          <span>break</span><span>;</span>
-        <span>case</span> <span>'M'</span><span>:</span>
-          number <span>=</span> number <span>+</span> <span>1000</span><span>;</span>
-          <span>break</span><span>;</span>
-        <span>default</span><span>:</span>
-          <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"default"</span><span>)</span><span>;</span>
-          <span>break</span><span>;</span>
-      <span>}</span>
-
-      <span>if</span> <span>(</span>i <span>></span> <span>0</span><span>)</span> <span>{</span>
-        <span>if</span> <span>(</span><span>(</span>s<span>.</span><span>charAt</span><span>(</span>i<span>)</span> <span>==</span> <span>'V'</span> <span>||</span> s<span>.</span><span>charAt</span><span>(</span>i<span>)</span> <span>==</span> <span>'X'</span><span>)</span> <span>&amp;&amp;</span> s<span>.</span><span>charAt</span><span>(</span>i <span>-</span> <span>1</span><span>)</span> <span>==</span> <span>'I'</span><span>)</span> <span>{</span>
-          number <span>-=</span> <span>2</span><span>;</span>
-        <span>}</span>
-        <span>if</span> <span>(</span><span>(</span>s<span>.</span><span>charAt</span><span>(</span>i<span>)</span> <span>==</span> <span>'L'</span> <span>||</span> s<span>.</span><span>charAt</span><span>(</span>i<span>)</span> <span>==</span> <span>'C'</span><span>)</span> <span>&amp;&amp;</span> s<span>.</span><span>charAt</span><span>(</span>i <span>-</span> <span>1</span><span>)</span> <span>==</span> <span>'X'</span><span>)</span> <span>{</span>
-          number <span>-=</span> <span>20</span><span>;</span>
-        <span>}</span>
-        <span>if</span> <span>(</span><span>(</span>s<span>.</span><span>charAt</span><span>(</span>i<span>)</span> <span>==</span> <span>'D'</span> <span>||</span> s<span>.</span><span>charAt</span><span>(</span>i<span>)</span> <span>==</span> <span>'M'</span><span>)</span> <span>&amp;&amp;</span> s<span>.</span><span>charAt</span><span>(</span>i <span>-</span> <span>1</span><span>)</span> <span>==</span> <span>'C'</span><span>)</span> <span>{</span>
-          number <span>-=</span> <span>200</span><span>;</span>
-        <span>}</span>
-      <span>}</span>
-    <span>}</span>
-    <span>return</span> number<span>;</span>
-  <span>}</span>
-<span>}</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>C++</title>
       <link>https://leetcode.innenu.com/13-roman-to-integer/C++/</link>
       <guid>https://leetcode.innenu.com/13-roman-to-integer/C++/</guid>
@@ -1772,6 +1713,65 @@ Only 1771 contains an even number of digits.</p>
 
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://leetcode.innenu.com/13-roman-to-integer/Java/</link>
+      <guid>https://leetcode.innenu.com/13-roman-to-integer/Java/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">Java</source>
+      <category>Java</category>
+      <content:encoded><![CDATA[<h2 id="lizncu"> lizncu</h2>
+<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
+  <span>public</span> <span>int</span> <span>romanToInt</span><span>(</span><span>String</span> s<span>)</span> <span>{</span>
+    <span>int</span> n <span>=</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span>
+    <span>int</span> number <span>=</span> <span>0</span><span>;</span>
+
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> n<span>;</span> i<span>++</span><span>)</span> <span>{</span>
+      <span>switch</span> <span>(</span>s<span>.</span><span>charAt</span><span>(</span>i<span>)</span><span>)</span> <span>{</span>
+        <span>case</span> <span>'I'</span><span>:</span>
+          number <span>=</span> number <span>+</span> <span>1</span><span>;</span>
+          <span>break</span><span>;</span>
+        <span>case</span> <span>'V'</span><span>:</span>
+          number <span>=</span> number <span>+</span> <span>5</span><span>;</span>
+          <span>break</span><span>;</span>
+        <span>case</span> <span>'X'</span><span>:</span>
+          number <span>=</span> number <span>+</span> <span>10</span><span>;</span>
+          <span>break</span><span>;</span>
+        <span>case</span> <span>'L'</span><span>:</span>
+          number <span>=</span> number <span>+</span> <span>50</span><span>;</span>
+          <span>break</span><span>;</span>
+        <span>case</span> <span>'C'</span><span>:</span>
+          number <span>=</span> number <span>+</span> <span>100</span><span>;</span>
+          <span>break</span><span>;</span>
+        <span>case</span> <span>'D'</span><span>:</span>
+          number <span>=</span> number <span>+</span> <span>500</span><span>;</span>
+          <span>break</span><span>;</span>
+        <span>case</span> <span>'M'</span><span>:</span>
+          number <span>=</span> number <span>+</span> <span>1000</span><span>;</span>
+          <span>break</span><span>;</span>
+        <span>default</span><span>:</span>
+          <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"default"</span><span>)</span><span>;</span>
+          <span>break</span><span>;</span>
+      <span>}</span>
+
+      <span>if</span> <span>(</span>i <span>></span> <span>0</span><span>)</span> <span>{</span>
+        <span>if</span> <span>(</span><span>(</span>s<span>.</span><span>charAt</span><span>(</span>i<span>)</span> <span>==</span> <span>'V'</span> <span>||</span> s<span>.</span><span>charAt</span><span>(</span>i<span>)</span> <span>==</span> <span>'X'</span><span>)</span> <span>&amp;&amp;</span> s<span>.</span><span>charAt</span><span>(</span>i <span>-</span> <span>1</span><span>)</span> <span>==</span> <span>'I'</span><span>)</span> <span>{</span>
+          number <span>-=</span> <span>2</span><span>;</span>
+        <span>}</span>
+        <span>if</span> <span>(</span><span>(</span>s<span>.</span><span>charAt</span><span>(</span>i<span>)</span> <span>==</span> <span>'L'</span> <span>||</span> s<span>.</span><span>charAt</span><span>(</span>i<span>)</span> <span>==</span> <span>'C'</span><span>)</span> <span>&amp;&amp;</span> s<span>.</span><span>charAt</span><span>(</span>i <span>-</span> <span>1</span><span>)</span> <span>==</span> <span>'X'</span><span>)</span> <span>{</span>
+          number <span>-=</span> <span>20</span><span>;</span>
+        <span>}</span>
+        <span>if</span> <span>(</span><span>(</span>s<span>.</span><span>charAt</span><span>(</span>i<span>)</span> <span>==</span> <span>'D'</span> <span>||</span> s<span>.</span><span>charAt</span><span>(</span>i<span>)</span> <span>==</span> <span>'M'</span><span>)</span> <span>&amp;&amp;</span> s<span>.</span><span>charAt</span><span>(</span>i <span>-</span> <span>1</span><span>)</span> <span>==</span> <span>'C'</span><span>)</span> <span>{</span>
+          number <span>-=</span> <span>200</span><span>;</span>
+        <span>}</span>
+      <span>}</span>
+    <span>}</span>
+    <span>return</span> number<span>;</span>
+  <span>}</span>
+<span>}</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>JavaScript</title>
@@ -2214,12 +2214,12 @@ At the end the concatenation [2] + [4,4,4] is [2,4,4,4].</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>lizncu</title>
-      <link>https://leetcode.innenu.com/1317-Convert-Integer-to-the-Sum-of-Two-No-Zero-Integers/lizncu/</link>
-      <guid>https://leetcode.innenu.com/1317-Convert-Integer-to-the-Sum-of-Two-No-Zero-Integers/lizncu/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">lizncu</source>
-      <category>lizncu</category>
-      <content:encoded><![CDATA[<h2 id="java"> Java</h2>
+      <title>Java</title>
+      <link>https://leetcode.innenu.com/1317-Convert-Integer-to-the-Sum-of-Two-No-Zero-Integers/Java/</link>
+      <guid>https://leetcode.innenu.com/1317-Convert-Integer-to-the-Sum-of-Two-No-Zero-Integers/Java/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">Java</source>
+      <category>Java</category>
+      <content:encoded><![CDATA[<h2 id="lizncu"> lizncu</h2>
 <div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
   <span>public</span> <span>int</span><span>[</span><span>]</span> <span>getNoZeroIntegers</span><span>(</span><span>int</span> n<span>)</span> <span>{</span>
     <span>int</span> i <span>=</span> <span>1</span><span>;</span>
@@ -2236,12 +2236,12 @@ At the end the concatenation [2] + [4,4,4] is [2,4,4,4].</p>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>Java</title>
-      <link>https://leetcode.innenu.com/1317-Convert-Integer-to-the-Sum-of-Two-No-Zero-Integers/Java/</link>
-      <guid>https://leetcode.innenu.com/1317-Convert-Integer-to-the-Sum-of-Two-No-Zero-Integers/Java/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">Java</source>
-      <category>Java</category>
-      <content:encoded><![CDATA[<h2 id="lizncu"> lizncu</h2>
+      <title>lizncu</title>
+      <link>https://leetcode.innenu.com/1317-Convert-Integer-to-the-Sum-of-Two-No-Zero-Integers/lizncu/</link>
+      <guid>https://leetcode.innenu.com/1317-Convert-Integer-to-the-Sum-of-Two-No-Zero-Integers/lizncu/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">lizncu</source>
+      <category>lizncu</category>
+      <content:encoded><![CDATA[<h2 id="java"> Java</h2>
 <div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
   <span>public</span> <span>int</span><span>[</span><span>]</span> <span>getNoZeroIntegers</span><span>(</span><span>int</span> n<span>)</span> <span>{</span>
     <span>int</span> i <span>=</span> <span>1</span><span>;</span>
@@ -3224,12 +3224,12 @@ At the end the concatenation [2] + [4,4,4] is [2,4,4,4].</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>lizncu</title>
-      <link>https://leetcode.innenu.com/1486-XOR-Operation-in-an-Array/lizncu/</link>
-      <guid>https://leetcode.innenu.com/1486-XOR-Operation-in-an-Array/lizncu/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">lizncu</source>
-      <category>lizncu</category>
-      <content:encoded><![CDATA[<h2 id="java"> Java</h2>
+      <title>Java</title>
+      <link>https://leetcode.innenu.com/1486-XOR-Operation-in-an-Array/Java/</link>
+      <guid>https://leetcode.innenu.com/1486-XOR-Operation-in-an-Array/Java/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">Java</source>
+      <category>Java</category>
+      <content:encoded><![CDATA[<h2 id="lizncu"> lizncu</h2>
 <div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
   <span>public</span> <span>int</span> <span>xorOperation</span><span>(</span><span>int</span> n<span>,</span> <span>int</span> start<span>)</span> <span>{</span>
     <span>int</span> result <span>=</span> start<span>;</span>
@@ -3245,12 +3245,12 @@ At the end the concatenation [2] + [4,4,4] is [2,4,4,4].</p>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>Java</title>
-      <link>https://leetcode.innenu.com/1486-XOR-Operation-in-an-Array/Java/</link>
-      <guid>https://leetcode.innenu.com/1486-XOR-Operation-in-an-Array/Java/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">Java</source>
-      <category>Java</category>
-      <content:encoded><![CDATA[<h2 id="lizncu"> lizncu</h2>
+      <title>lizncu</title>
+      <link>https://leetcode.innenu.com/1486-XOR-Operation-in-an-Array/lizncu/</link>
+      <guid>https://leetcode.innenu.com/1486-XOR-Operation-in-an-Array/lizncu/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">lizncu</source>
+      <category>lizncu</category>
+      <content:encoded><![CDATA[<h2 id="java"> Java</h2>
 <div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
   <span>public</span> <span>int</span> <span>xorOperation</span><span>(</span><span>int</span> n<span>,</span> <span>int</span> start<span>)</span> <span>{</span>
     <span>int</span> result <span>=</span> start<span>;</span>
@@ -3578,29 +3578,6 @@ Average salary excluding minimum and maximum salary is (2000)/1= 2000</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>1502. Can Make Arithmetic Progression From Sequence</title>
-      <link>https://leetcode.innenu.com/1502-can-make-arithmetic-progression-from-sequence/</link>
-      <guid>https://leetcode.innenu.com/1502-can-make-arithmetic-progression-from-sequence/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">1502. Can Make Arithmetic Progression From Sequence</source>
-      <content:encoded><![CDATA[<h1 id="_1502-can-make-arithmetic-progression-from-sequence"> <a href="https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/" target="_blank" rel="noopener noreferrer">1502. Can Make Arithmetic Progression From Sequence</a></h1>
-<p>Given an array of numbers <code>arr</code>. A sequence of numbers is called an arithmetic progression if the difference between any two consecutive elements is the same.</p>
-<p>Return <code>true</code> if the array can be rearranged to form an arithmetic progression, otherwise, return <code>false</code>.</p>
-<p><strong>Example 1:</strong></p>
-<p><strong>Input:</strong> arr = [3,5,1]</p>
-<p><strong>Output:</strong> true</p>
-<p><strong>Explanation:</strong> We can reorder the elements as [1,3,5] or [5,3,1] with differences 2 and -2 respectively, between each consecutive elements.</p>
-<p><strong>Example 2:</strong></p>
-<p><strong>Input:</strong> arr = [1,2,4]</p>
-<p><strong>Output:</strong> false</p>
-<p><strong>Explanation:</strong> There is no way to reorder the elements to obtain an arithmetic progression.</p>
-<h2 id="constraints"> Constraints</h2>
-<ul>
-<li><code>2 &lt;= arr.length &lt;= 1000</code></li>
-<li><code>-10^6 &lt;= arr[i] &lt;= 10^6</code></li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
       <title>C++</title>
       <link>https://leetcode.innenu.com/1502-can-make-arithmetic-progression-from-sequence/C++/</link>
       <guid>https://leetcode.innenu.com/1502-can-make-arithmetic-progression-from-sequence/C++/</guid>
@@ -3625,6 +3602,29 @@ Average salary excluding minimum and maximum salary is (2000)/1= 2000</p>
 
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>1502. Can Make Arithmetic Progression From Sequence</title>
+      <link>https://leetcode.innenu.com/1502-can-make-arithmetic-progression-from-sequence/</link>
+      <guid>https://leetcode.innenu.com/1502-can-make-arithmetic-progression-from-sequence/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">1502. Can Make Arithmetic Progression From Sequence</source>
+      <content:encoded><![CDATA[<h1 id="_1502-can-make-arithmetic-progression-from-sequence"> <a href="https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/" target="_blank" rel="noopener noreferrer">1502. Can Make Arithmetic Progression From Sequence</a></h1>
+<p>Given an array of numbers <code>arr</code>. A sequence of numbers is called an arithmetic progression if the difference between any two consecutive elements is the same.</p>
+<p>Return <code>true</code> if the array can be rearranged to form an arithmetic progression, otherwise, return <code>false</code>.</p>
+<p><strong>Example 1:</strong></p>
+<p><strong>Input:</strong> arr = [3,5,1]</p>
+<p><strong>Output:</strong> true</p>
+<p><strong>Explanation:</strong> We can reorder the elements as [1,3,5] or [5,3,1] with differences 2 and -2 respectively, between each consecutive elements.</p>
+<p><strong>Example 2:</strong></p>
+<p><strong>Input:</strong> arr = [1,2,4]</p>
+<p><strong>Output:</strong> false</p>
+<p><strong>Explanation:</strong> There is no way to reorder the elements to obtain an arithmetic progression.</p>
+<h2 id="constraints"> Constraints</h2>
+<ul>
+<li><code>2 &lt;= arr.length &lt;= 1000</code></li>
+<li><code>-10^6 &lt;= arr[i] &lt;= 10^6</code></li>
+</ul>
+]]></content:encoded>
     </item>
     <item>
       <title>sqm</title>
@@ -3812,12 +3812,12 @@ Average salary excluding minimum and maximum salary is (2000)/1= 2000</p>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>Java</title>
-      <link>https://leetcode.innenu.com/1518-Wate-Bottles/Java/</link>
-      <guid>https://leetcode.innenu.com/1518-Wate-Bottles/Java/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">Java</source>
-      <category>Java</category>
-      <content:encoded><![CDATA[<h2 id="lizncu"> lizncu</h2>
+      <title>lizncu</title>
+      <link>https://leetcode.innenu.com/1518-Wate-Bottles/lizncu/</link>
+      <guid>https://leetcode.innenu.com/1518-Wate-Bottles/lizncu/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">lizncu</source>
+      <category>lizncu</category>
+      <content:encoded><![CDATA[<h2 id="java"> Java</h2>
 <div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
   <span>public</span> <span>int</span> <span>numWaterBottles</span><span>(</span><span>int</span> numBottles<span>,</span> <span>int</span> numExchange<span>)</span> <span>{</span>
     <span>int</span> ans <span>=</span> numBottles<span>;</span>
@@ -3937,29 +3937,6 @@ Number of water bottles you can drink: 15 + 3 + 1 = 19.</p>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>JavaScript</title>
-      <link>https://leetcode.innenu.com/1528-Shuffle-String/JavaScript/</link>
-      <guid>https://leetcode.innenu.com/1528-Shuffle-String/JavaScript/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">JavaScript</source>
-      <category>JavaScript</category>
-      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
-<div><pre><code><span>/*
- * Runtime: 84 ms, faster than 87.24% of JavaScript online submissions for Shuffle String.
- *
- * Memory Usage: 40.3 MB, less than 7.04% of JavaScript online submissions for Shuffle String.
- */</span>
-<span>const</span> <span>restoreString</span> <span>=</span> <span>(</span><span>s<span>,</span> indices</span><span>)</span> <span>=></span> <span>{</span>
-  <span>const</span> result <span>=</span> <span>[</span><span>]</span><span>;</span>
-
-  <span>for</span> <span>(</span><span>let</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> indices<span>.</span>length<span>;</span> i<span>++</span><span>)</span> result<span>[</span>indices<span>[</span>i<span>]</span><span>]</span> <span>=</span> s<span>.</span><span>charAt</span><span>(</span>i<span>)</span><span>;</span>
-
-  <span>return</span> result<span>.</span><span>join</span><span>(</span><span>""</span><span>)</span><span>;</span>
-<span>}</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>Mister-Hope</title>
       <link>https://leetcode.innenu.com/1528-Shuffle-String/Mister-Hope/</link>
       <guid>https://leetcode.innenu.com/1528-Shuffle-String/Mister-Hope/</guid>
@@ -4016,26 +3993,27 @@ Number of water bottles you can drink: 15 + 3 + 1 = 19.</p>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>lizncu</title>
-      <link>https://leetcode.innenu.com/1528-Shuffle-String/lizncu/</link>
-      <guid>https://leetcode.innenu.com/1528-Shuffle-String/lizncu/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">lizncu</source>
-      <category>lizncu</category>
-      <content:encoded><![CDATA[<h2 id="java"> Java</h2>
-<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
-  <span>public</span> <span>String</span> <span>restoreString</span><span>(</span><span>String</span> s<span>,</span> <span>int</span><span>[</span><span>]</span> indices<span>)</span> <span>{</span>
-    <span>char</span><span>[</span><span>]</span> chars <span>=</span> <span>new</span> <span>char</span><span>[</span>s<span>.</span><span>length</span><span>(</span><span>)</span><span>]</span><span>;</span>
+      <title>JavaScript</title>
+      <link>https://leetcode.innenu.com/1528-Shuffle-String/JavaScript/</link>
+      <guid>https://leetcode.innenu.com/1528-Shuffle-String/JavaScript/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">JavaScript</source>
+      <category>JavaScript</category>
+      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
+<div><pre><code><span>/*
+ * Runtime: 84 ms, faster than 87.24% of JavaScript online submissions for Shuffle String.
+ *
+ * Memory Usage: 40.3 MB, less than 7.04% of JavaScript online submissions for Shuffle String.
+ */</span>
+<span>const</span> <span>restoreString</span> <span>=</span> <span>(</span><span>s<span>,</span> indices</span><span>)</span> <span>=></span> <span>{</span>
+  <span>const</span> result <span>=</span> <span>[</span><span>]</span><span>;</span>
 
-    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> indices<span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
-      chars<span>[</span>indices<span>[</span>i<span>]</span><span>]</span> <span>=</span> s<span>.</span><span>charAt</span><span>(</span>i<span>)</span><span>;</span>
-    <span>}</span>
+  <span>for</span> <span>(</span><span>let</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> indices<span>.</span>length<span>;</span> i<span>++</span><span>)</span> result<span>[</span>indices<span>[</span>i<span>]</span><span>]</span> <span>=</span> s<span>.</span><span>charAt</span><span>(</span>i<span>)</span><span>;</span>
 
-    <span>return</span> <span>new</span> <span>String</span><span>(</span>chars<span>)</span><span>;</span>
-  <span>}</span>
-<span>}</span>
+  <span>return</span> result<span>.</span><span>join</span><span>(</span><span>""</span><span>)</span><span>;</span>
+<span>}</span><span>;</span>
 
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div>]]></content:encoded>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>TypeScript</title>
@@ -4059,6 +4037,28 @@ Number of water bottles you can drink: 15 + 3 + 1 = 19.</p>
 
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>lizncu</title>
+      <link>https://leetcode.innenu.com/1528-Shuffle-String/lizncu/</link>
+      <guid>https://leetcode.innenu.com/1528-Shuffle-String/lizncu/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">lizncu</source>
+      <category>lizncu</category>
+      <content:encoded><![CDATA[<h2 id="java"> Java</h2>
+<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
+  <span>public</span> <span>String</span> <span>restoreString</span><span>(</span><span>String</span> s<span>,</span> <span>int</span><span>[</span><span>]</span> indices<span>)</span> <span>{</span>
+    <span>char</span><span>[</span><span>]</span> chars <span>=</span> <span>new</span> <span>char</span><span>[</span>s<span>.</span><span>length</span><span>(</span><span>)</span><span>]</span><span>;</span>
+
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> indices<span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
+      chars<span>[</span>indices<span>[</span>i<span>]</span><span>]</span> <span>=</span> s<span>.</span><span>charAt</span><span>(</span>i<span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>return</span> <span>new</span> <span>String</span><span>(</span>chars<span>)</span><span>;</span>
+  <span>}</span>
+<span>}</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>lmy</title>
@@ -4298,12 +4298,12 @@ parkingSystem.addCar(1); // return false because there is no available slot for 
 ]]></content:encoded>
     </item>
     <item>
-      <title>lmy</title>
-      <link>https://leetcode.innenu.com/167-two-sum-ii-input-array-is-sorted/lmy/</link>
-      <guid>https://leetcode.innenu.com/167-two-sum-ii-input-array-is-sorted/lmy/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">lmy</source>
-      <category>lmy</category>
-      <content:encoded><![CDATA[<h2 id="c"> C++</h2>
+      <title>C++</title>
+      <link>https://leetcode.innenu.com/167-two-sum-ii-input-array-is-sorted/C++/</link>
+      <guid>https://leetcode.innenu.com/167-two-sum-ii-input-array-is-sorted/C++/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">C++</source>
+      <category>C++</category>
+      <content:encoded><![CDATA[<h2 id="lmy"> lmy</h2>
 <div><pre><code><span><span>#</span><span>include</span> <span>&lt;vector></span></span>
 <span>using</span> <span>namespace</span> std<span>;</span>
 
@@ -4325,12 +4325,12 @@ parkingSystem.addCar(1); // return false because there is no available slot for 
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>C++</title>
-      <link>https://leetcode.innenu.com/167-two-sum-ii-input-array-is-sorted/C++/</link>
-      <guid>https://leetcode.innenu.com/167-two-sum-ii-input-array-is-sorted/C++/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">C++</source>
-      <category>C++</category>
-      <content:encoded><![CDATA[<h2 id="lmy"> lmy</h2>
+      <title>lmy</title>
+      <link>https://leetcode.innenu.com/167-two-sum-ii-input-array-is-sorted/lmy/</link>
+      <guid>https://leetcode.innenu.com/167-two-sum-ii-input-array-is-sorted/lmy/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">lmy</source>
+      <category>lmy</category>
+      <content:encoded><![CDATA[<h2 id="c"> C++</h2>
 <div><pre><code><span><span>#</span><span>include</span> <span>&lt;vector></span></span>
 <span>using</span> <span>namespace</span> std<span>;</span>
 
@@ -4483,53 +4483,6 @@ parkingSystem.addCar(1); // return false because there is no available slot for 
 ]]></content:encoded>
     </item>
     <item>
-      <title>JavaScript</title>
-      <link>https://leetcode.innenu.com/2-add-two-numbers/JavaScript/</link>
-      <guid>https://leetcode.innenu.com/2-add-two-numbers/JavaScript/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">JavaScript</source>
-      <category>JavaScript</category>
-      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
-<div><pre><code><span>/*
- * Runtime: 120 ms, faster than 96.86% of JavaScript online submissions for Add Two Numbers.
- *
- * Memory Usage: 43.7 MB, less than 6.82% of JavaScript online submissions for Add Two Numbers.
- */</span>
-
-<span>const</span> <span>addTwoNumbers</span> <span>=</span> <span>(</span><span>l1<span>,</span> l2</span><span>)</span> <span>=></span> <span>{</span>
-  <span>let</span> l1Pointer <span>=</span> l1<span>;</span> <span>// list 1 pointer</span>
-  <span>let</span> l2Pointer <span>=</span> l2<span>;</span> <span>// list 2 pointer</span>
-
-  <span>let</span> prev <span>=</span> <span>new</span> <span>ListNode</span><span>(</span><span>0</span><span>)</span><span>;</span>
-  <span>let</span> prevPointer <span>=</span> prev<span>;</span> <span>// prev pointer</span>
-  <span>let</span> needCarry <span>=</span> <span>false</span><span>;</span>
-
-  <span>while</span> <span>(</span>l1Pointer <span>||</span> l2Pointer<span>)</span> <span>{</span>
-    <span>let</span> currentPosition <span>=</span> l1Pointer <span>||</span> l2Pointer<span>;</span>
-    <span>let</span> sum <span>=</span>
-      <span>(</span>l1Pointer<span>?.</span>val <span>||</span> <span>0</span><span>)</span> <span>+</span> <span>(</span>l2Pointer<span>?.</span>val <span>||</span> <span>0</span><span>)</span> <span>+</span> <span>(</span>needCarry <span>?</span> <span>1</span> <span>:</span> <span>0</span><span>)</span><span>;</span>
-
-    <span>if</span> <span>(</span>sum <span>></span> <span>9</span><span>)</span> <span>{</span>
-      sum <span>=</span> sum <span>-</span> <span>10</span><span>;</span>
-      needCarry <span>=</span> <span>true</span><span>;</span>
-    <span>}</span> <span>else</span> needCarry <span>=</span> <span>false</span><span>;</span>
-
-    currentPosition<span>.</span>val <span>=</span> sum<span>;</span>
-    prevPointer<span>.</span>next <span>=</span> currentPosition<span>;</span>
-    prevPointer <span>=</span> prevPointer<span>.</span>next<span>;</span>
-
-    <span>if</span> <span>(</span>l1Pointer<span>)</span> l1Pointer <span>=</span> l1Pointer<span>.</span>next<span>;</span>
-    <span>if</span> <span>(</span>l2Pointer<span>)</span> l2Pointer <span>=</span> l2Pointer<span>.</span>next<span>;</span>
-  <span>}</span>
-
-  <span>if</span> <span>(</span>needCarry<span>)</span> prevPointer<span>.</span>next <span>=</span> <span>new</span> <span>ListNode</span><span>(</span><span>1</span><span>)</span><span>;</span>
-
-  <span>return</span> prev<span>.</span>next<span>;</span>
-<span>}</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>Java</title>
       <link>https://leetcode.innenu.com/2-add-two-numbers/Java/</link>
       <guid>https://leetcode.innenu.com/2-add-two-numbers/Java/</guid>
@@ -4576,6 +4529,53 @@ parkingSystem.addCar(1); // return false because there is no available slot for 
 
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>JavaScript</title>
+      <link>https://leetcode.innenu.com/2-add-two-numbers/JavaScript/</link>
+      <guid>https://leetcode.innenu.com/2-add-two-numbers/JavaScript/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">JavaScript</source>
+      <category>JavaScript</category>
+      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
+<div><pre><code><span>/*
+ * Runtime: 120 ms, faster than 96.86% of JavaScript online submissions for Add Two Numbers.
+ *
+ * Memory Usage: 43.7 MB, less than 6.82% of JavaScript online submissions for Add Two Numbers.
+ */</span>
+
+<span>const</span> <span>addTwoNumbers</span> <span>=</span> <span>(</span><span>l1<span>,</span> l2</span><span>)</span> <span>=></span> <span>{</span>
+  <span>let</span> l1Pointer <span>=</span> l1<span>;</span> <span>// list 1 pointer</span>
+  <span>let</span> l2Pointer <span>=</span> l2<span>;</span> <span>// list 2 pointer</span>
+
+  <span>let</span> prev <span>=</span> <span>new</span> <span>ListNode</span><span>(</span><span>0</span><span>)</span><span>;</span>
+  <span>let</span> prevPointer <span>=</span> prev<span>;</span> <span>// prev pointer</span>
+  <span>let</span> needCarry <span>=</span> <span>false</span><span>;</span>
+
+  <span>while</span> <span>(</span>l1Pointer <span>||</span> l2Pointer<span>)</span> <span>{</span>
+    <span>let</span> currentPosition <span>=</span> l1Pointer <span>||</span> l2Pointer<span>;</span>
+    <span>let</span> sum <span>=</span>
+      <span>(</span>l1Pointer<span>?.</span>val <span>||</span> <span>0</span><span>)</span> <span>+</span> <span>(</span>l2Pointer<span>?.</span>val <span>||</span> <span>0</span><span>)</span> <span>+</span> <span>(</span>needCarry <span>?</span> <span>1</span> <span>:</span> <span>0</span><span>)</span><span>;</span>
+
+    <span>if</span> <span>(</span>sum <span>></span> <span>9</span><span>)</span> <span>{</span>
+      sum <span>=</span> sum <span>-</span> <span>10</span><span>;</span>
+      needCarry <span>=</span> <span>true</span><span>;</span>
+    <span>}</span> <span>else</span> needCarry <span>=</span> <span>false</span><span>;</span>
+
+    currentPosition<span>.</span>val <span>=</span> sum<span>;</span>
+    prevPointer<span>.</span>next <span>=</span> currentPosition<span>;</span>
+    prevPointer <span>=</span> prevPointer<span>.</span>next<span>;</span>
+
+    <span>if</span> <span>(</span>l1Pointer<span>)</span> l1Pointer <span>=</span> l1Pointer<span>.</span>next<span>;</span>
+    <span>if</span> <span>(</span>l2Pointer<span>)</span> l2Pointer <span>=</span> l2Pointer<span>.</span>next<span>;</span>
+  <span>}</span>
+
+  <span>if</span> <span>(</span>needCarry<span>)</span> prevPointer<span>.</span>next <span>=</span> <span>new</span> <span>ListNode</span><span>(</span><span>1</span><span>)</span><span>;</span>
+
+  <span>return</span> prev<span>.</span>next<span>;</span>
+<span>}</span><span>;</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>Mister-Hope</title>
@@ -5262,6 +5262,25 @@ What if the inputs contain unicode characters? How would you adapt your solution
 ]]></content:encoded>
     </item>
     <item>
+      <title>C++</title>
+      <link>https://leetcode.innenu.com/292-Nim-Game/C++/</link>
+      <guid>https://leetcode.innenu.com/292-Nim-Game/C++/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">C++</source>
+      <category>C++</category>
+      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
+<div><pre><code><span>/**
+ * Your runtime beats 100 % of cpp submissions
+ * Your memory usage beats 100 % of cpp submissions (6 MB)
+ */</span>
+<span>class</span> <span>Solution</span> <span>{</span>
+ <span>public</span><span>:</span>
+  <span>bool</span> <span>canWinNim</span><span>(</span><span>int</span> n<span>)</span> <span>{</span> <span>return</span> n <span>%</span> <span>4</span> <span>!=</span> <span>0</span><span>;</span> <span>}</span>
+<span>}</span><span>;</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>Java</title>
       <link>https://leetcode.innenu.com/292-Nim-Game/Java/</link>
       <guid>https://leetcode.innenu.com/292-Nim-Game/Java/</guid>
@@ -5289,25 +5308,6 @@ What if the inputs contain unicode characters? How would you adapt your solution
 
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>C++</title>
-      <link>https://leetcode.innenu.com/292-Nim-Game/C++/</link>
-      <guid>https://leetcode.innenu.com/292-Nim-Game/C++/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">C++</source>
-      <category>C++</category>
-      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
-<div><pre><code><span>/**
- * Your runtime beats 100 % of cpp submissions
- * Your memory usage beats 100 % of cpp submissions (6 MB)
- */</span>
-<span>class</span> <span>Solution</span> <span>{</span>
- <span>public</span><span>:</span>
-  <span>bool</span> <span>canWinNim</span><span>(</span><span>int</span> n<span>)</span> <span>{</span> <span>return</span> n <span>%</span> <span>4</span> <span>!=</span> <span>0</span><span>;</span> <span>}</span>
-<span>}</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>JavaScript</title>
@@ -5524,23 +5524,6 @@ What if the inputs contain unicode characters? How would you adapt your solution
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>C++</title>
-      <link>https://leetcode.innenu.com/344-Reverse-String/C++/</link>
-      <guid>https://leetcode.innenu.com/344-Reverse-String/C++/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">C++</source>
-      <category>C++</category>
-      <content:encoded><![CDATA[<h2 id="sqm"> sqm</h2>
-<div><pre><code><span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
-<span><span>#</span><span>include</span> <span>&lt;vector></span></span>
-<span>using</span> <span>namespace</span> std<span>;</span>
-<span>class</span> <span>Solution</span> <span>{</span>
- <span>public</span><span>:</span>
-  <span>void</span> <span>reverseString</span><span>(</span>vector<span>&lt;</span><span>char</span><span>></span><span>&amp;</span> s<span>)</span> <span>{</span> <span>reverse</span><span>(</span>s<span>.</span><span>begin</span><span>(</span><span>)</span><span>,</span> s<span>.</span><span>end</span><span>(</span><span>)</span><span>)</span><span>;</span> <span>}</span>
-<span>}</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>292. Nim Game</title>
       <link>https://leetcode.innenu.com/292-Nim-Game/</link>
       <guid>https://leetcode.innenu.com/292-Nim-Game/</guid>
@@ -5575,6 +5558,23 @@ What if the inputs contain unicode characters? How would you adapt your solution
 <li><code>1 &lt;= n &lt;= 231 - 1</code></li>
 </ul>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>C++</title>
+      <link>https://leetcode.innenu.com/344-Reverse-String/C++/</link>
+      <guid>https://leetcode.innenu.com/344-Reverse-String/C++/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">C++</source>
+      <category>C++</category>
+      <content:encoded><![CDATA[<h2 id="sqm"> sqm</h2>
+<div><pre><code><span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
+<span><span>#</span><span>include</span> <span>&lt;vector></span></span>
+<span>using</span> <span>namespace</span> std<span>;</span>
+<span>class</span> <span>Solution</span> <span>{</span>
+ <span>public</span><span>:</span>
+  <span>void</span> <span>reverseString</span><span>(</span>vector<span>&lt;</span><span>char</span><span>></span><span>&amp;</span> s<span>)</span> <span>{</span> <span>reverse</span><span>(</span>s<span>.</span><span>begin</span><span>(</span><span>)</span><span>,</span> s<span>.</span><span>end</span><span>(</span><span>)</span><span>)</span><span>;</span> <span>}</span>
+<span>}</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>Java</title>
@@ -5655,21 +5655,6 @@ What if the inputs contain unicode characters? How would you adapt your solution
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>371. Sum of Two Integers</title>
-      <link>https://leetcode.innenu.com/371-sum-of-two-integers/</link>
-      <guid>https://leetcode.innenu.com/371-sum-of-two-integers/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">371. Sum of Two Integers</source>
-      <content:encoded><![CDATA[<h1 id="_371-sum-of-two-integers"> <a href="https://leetcode.com/problems/sum-of-two-integers/" target="_blank" rel="noopener noreferrer">371. Sum of Two Integers</a></h1>
-<p>Calculate the sum of two integers <em>a</em> and <em>b</em>, but you are <strong>not allowed</strong> to use the operator <code>+</code> and <code>-</code>.</p>
-<p><strong>Example 1:</strong></p>
-<p><strong>Input:</strong> a = 1, b = 2</p>
-<p><strong>Output:</strong> 3</p>
-<p><strong>Example 2:</strong></p>
-<p><strong>Input:</strong> a = -2, b = 3</p>
-<p><strong>Output:</strong> 1</p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>C++</title>
       <link>https://leetcode.innenu.com/371-sum-of-two-integers/C++/</link>
       <guid>https://leetcode.innenu.com/371-sum-of-two-integers/C++/</guid>
@@ -5694,6 +5679,21 @@ What if the inputs contain unicode characters? How would you adapt your solution
 <span>}</span><span>;</span>
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>371. Sum of Two Integers</title>
+      <link>https://leetcode.innenu.com/371-sum-of-two-integers/</link>
+      <guid>https://leetcode.innenu.com/371-sum-of-two-integers/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">371. Sum of Two Integers</source>
+      <content:encoded><![CDATA[<h1 id="_371-sum-of-two-integers"> <a href="https://leetcode.com/problems/sum-of-two-integers/" target="_blank" rel="noopener noreferrer">371. Sum of Two Integers</a></h1>
+<p>Calculate the sum of two integers <em>a</em> and <em>b</em>, but you are <strong>not allowed</strong> to use the operator <code>+</code> and <code>-</code>.</p>
+<p><strong>Example 1:</strong></p>
+<p><strong>Input:</strong> a = 1, b = 2</p>
+<p><strong>Output:</strong> 3</p>
+<p><strong>Example 2:</strong></p>
+<p><strong>Input:</strong> a = -2, b = 3</p>
+<p><strong>Output:</strong> 1</p>
+]]></content:encoded>
     </item>
     <item>
       <title>sqm</title>
@@ -6297,29 +6297,6 @@ return 2.</p>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>C++</title>
-      <link>https://leetcode.innenu.com/461-hamming-distance/C++/</link>
-      <guid>https://leetcode.innenu.com/461-hamming-distance/C++/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">C++</source>
-      <category>C++</category>
-      <content:encoded><![CDATA[<h2 id="sqm"> sqm</h2>
-<div><pre><code><span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
-<span>using</span> <span>namespace</span> std<span>;</span>
-<span>class</span> <span>Solution</span> <span>{</span>
- <span>public</span><span>:</span>
-  <span>int</span> <span>hammingDistance</span><span>(</span><span>int</span> x<span>,</span> <span>int</span> y<span>)</span> <span>{</span>
-    <span>int</span> d <span>=</span> x <span>^</span> y<span>,</span> c <span>=</span> <span>0</span><span>;</span>
-    <span>while</span> <span>(</span>d<span>)</span> <span>{</span>
-      d <span>=</span> d <span>&amp;</span> <span>(</span>d <span>-</span> <span>1</span><span>)</span><span>;</span>
-      c<span>++</span><span>;</span>
-    <span>}</span>
-    <span>return</span> c<span>;</span>
-  <span>}</span>
-<span>}</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>455. Assign Cookies</title>
       <link>https://leetcode.innenu.com/455-assign-cookies/</link>
       <guid>https://leetcode.innenu.com/455-assign-cookies/</guid>
@@ -6346,6 +6323,29 @@ You need to output 2.</p>
 <li><code>1 &lt;= g[i], s[j] &lt;= 231 - 1</code></li>
 </ul>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>C++</title>
+      <link>https://leetcode.innenu.com/461-hamming-distance/C++/</link>
+      <guid>https://leetcode.innenu.com/461-hamming-distance/C++/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">C++</source>
+      <category>C++</category>
+      <content:encoded><![CDATA[<h2 id="sqm"> sqm</h2>
+<div><pre><code><span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
+<span>using</span> <span>namespace</span> std<span>;</span>
+<span>class</span> <span>Solution</span> <span>{</span>
+ <span>public</span><span>:</span>
+  <span>int</span> <span>hammingDistance</span><span>(</span><span>int</span> x<span>,</span> <span>int</span> y<span>)</span> <span>{</span>
+    <span>int</span> d <span>=</span> x <span>^</span> y<span>,</span> c <span>=</span> <span>0</span><span>;</span>
+    <span>while</span> <span>(</span>d<span>)</span> <span>{</span>
+      d <span>=</span> d <span>&amp;</span> <span>(</span>d <span>-</span> <span>1</span><span>)</span><span>;</span>
+      c<span>++</span><span>;</span>
+    <span>}</span>
+    <span>return</span> c<span>;</span>
+  <span>}</span>
+<span>}</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>Java</title>
@@ -6503,27 +6503,6 @@ You need to output 2.</p>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>58. Length of Last Word</title>
-      <link>https://leetcode.innenu.com/58-uo-xuan-zhuan-zi-fu-chuan-lcof/</link>
-      <guid>https://leetcode.innenu.com/58-uo-xuan-zhuan-zi-fu-chuan-lcof/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">58. Length of Last Word</source>
-      <content:encoded><![CDATA[<h1 id="_58-length-of-last-word"> <a href="https://leetcode.com/problems/length-of-last-word/" target="_blank" rel="noopener noreferrer">58. Length of Last Word</a></h1>
-<p>Given a string <code>s</code> consists of some words separated by spaces, return <em>the length of the last word in the string. If the last word does not exist, return</em> <code>0</code>.</p>
-<p>A <strong>word</strong> is a maximal substring consisting of non-space characters only.</p>
-<p><strong>Example 1:</strong></p>
-<p><strong>Input:</strong> s = &quot;Hello World&quot;</p>
-<p><strong>Output:</strong> 5</p>
-<p><strong>Example 2:</strong></p>
-<p><strong>Input:</strong> s = &quot; &quot;</p>
-<p><strong>Output:</strong> 0</p>
-<h2 id="constraints"> Constraints</h2>
-<ul>
-<li><code>1 &lt;= s.length &lt;= 104</code></li>
-<li><code>s</code> consists of only English letters and spaces <code>' '</code>.</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
       <title>53. Maximum Subarray</title>
       <link>https://leetcode.innenu.com/53-maximum-subarray/</link>
       <guid>https://leetcode.innenu.com/53-maximum-subarray/</guid>
@@ -6551,6 +6530,27 @@ You need to output 2.</p>
 <ul>
 <li><code>1 &lt;= nums.length &lt;= 2 * 104</code></li>
 <li><code>-231 &lt;= nums[i] &lt;= 231 - 1</code></li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>58. Length of Last Word</title>
+      <link>https://leetcode.innenu.com/58-uo-xuan-zhuan-zi-fu-chuan-lcof/</link>
+      <guid>https://leetcode.innenu.com/58-uo-xuan-zhuan-zi-fu-chuan-lcof/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">58. Length of Last Word</source>
+      <content:encoded><![CDATA[<h1 id="_58-length-of-last-word"> <a href="https://leetcode.com/problems/length-of-last-word/" target="_blank" rel="noopener noreferrer">58. Length of Last Word</a></h1>
+<p>Given a string <code>s</code> consists of some words separated by spaces, return <em>the length of the last word in the string. If the last word does not exist, return</em> <code>0</code>.</p>
+<p>A <strong>word</strong> is a maximal substring consisting of non-space characters only.</p>
+<p><strong>Example 1:</strong></p>
+<p><strong>Input:</strong> s = &quot;Hello World&quot;</p>
+<p><strong>Output:</strong> 5</p>
+<p><strong>Example 2:</strong></p>
+<p><strong>Input:</strong> s = &quot; &quot;</p>
+<p><strong>Output:</strong> 0</p>
+<h2 id="constraints"> Constraints</h2>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 104</code></li>
+<li><code>s</code> consists of only English letters and spaces <code>' '</code>.</li>
 </ul>
 ]]></content:encoded>
     </item>
@@ -6750,6 +6750,24 @@ You need to output 2.</p>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div>]]></content:encoded>
     </item>
     <item>
+      <title>JavaScript</title>
+      <link>https://leetcode.innenu.com/67-add-binary/JavaScript/</link>
+      <guid>https://leetcode.innenu.com/67-add-binary/JavaScript/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">JavaScript</source>
+      <category>JavaScript</category>
+      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
+<div><pre><code><span>/*
+ * Runtime: 84 ms, faster than 82.80% of JavaScript online submissions for Add Binary.
+ *
+ * Memory Usage: 38.8 MB, less than 6.01% of JavaScript online submissions for Add Binary.
+ */</span>
+
+<span>const</span> <span>addBinary</span> <span>=</span> <span>(</span><span>a<span>,</span> b</span><span>)</span> <span>=></span> <span>(</span><span>BigInt</span><span>(</span><span>"0b"</span> <span>+</span> a<span>)</span> <span>+</span> <span>BigInt</span><span>(</span><span>"0b"</span> <span>+</span> b<span>)</span><span>)</span><span>.</span><span>toString</span><span>(</span><span>2</span><span>)</span><span>;</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>Mister-Hope</title>
       <link>https://leetcode.innenu.com/67-add-binary/Mister-Hope/</link>
       <guid>https://leetcode.innenu.com/67-add-binary/Mister-Hope/</guid>
@@ -6777,24 +6795,6 @@ You need to output 2.</p>
 
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>JavaScript</title>
-      <link>https://leetcode.innenu.com/67-add-binary/JavaScript/</link>
-      <guid>https://leetcode.innenu.com/67-add-binary/JavaScript/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">JavaScript</source>
-      <category>JavaScript</category>
-      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
-<div><pre><code><span>/*
- * Runtime: 84 ms, faster than 82.80% of JavaScript online submissions for Add Binary.
- *
- * Memory Usage: 38.8 MB, less than 6.01% of JavaScript online submissions for Add Binary.
- */</span>
-
-<span>const</span> <span>addBinary</span> <span>=</span> <span>(</span><span>a<span>,</span> b</span><span>)</span> <span>=></span> <span>(</span><span>BigInt</span><span>(</span><span>"0b"</span> <span>+</span> a<span>)</span> <span>+</span> <span>BigInt</span><span>(</span><span>"0b"</span> <span>+</span> b<span>)</span><span>)</span><span>.</span><span>toString</span><span>(</span><span>2</span><span>)</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>TypeScript</title>
@@ -7137,32 +7137,6 @@ You need to output 2.</p>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>lmy</title>
-      <link>https://leetcode.innenu.com/7-reverse-integer/lmy/</link>
-      <guid>https://leetcode.innenu.com/7-reverse-integer/lmy/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">lmy</source>
-      <category>lmy</category>
-      <content:encoded><![CDATA[<h2 id="c"> C++</h2>
-<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
- <span>public</span><span>:</span>
-  <span>int</span> <span>reverse</span><span>(</span><span>int</span> x<span>)</span> <span>{</span>
-    <span>int</span> tmp <span>=</span> x<span>;</span>
-    <span>int</span> res <span>=</span> <span>0</span><span>;</span>
-    <span>while</span> <span>(</span>tmp<span>)</span> <span>{</span>
-      <span>int</span> pop <span>=</span> tmp <span>%</span> <span>10</span><span>;</span>
-      tmp <span>/=</span> <span>10</span><span>;</span>
-      <span>if</span> <span>(</span>res <span>></span> <span>2147483647</span> <span>/</span> <span>10</span> <span>||</span> <span>(</span>res <span>==</span> <span>2147483647</span> <span>&amp;&amp;</span> pop <span>></span> <span>7</span><span>)</span><span>)</span> <span>return</span> <span>0</span><span>;</span>
-      <span>if</span> <span>(</span>res <span>&lt;</span> <span>-</span><span>2147483647</span> <span>/</span> <span>10</span> <span>||</span> <span>(</span>res <span>==</span> <span>-</span><span>2147483647</span> <span>&amp;&amp;</span> pop <span>&lt;</span> <span>-</span><span>8</span><span>)</span><span>)</span> <span>return</span> <span>0</span><span>;</span>
-      res <span>=</span> res <span>*</span> <span>10</span> <span>+</span> pop<span>;</span>
-    <span>}</span>
-    <span>return</span> res<span>;</span>
-  <span>}</span>
-<span>}</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>lizncu</title>
       <link>https://leetcode.innenu.com/7-reverse-integer/lizncu/</link>
       <guid>https://leetcode.innenu.com/7-reverse-integer/lizncu/</guid>
@@ -7198,6 +7172,32 @@ You need to output 2.</p>
 
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>lmy</title>
+      <link>https://leetcode.innenu.com/7-reverse-integer/lmy/</link>
+      <guid>https://leetcode.innenu.com/7-reverse-integer/lmy/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">lmy</source>
+      <category>lmy</category>
+      <content:encoded><![CDATA[<h2 id="c"> C++</h2>
+<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
+ <span>public</span><span>:</span>
+  <span>int</span> <span>reverse</span><span>(</span><span>int</span> x<span>)</span> <span>{</span>
+    <span>int</span> tmp <span>=</span> x<span>;</span>
+    <span>int</span> res <span>=</span> <span>0</span><span>;</span>
+    <span>while</span> <span>(</span>tmp<span>)</span> <span>{</span>
+      <span>int</span> pop <span>=</span> tmp <span>%</span> <span>10</span><span>;</span>
+      tmp <span>/=</span> <span>10</span><span>;</span>
+      <span>if</span> <span>(</span>res <span>></span> <span>2147483647</span> <span>/</span> <span>10</span> <span>||</span> <span>(</span>res <span>==</span> <span>2147483647</span> <span>&amp;&amp;</span> pop <span>></span> <span>7</span><span>)</span><span>)</span> <span>return</span> <span>0</span><span>;</span>
+      <span>if</span> <span>(</span>res <span>&lt;</span> <span>-</span><span>2147483647</span> <span>/</span> <span>10</span> <span>||</span> <span>(</span>res <span>==</span> <span>-</span><span>2147483647</span> <span>&amp;&amp;</span> pop <span>&lt;</span> <span>-</span><span>8</span><span>)</span><span>)</span> <span>return</span> <span>0</span><span>;</span>
+      res <span>=</span> res <span>*</span> <span>10</span> <span>+</span> pop<span>;</span>
+    <span>}</span>
+    <span>return</span> res<span>;</span>
+  <span>}</span>
+<span>}</span><span>;</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>7. Reverse Integer</title>
@@ -7293,37 +7293,6 @@ Assume we are dealing with an environment that could only store integers within 
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>70. Climbing Stairs</title>
-      <link>https://leetcode.innenu.com/70-climbing-stairs/</link>
-      <guid>https://leetcode.innenu.com/70-climbing-stairs/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">70. Climbing Stairs</source>
-      <content:encoded><![CDATA[<h1 id="_70-climbing-stairs"> <a href="https://leetcode.com/problems/climbing-stairs/" target="_blank" rel="noopener noreferrer">70. Climbing Stairs</a></h1>
-<p>You are climbing a stair case. It takes <em>n</em> steps to reach to the top.</p>
-<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
-<p><strong>Example 1:</strong></p>
-<p><strong>Input:</strong> 2</p>
-<p><strong>Output:</strong> 2</p>
-<p><strong>Explanation:</strong> There are two ways to climb to the top.</p>
-<ol>
-<li>1 step + 1 step</li>
-<li>2 steps</li>
-</ol>
-<p><strong>Example 2:</strong></p>
-<p><strong>Input:</strong> 3</p>
-<p><strong>Output:</strong> 3</p>
-<p><strong>Explanation:</strong> There are three ways to climb to the top.</p>
-<ol>
-<li>1 step + 1 step + 1 step</li>
-<li>1 step + 2 steps</li>
-<li>2 steps + 1 step</li>
-</ol>
-<h2 id="constraints"> Constraints</h2>
-<ul>
-<li><code>1 &lt;= n &lt;= 45</code></li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
       <title>Virgil</title>
       <link>https://leetcode.innenu.com/70-climbing-stairs/Virgil/</link>
       <guid>https://leetcode.innenu.com/70-climbing-stairs/Virgil/</guid>
@@ -7356,6 +7325,37 @@ Assume we are dealing with an environment that could only store integers within 
 
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>70. Climbing Stairs</title>
+      <link>https://leetcode.innenu.com/70-climbing-stairs/</link>
+      <guid>https://leetcode.innenu.com/70-climbing-stairs/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">70. Climbing Stairs</source>
+      <content:encoded><![CDATA[<h1 id="_70-climbing-stairs"> <a href="https://leetcode.com/problems/climbing-stairs/" target="_blank" rel="noopener noreferrer">70. Climbing Stairs</a></h1>
+<p>You are climbing a stair case. It takes <em>n</em> steps to reach to the top.</p>
+<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
+<p><strong>Example 1:</strong></p>
+<p><strong>Input:</strong> 2</p>
+<p><strong>Output:</strong> 2</p>
+<p><strong>Explanation:</strong> There are two ways to climb to the top.</p>
+<ol>
+<li>1 step + 1 step</li>
+<li>2 steps</li>
+</ol>
+<p><strong>Example 2:</strong></p>
+<p><strong>Input:</strong> 3</p>
+<p><strong>Output:</strong> 3</p>
+<p><strong>Explanation:</strong> There are three ways to climb to the top.</p>
+<ol>
+<li>1 step + 1 step + 1 step</li>
+<li>1 step + 2 steps</li>
+<li>2 steps + 1 step</li>
+</ol>
+<h2 id="constraints"> Constraints</h2>
+<ul>
+<li><code>1 &lt;= n &lt;= 45</code></li>
+</ul>
+]]></content:encoded>
     </item>
     <item>
       <title>C++</title>
@@ -7732,30 +7732,6 @@ Assume we are dealing with an environment that could only store integers within 
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>lmy</title>
-      <link>https://leetcode.innenu.com/1518-Wate-Bottles/lmy/</link>
-      <guid>https://leetcode.innenu.com/1518-Wate-Bottles/lmy/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">lmy</source>
-      <category>lmy</category>
-      <content:encoded><![CDATA[<h2 id="c"> C++</h2>
-<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
- <span>public</span><span>:</span>
-  <span>int</span> <span>numWaterBottles</span><span>(</span><span>int</span> numBottles<span>,</span> <span>int</span> numExchange<span>)</span> <span>{</span>
-    <span>int</span> sum <span>=</span> <span>0</span><span>;</span>
-    <span>int</span> emptybottles <span>=</span> numBottles<span>;</span>
-    <span>while</span> <span>(</span>numBottles <span>!=</span> <span>0</span><span>)</span> <span>{</span>
-      sum <span>+=</span> numBottles<span>;</span>
-      numBottles <span>=</span> emptybottles <span>/</span> numExchange<span>;</span>
-      emptybottles <span>=</span> emptybottles <span>-</span> numBottles <span>*</span> numExchange <span>+</span> numBottles<span>;</span>
-    <span>}</span>
-    <span>return</span> sum<span>;</span>
-  <span>}</span>
-<span>}</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>lizncu</title>
       <link>https://leetcode.innenu.com/867-Transpose-Matrix/lizncu/</link>
       <guid>https://leetcode.innenu.com/867-Transpose-Matrix/lizncu/</guid>
@@ -7791,12 +7767,38 @@ Assume we are dealing with an environment that could only store integers within 
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>lizncu</title>
-      <link>https://leetcode.innenu.com/1518-Wate-Bottles/lizncu/</link>
-      <guid>https://leetcode.innenu.com/1518-Wate-Bottles/lizncu/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">lizncu</source>
-      <category>lizncu</category>
-      <content:encoded><![CDATA[<h2 id="java"> Java</h2>
+      <title>lmy</title>
+      <link>https://leetcode.innenu.com/867-Transpose-Matrix/lmy/</link>
+      <guid>https://leetcode.innenu.com/867-Transpose-Matrix/lmy/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">lmy</source>
+      <category>lmy</category>
+      <content:encoded><![CDATA[<h2 id="c"> C++</h2>
+<div><pre><code><span><span>#</span><span>include</span> <span>&lt;vector></span></span>
+<span>using</span> <span>namespace</span> std<span>;</span>
+
+<span>class</span> <span>Solution</span> <span>{</span>
+ <span>public</span><span>:</span>
+  vector<span>&lt;</span>vector<span>&lt;</span><span>int</span><span>>></span> <span>transpose</span><span>(</span>vector<span>&lt;</span>vector<span>&lt;</span><span>int</span><span>>></span><span>&amp;</span> A<span>)</span> <span>{</span>
+    vector<span>&lt;</span>vector<span>&lt;</span><span>int</span><span>>></span> <span>B</span><span>(</span>A<span>[</span><span>0</span><span>]</span><span>.</span><span>size</span><span>(</span><span>)</span><span>,</span> vector<span>&lt;</span><span>int</span><span>></span><span>(</span>A<span>.</span><span>size</span><span>(</span><span>)</span><span>,</span> <span>0</span><span>)</span><span>)</span><span>;</span>
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> A<span>[</span><span>0</span><span>]</span><span>.</span><span>size</span><span>(</span><span>)</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
+      <span>for</span> <span>(</span><span>int</span> j <span>=</span> <span>0</span><span>;</span> j <span>&lt;</span> A<span>.</span><span>size</span><span>(</span><span>)</span><span>;</span> j<span>++</span><span>)</span> <span>{</span>
+        B<span>[</span>i<span>]</span><span>[</span>j<span>]</span> <span>=</span> A<span>[</span>j<span>]</span><span>[</span>i<span>]</span><span>;</span>
+      <span>}</span>
+    <span>}</span>
+    <span>return</span> B<span>;</span>
+  <span>}</span>
+<span>}</span><span>;</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://leetcode.innenu.com/1518-Wate-Bottles/Java/</link>
+      <guid>https://leetcode.innenu.com/1518-Wate-Bottles/Java/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">Java</source>
+      <category>Java</category>
+      <content:encoded><![CDATA[<h2 id="lizncu"> lizncu</h2>
 <div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
   <span>public</span> <span>int</span> <span>numWaterBottles</span><span>(</span><span>int</span> numBottles<span>,</span> <span>int</span> numExchange<span>)</span> <span>{</span>
     <span>int</span> ans <span>=</span> numBottles<span>;</span>
@@ -7837,6 +7839,53 @@ Assume we are dealing with an environment that could only store integers within 
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div>]]></content:encoded>
     </item>
     <item>
+      <title>sqm</title>
+      <link>https://leetcode.innenu.com/88-merge-sorted-array/sqm/</link>
+      <guid>https://leetcode.innenu.com/88-merge-sorted-array/sqm/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">sqm</source>
+      <category>sqm</category>
+      <content:encoded><![CDATA[<h2 id="c"> C++</h2>
+<div><pre><code><span><span>#</span><span>include</span> <span>&lt;algorithm></span></span>
+<span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
+<span><span>#</span><span>include</span> <span>&lt;vector></span></span>
+<span>using</span> <span>namespace</span> std<span>;</span>
+<span>class</span> <span>Solution</span> <span>{</span>
+ <span>public</span><span>:</span>
+  <span>void</span> <span>merge</span><span>(</span>vector<span>&lt;</span><span>int</span><span>></span><span>&amp;</span> nums1<span>,</span> <span>int</span> m<span>,</span> vector<span>&lt;</span><span>int</span><span>></span><span>&amp;</span> nums2<span>,</span> <span>int</span> n<span>)</span> <span>{</span>
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> m<span>;</span> i <span>&lt;</span> m <span>+</span> n<span>;</span> i<span>++</span><span>)</span> nums1<span>[</span>i<span>]</span> <span>=</span> nums2<span>[</span>i <span>-</span> m<span>]</span><span>;</span>
+    <span>sort</span><span>(</span>nums1<span>.</span><span>begin</span><span>(</span><span>)</span><span>,</span> nums1<span>.</span><span>begin</span><span>(</span><span>)</span> <span>+</span> m <span>+</span> n<span>)</span><span>;</span>
+  <span>}</span>
+<span>}</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://leetcode.innenu.com/9-palindrome-number/Java/</link>
+      <guid>https://leetcode.innenu.com/9-palindrome-number/Java/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">Java</source>
+      <category>Java</category>
+      <content:encoded><![CDATA[<h2 id="lizncu"> lizncu</h2>
+<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
+  <span>public</span> <span>boolean</span> <span>isPalindrome</span><span>(</span><span>int</span> x<span>)</span> <span>{</span>
+    <span>int</span> k <span>=</span> x<span>;</span>
+    <span>int</span> sum <span>=</span> <span>0</span><span>;</span>
+    <span>while</span> <span>(</span>x <span>!=</span> <span>0</span> <span>&amp;&amp;</span> x <span>></span> <span>0</span><span>)</span> <span>{</span>
+      sum <span>=</span> sum <span>*</span> <span>10</span> <span>+</span> x <span>%</span> <span>10</span><span>;</span>
+      x <span>=</span> x <span>/</span> <span>10</span><span>;</span>
+    <span>}</span>
+
+    <span>if</span> <span>(</span>k <span>==</span> sum<span>)</span> <span>{</span>
+      <span>return</span> <span>true</span><span>;</span>
+    <span>}</span>
+    <span>return</span> <span>false</span><span>;</span>
+  <span>}</span>
+<span>}</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>88. Merge Sorted Array</title>
       <link>https://leetcode.innenu.com/88-merge-sorted-array/</link>
       <guid>https://leetcode.innenu.com/88-merge-sorted-array/</guid>
@@ -7862,25 +7911,27 @@ Assume we are dealing with an environment that could only store integers within 
 ]]></content:encoded>
     </item>
     <item>
-      <title>sqm</title>
-      <link>https://leetcode.innenu.com/88-merge-sorted-array/sqm/</link>
-      <guid>https://leetcode.innenu.com/88-merge-sorted-array/sqm/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">sqm</source>
-      <category>sqm</category>
-      <content:encoded><![CDATA[<h2 id="c"> C++</h2>
-<div><pre><code><span><span>#</span><span>include</span> <span>&lt;algorithm></span></span>
-<span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
-<span><span>#</span><span>include</span> <span>&lt;vector></span></span>
-<span>using</span> <span>namespace</span> std<span>;</span>
-<span>class</span> <span>Solution</span> <span>{</span>
- <span>public</span><span>:</span>
-  <span>void</span> <span>merge</span><span>(</span>vector<span>&lt;</span><span>int</span><span>></span><span>&amp;</span> nums1<span>,</span> <span>int</span> m<span>,</span> vector<span>&lt;</span><span>int</span><span>></span><span>&amp;</span> nums2<span>,</span> <span>int</span> n<span>)</span> <span>{</span>
-    <span>for</span> <span>(</span><span>int</span> i <span>=</span> m<span>;</span> i <span>&lt;</span> m <span>+</span> n<span>;</span> i<span>++</span><span>)</span> nums1<span>[</span>i<span>]</span> <span>=</span> nums2<span>[</span>i <span>-</span> m<span>]</span><span>;</span>
-    <span>sort</span><span>(</span>nums1<span>.</span><span>begin</span><span>(</span><span>)</span><span>,</span> nums1<span>.</span><span>begin</span><span>(</span><span>)</span> <span>+</span> m <span>+</span> n<span>)</span><span>;</span>
-  <span>}</span>
+      <title>JavaScript</title>
+      <link>https://leetcode.innenu.com/9-palindrome-number/JavaScript/</link>
+      <guid>https://leetcode.innenu.com/9-palindrome-number/JavaScript/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">JavaScript</source>
+      <category>JavaScript</category>
+      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
+<div><pre><code><span>/*
+ * Runtime: 236 ms, faster than 30.44% of JavaScript online submissions for Palindrome Number.
+ *
+ * Memory Usage: 47.3 MB, less than 5.10% of JavaScript online submissions for Palindrome Number.
+ */</span>
+
+<span>const</span> <span>isPalindrome</span> <span>=</span> <span>(</span><span>x</span><span>)</span> <span>=></span> <span>{</span>
+  <span>let</span> string <span>=</span> <span>String</span><span>(</span>x<span>)</span><span>;</span>
+  <span>for</span> <span>(</span><span>let</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> string<span>.</span>length <span>/</span> <span>2</span><span>;</span> i<span>++</span><span>)</span>
+    <span>if</span> <span>(</span>string<span>[</span>i<span>]</span> <span>!=</span> string<span>[</span>string<span>.</span>length <span>-</span> i <span>-</span> <span>1</span><span>]</span><span>)</span> <span>return</span> <span>false</span><span>;</span>
+  <span>return</span> <span>true</span><span>;</span>
 <span>}</span><span>;</span>
+
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div>]]></content:encoded>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>C++</title>
@@ -7956,55 +8007,6 @@ Assume we are dealing with an environment that could only store integers within 
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>Java</title>
-      <link>https://leetcode.innenu.com/9-palindrome-number/Java/</link>
-      <guid>https://leetcode.innenu.com/9-palindrome-number/Java/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">Java</source>
-      <category>Java</category>
-      <content:encoded><![CDATA[<h2 id="lizncu"> lizncu</h2>
-<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
-  <span>public</span> <span>boolean</span> <span>isPalindrome</span><span>(</span><span>int</span> x<span>)</span> <span>{</span>
-    <span>int</span> k <span>=</span> x<span>;</span>
-    <span>int</span> sum <span>=</span> <span>0</span><span>;</span>
-    <span>while</span> <span>(</span>x <span>!=</span> <span>0</span> <span>&amp;&amp;</span> x <span>></span> <span>0</span><span>)</span> <span>{</span>
-      sum <span>=</span> sum <span>*</span> <span>10</span> <span>+</span> x <span>%</span> <span>10</span><span>;</span>
-      x <span>=</span> x <span>/</span> <span>10</span><span>;</span>
-    <span>}</span>
-
-    <span>if</span> <span>(</span>k <span>==</span> sum<span>)</span> <span>{</span>
-      <span>return</span> <span>true</span><span>;</span>
-    <span>}</span>
-    <span>return</span> <span>false</span><span>;</span>
-  <span>}</span>
-<span>}</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>JavaScript</title>
-      <link>https://leetcode.innenu.com/9-palindrome-number/JavaScript/</link>
-      <guid>https://leetcode.innenu.com/9-palindrome-number/JavaScript/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">JavaScript</source>
-      <category>JavaScript</category>
-      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
-<div><pre><code><span>/*
- * Runtime: 236 ms, faster than 30.44% of JavaScript online submissions for Palindrome Number.
- *
- * Memory Usage: 47.3 MB, less than 5.10% of JavaScript online submissions for Palindrome Number.
- */</span>
-
-<span>const</span> <span>isPalindrome</span> <span>=</span> <span>(</span><span>x</span><span>)</span> <span>=></span> <span>{</span>
-  <span>let</span> string <span>=</span> <span>String</span><span>(</span>x<span>)</span><span>;</span>
-  <span>for</span> <span>(</span><span>let</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> string<span>.</span>length <span>/</span> <span>2</span><span>;</span> i<span>++</span><span>)</span>
-    <span>if</span> <span>(</span>string<span>[</span>i<span>]</span> <span>!=</span> string<span>[</span>string<span>.</span>length <span>-</span> i <span>-</span> <span>1</span><span>]</span><span>)</span> <span>return</span> <span>false</span><span>;</span>
-  <span>return</span> <span>true</span><span>;</span>
-<span>}</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>Mister-Hope</title>
       <link>https://leetcode.innenu.com/9-palindrome-number/Mister-Hope/</link>
       <guid>https://leetcode.innenu.com/9-palindrome-number/Mister-Hope/</guid>
@@ -8066,43 +8068,6 @@ Assume we are dealing with an environment that could only store integers within 
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>Virgil</title>
-      <link>https://leetcode.innenu.com/9-palindrome-number/Virgil/</link>
-      <guid>https://leetcode.innenu.com/9-palindrome-number/Virgil/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">Virgil</source>
-      <category>Virgil</category>
-      <content:encoded><![CDATA[<h2 id="c"> C++</h2>
-<div><pre><code><span><span>#</span><span>include</span> <span>&lt;algorithm></span></span>
-<span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
-<span><span>#</span><span>include</span> <span>&lt;vector></span></span>
-<span>using</span> <span>namespace</span> std<span>;</span>
-
-<span>class</span> <span>Solution</span> <span>{</span>
- <span>public</span><span>:</span>
-  <span>bool</span> <span>isPalindrome</span><span>(</span><span>int</span> x<span>)</span> <span>{</span>
-    <span>int</span> a<span>[</span><span>10001</span><span>]</span><span>,</span> cnt <span>=</span> <span>0</span><span>;</span>
-    <span>if</span> <span>(</span><span>!</span>x<span>)</span>
-      <span>return</span> <span>true</span><span>;</span>
-    <span>else</span> <span>if</span> <span>(</span>x <span>&lt;</span> <span>0</span><span>)</span>
-      <span>return</span> <span>false</span><span>;</span>
-    <span>else</span> <span>{</span>
-      <span>while</span> <span>(</span>x <span>></span> <span>0</span><span>)</span> <span>{</span>
-        a<span>[</span>cnt<span>]</span> <span>=</span> x <span>%</span> <span>10</span><span>;</span>
-        x <span>/=</span> <span>10</span><span>;</span>
-        cnt<span>++</span><span>;</span>
-      <span>}</span>
-      <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;=</span> <span>(</span>cnt <span>-</span> <span>1</span><span>)</span> <span>/</span> <span>2</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
-        <span>if</span> <span>(</span>a<span>[</span>i<span>]</span> <span>!=</span> a<span>[</span>cnt <span>-</span> i <span>-</span> <span>1</span><span>]</span><span>)</span> <span>return</span> <span>false</span><span>;</span>
-      <span>}</span>
-      <span>return</span> <span>true</span><span>;</span>
-    <span>}</span>
-  <span>}</span>
-<span>}</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>lizncu</title>
       <link>https://leetcode.innenu.com/9-palindrome-number/lizncu/</link>
       <guid>https://leetcode.innenu.com/9-palindrome-number/lizncu/</guid>
@@ -8153,6 +8118,43 @@ Assume we are dealing with an environment that could only store integers within 
 
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>Virgil</title>
+      <link>https://leetcode.innenu.com/9-palindrome-number/Virgil/</link>
+      <guid>https://leetcode.innenu.com/9-palindrome-number/Virgil/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">Virgil</source>
+      <category>Virgil</category>
+      <content:encoded><![CDATA[<h2 id="c"> C++</h2>
+<div><pre><code><span><span>#</span><span>include</span> <span>&lt;algorithm></span></span>
+<span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
+<span><span>#</span><span>include</span> <span>&lt;vector></span></span>
+<span>using</span> <span>namespace</span> std<span>;</span>
+
+<span>class</span> <span>Solution</span> <span>{</span>
+ <span>public</span><span>:</span>
+  <span>bool</span> <span>isPalindrome</span><span>(</span><span>int</span> x<span>)</span> <span>{</span>
+    <span>int</span> a<span>[</span><span>10001</span><span>]</span><span>,</span> cnt <span>=</span> <span>0</span><span>;</span>
+    <span>if</span> <span>(</span><span>!</span>x<span>)</span>
+      <span>return</span> <span>true</span><span>;</span>
+    <span>else</span> <span>if</span> <span>(</span>x <span>&lt;</span> <span>0</span><span>)</span>
+      <span>return</span> <span>false</span><span>;</span>
+    <span>else</span> <span>{</span>
+      <span>while</span> <span>(</span>x <span>></span> <span>0</span><span>)</span> <span>{</span>
+        a<span>[</span>cnt<span>]</span> <span>=</span> x <span>%</span> <span>10</span><span>;</span>
+        x <span>/=</span> <span>10</span><span>;</span>
+        cnt<span>++</span><span>;</span>
+      <span>}</span>
+      <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;=</span> <span>(</span>cnt <span>-</span> <span>1</span><span>)</span> <span>/</span> <span>2</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>a<span>[</span>i<span>]</span> <span>!=</span> a<span>[</span>cnt <span>-</span> i <span>-</span> <span>1</span><span>]</span><span>)</span> <span>return</span> <span>false</span><span>;</span>
+      <span>}</span>
+      <span>return</span> <span>true</span><span>;</span>
+    <span>}</span>
+  <span>}</span>
+<span>}</span><span>;</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>9. Palindrome Number</title>
@@ -8310,34 +8312,6 @@ The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>sqm</title>
-      <link>https://leetcode.innenu.com/905-Sort-Array-By-Parity/sqm/</link>
-      <guid>https://leetcode.innenu.com/905-Sort-Array-By-Parity/sqm/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">sqm</source>
-      <category>sqm</category>
-      <content:encoded><![CDATA[<h2 id="c"> C++</h2>
-<div><pre><code><span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
-<span><span>#</span><span>include</span> <span>&lt;vector></span></span>
-<span>using</span> <span>namespace</span> std<span>;</span>
-
-<span>class</span> <span>Solution</span> <span>{</span>
- <span>public</span><span>:</span>
-  vector<span>&lt;</span><span>int</span><span>></span> <span>sortArrayByParity</span><span>(</span>vector<span>&lt;</span><span>int</span><span>></span><span>&amp;</span> A<span>)</span> <span>{</span>
-    <span>int</span> l <span>=</span> <span>0</span><span>,</span> r <span>=</span> A<span>.</span><span>size</span><span>(</span><span>)</span> <span>-</span> <span>1</span><span>;</span>
-    <span>while</span> <span>(</span>l <span>&lt;</span> r<span>)</span> <span>{</span>
-      <span>if</span> <span>(</span>A<span>[</span>l<span>]</span> <span>%</span> <span>2</span> <span>==</span> <span>0</span><span>)</span>
-        l<span>++</span><span>;</span>
-      <span>else</span>
-        <span>swap</span><span>(</span>A<span>[</span>l<span>]</span><span>,</span> A<span>[</span>r<span>]</span><span>)</span><span>,</span> r<span>--</span><span>;</span>
-    <span>}</span>
-    <span>return</span> A<span>;</span>
-  <span>}</span>
-<span>}</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>C++</title>
       <link>https://leetcode.innenu.com/922-Sort-Array-By-Parity-II/C++/</link>
       <guid>https://leetcode.innenu.com/922-Sort-Array-By-Parity-II/C++/</guid>
@@ -8373,6 +8347,34 @@ The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.</p>
 
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>sqm</title>
+      <link>https://leetcode.innenu.com/905-Sort-Array-By-Parity/sqm/</link>
+      <guid>https://leetcode.innenu.com/905-Sort-Array-By-Parity/sqm/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">sqm</source>
+      <category>sqm</category>
+      <content:encoded><![CDATA[<h2 id="c"> C++</h2>
+<div><pre><code><span><span>#</span><span>include</span> <span>&lt;iostream></span></span>
+<span><span>#</span><span>include</span> <span>&lt;vector></span></span>
+<span>using</span> <span>namespace</span> std<span>;</span>
+
+<span>class</span> <span>Solution</span> <span>{</span>
+ <span>public</span><span>:</span>
+  vector<span>&lt;</span><span>int</span><span>></span> <span>sortArrayByParity</span><span>(</span>vector<span>&lt;</span><span>int</span><span>></span><span>&amp;</span> A<span>)</span> <span>{</span>
+    <span>int</span> l <span>=</span> <span>0</span><span>,</span> r <span>=</span> A<span>.</span><span>size</span><span>(</span><span>)</span> <span>-</span> <span>1</span><span>;</span>
+    <span>while</span> <span>(</span>l <span>&lt;</span> r<span>)</span> <span>{</span>
+      <span>if</span> <span>(</span>A<span>[</span>l<span>]</span> <span>%</span> <span>2</span> <span>==</span> <span>0</span><span>)</span>
+        l<span>++</span><span>;</span>
+      <span>else</span>
+        <span>swap</span><span>(</span>A<span>[</span>l<span>]</span><span>,</span> A<span>[</span>r<span>]</span><span>)</span><span>,</span> r<span>--</span><span>;</span>
+    <span>}</span>
+    <span>return</span> A<span>;</span>
+  <span>}</span>
+<span>}</span><span>;</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>922. Sort Array By Parity II</title>
@@ -8810,6 +8812,30 @@ The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.</p>
 ]]></content:encoded>
     </item>
     <item>
+      <title>lmy</title>
+      <link>https://leetcode.innenu.com/1518-Wate-Bottles/lmy/</link>
+      <guid>https://leetcode.innenu.com/1518-Wate-Bottles/lmy/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">lmy</source>
+      <category>lmy</category>
+      <content:encoded><![CDATA[<h2 id="c"> C++</h2>
+<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
+ <span>public</span><span>:</span>
+  <span>int</span> <span>numWaterBottles</span><span>(</span><span>int</span> numBottles<span>,</span> <span>int</span> numExchange<span>)</span> <span>{</span>
+    <span>int</span> sum <span>=</span> <span>0</span><span>;</span>
+    <span>int</span> emptybottles <span>=</span> numBottles<span>;</span>
+    <span>while</span> <span>(</span>numBottles <span>!=</span> <span>0</span><span>)</span> <span>{</span>
+      sum <span>+=</span> numBottles<span>;</span>
+      numBottles <span>=</span> emptybottles <span>/</span> numExchange<span>;</span>
+      emptybottles <span>=</span> emptybottles <span>-</span> numBottles <span>*</span> numExchange <span>+</span> numBottles<span>;</span>
+    <span>}</span>
+    <span>return</span> sum<span>;</span>
+  <span>}</span>
+<span>}</span><span>;</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>867. Transpose Matrix</title>
       <link>https://leetcode.innenu.com/867-Transpose-Matrix/</link>
       <guid>https://leetcode.innenu.com/867-Transpose-Matrix/</guid>
@@ -8831,32 +8857,6 @@ The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.</p>
 </ol>
 ]]></content:encoded>
       <enclosure url="https://assets.leetcode.com/uploads/2019/10/20/hint_transpose.png" type="image/png"/>
-    </item>
-    <item>
-      <title>lmy</title>
-      <link>https://leetcode.innenu.com/867-Transpose-Matrix/lmy/</link>
-      <guid>https://leetcode.innenu.com/867-Transpose-Matrix/lmy/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">lmy</source>
-      <category>lmy</category>
-      <content:encoded><![CDATA[<h2 id="c"> C++</h2>
-<div><pre><code><span><span>#</span><span>include</span> <span>&lt;vector></span></span>
-<span>using</span> <span>namespace</span> std<span>;</span>
-
-<span>class</span> <span>Solution</span> <span>{</span>
- <span>public</span><span>:</span>
-  vector<span>&lt;</span>vector<span>&lt;</span><span>int</span><span>>></span> <span>transpose</span><span>(</span>vector<span>&lt;</span>vector<span>&lt;</span><span>int</span><span>>></span><span>&amp;</span> A<span>)</span> <span>{</span>
-    vector<span>&lt;</span>vector<span>&lt;</span><span>int</span><span>>></span> <span>B</span><span>(</span>A<span>[</span><span>0</span><span>]</span><span>.</span><span>size</span><span>(</span><span>)</span><span>,</span> vector<span>&lt;</span><span>int</span><span>></span><span>(</span>A<span>.</span><span>size</span><span>(</span><span>)</span><span>,</span> <span>0</span><span>)</span><span>)</span><span>;</span>
-    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> A<span>[</span><span>0</span><span>]</span><span>.</span><span>size</span><span>(</span><span>)</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
-      <span>for</span> <span>(</span><span>int</span> j <span>=</span> <span>0</span><span>;</span> j <span>&lt;</span> A<span>.</span><span>size</span><span>(</span><span>)</span><span>;</span> j<span>++</span><span>)</span> <span>{</span>
-        B<span>[</span>i<span>]</span><span>[</span>j<span>]</span> <span>=</span> A<span>[</span>j<span>]</span><span>[</span>i<span>]</span><span>;</span>
-      <span>}</span>
-    <span>}</span>
-    <span>return</span> B<span>;</span>
-  <span>}</span>
-<span>}</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>
