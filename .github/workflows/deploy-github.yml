@@ -13,11 +13,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          submodules: true
           fetch-depth: 0
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v2.1.4
         id: node-modules
         with:
           path: node_modules/
@@ -57,11 +55,11 @@ jobs:
           mkdir -p ~/.ssh/
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan mrhope.site >> ~/.ssh/known_hosts
+          ssh-keyscan leetcode.innenu.com >> ~/.ssh/known_hosts
           git config --global user.name 'Mr.Hope'
           git config --global user.email 'zhangbowang1998@gmail.com'
 
       - name: Deploy
         run: |
-          git push -f git@mrhope.site:/www/wwwroot/leetcode gh-pages
-          ssh git@mrhope.site "cd /www/wwwroot/leetcode && git reset --hard HEAD"
+          git push -f git@leetcode.innenu.com:/www/wwwroot/leetcode gh-pages
+          ssh git@leetcode.innenu.com "cd /www/wwwroot/leetcode && git reset --hard HEAD"
