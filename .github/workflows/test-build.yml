@@ -30,7 +30,7 @@ jobs:
         run: yarn run md:generate
 
       - name: Build Website
-        run: yarn run super:build
+        run: yarn run build:super
 
   linter-test:
     runs-on: ubuntu-latest
