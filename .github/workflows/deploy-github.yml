@@ -31,14 +31,13 @@ jobs:
         run: yarn run md:generate
 
       - name: Build Website
-        run: yarn run super:build
+        run: yarn run build:super
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: dist
+          branch: gh-pages
+          folder: dist
 
   deploy-server:
     runs-on: ubuntu-latest
