@@ -9,11 +9,10 @@
     "url": "https://mrhope.site"
   },
   "scripts": {
-    "postinstall": "husky install",
     "build": "vuepress build leetcode",
     "build:super": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js build leetcode",
+    "postinstall": "husky install",
     "lint": "yarn run lint-prettier && yarn run lint-eslint && yarn run lint-markdown && yarn run lint-clang",
-    "lint:check": "yarn run lint-prettier:check && yarn run lint-eslint:checl && yarn run lint-markdown:check && yarn run lint-clang:check",
     "lint-clang": "clang-format -i --glob=**/*.{c,csharp,cpp,java}",
     "lint-clang:check": "clang-format -i -n --glob=**/*.{c,csharp,cpp,java}",
     "lint-eslint": "yarn run lint-eslint:check --fix",
@@ -22,6 +21,7 @@
     "lint-markdown:check": "markdownlint **/*.md --ignore node_modules",
     "lint-prettier": "yarn run lint-prettier:check --write",
     "lint-prettier:check": "prettier --check .",
+    "lint:check": "yarn run lint-prettier:check && yarn run lint-eslint:checl && yarn run lint-markdown:check && yarn run lint-clang:check",
     "md:clean": "ts-node ./script/clean.ts",
     "md:generate": "ts-node ./script/generate.ts",
     "serve": "vuepress dev leetcode",
@@ -45,24 +45,24 @@
   },
   "dependencies": {
     "vuepress": "1.8.2",
-    "vuepress-theme-hope": "1.13.4"
+    "vuepress-theme-hope": "1.20.5"
   },
   "devDependencies": {
-    "@types/node": "14.14.37",
-    "@types/turndown": "5.0.0",
-    "@typescript-eslint/eslint-plugin": "4.20.0",
-    "@typescript-eslint/parser": "4.20.0",
+    "@types/node": "16.11.6",
+    "@types/turndown": "5.0.1",
+    "@typescript-eslint/eslint-plugin": "5.3.0",
+    "@typescript-eslint/parser": "5.3.0",
     "clang-format": "1.5.0",
-    "eslint": "7.23.0",
-    "eslint-config-prettier": "8.1.0",
-    "eslint-plugin-prettier": "3.3.1",
-    "husky": "6.0.0",
-    "lint-staged": "10.5.4",
-    "markdownlint-cli": "0.27.1",
-    "prettier": "2.2.1",
-    "sort-package-json": "1.49.0",
-    "ts-node": "9.1.1",
-    "turndown": "7.0.0",
-    "typescript": "4.2.3"
+    "eslint": "8.1.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "husky": "7.0.4",
+    "lint-staged": "11.2.6",
+    "markdownlint-cli": "0.29.0",
+    "prettier": "2.4.1",
+    "sort-package-json": "1.52.0",
+    "ts-node": "10.4.0",
+    "turndown": "7.1.1",
+    "typescript": "4.4.4"
   }
 }
