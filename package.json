@@ -58,7 +58,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "husky": "7.0.4",
     "lint-staged": "11.2.6",
-    "markdownlint-cli": "0.29.0",
+    "markdownlint-cli": "0.32.0",
     "prettier": "2.4.1",
     "sort-package-json": "1.52.0",
     "ts-node": "10.4.0",
