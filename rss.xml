@@ -6,14 +6,14 @@
     <link>https://leetcode.innenu.com/</link>
     <description>LeetCode 练习</description>
     <language>en-US</language>
-    <pubDate>Thu, 03 Nov 2022 14:11:51 GMT</pubDate>
-    <lastBuildDate>Thu, 03 Nov 2022 14:11:51 GMT</lastBuildDate>
+    <pubDate>Thu, 03 Nov 2022 14:12:38 GMT</pubDate>
+    <lastBuildDate>Thu, 03 Nov 2022 14:12:38 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright © 2017-present Hope Studio</copyright>
     <category>C++</category>
-    <category>JavaScript</category>
     <category>Java</category>
+    <category>JavaScript</category>
     <category>Mister-Hope</category>
     <category>Python3</category>
     <category>TypeScript</category>
@@ -1862,6 +1862,42 @@ Assume we are dealing with an environment that could only store integers within 
 ]]></content:encoded>
     </item>
     <item>
+      <title>1518. Water Bottles</title>
+      <link>https://leetcode.innenu.com/1518-Wate-Bottles/</link>
+      <guid>https://leetcode.innenu.com/1518-Wate-Bottles/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">1518. Water Bottles</source>
+      <pubDate>Mon, 30 Nov 2020 08:39:20 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="_1518-water-bottles"> <a href="https://leetcode.com/problems/water-bottles/" target="_blank" rel="noopener noreferrer">1518. Water Bottles<i>Content not supported</i></a></h1>
+<p>Given <code>numBottles</code> full water bottles, you can exchange <code>numExchange</code> empty water bottles for one full water bottle.</p>
+<p>The operation of drinking a full water bottle turns it into an empty bottle.</p>
+<p>Return the <strong>maximum</strong> number of water bottles you can drink.</p>
+<p><strong>Example 1:</strong></p>
+<p><strong><img src="https://assets.leetcode.com/uploads/2020/07/01/sample_1_1875.png" alt="LeetCode Image"></strong></p>
+<p><strong>Input:</strong> numBottles = 9, numExchange = 3</p>
+<p><strong>Output:</strong> 13</p>
+<p><strong>Explanation:</strong> You can exchange 3 empty bottles to get 1 full water bottle.
+Number of water bottles you can drink: 9 + 3 + 1 = 13.</p>
+<p><strong>Example 2:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/07/01/sample_2_1875.png" alt="LeetCode Image"></p>
+<p><strong>Input:</strong> numBottles = 15, numExchange = 4</p>
+<p><strong>Output:</strong> 19</p>
+<p><strong>Explanation:</strong> You can exchange 4 empty bottles to get 1 full water bottle.
+Number of water bottles you can drink: 15 + 3 + 1 = 19.</p>
+<p><strong>Example 3:</strong></p>
+<p><strong>Input:</strong> numBottles = 5, numExchange = 5</p>
+<p><strong>Output:</strong> 6</p>
+<p><strong>Example 4:</strong></p>
+<p><strong>Input:</strong> numBottles = 2, numExchange = 3</p>
+<p><strong>Output:</strong> 2</p>
+<h2 id="constraints"> Constraints</h2>
+<ul>
+<li><code>1 &lt;= numBottles &lt;= 100</code></li>
+<li><code>2 &lt;= numExchange &lt;= 100</code></li>
+</ul>
+]]></content:encoded>
+      <enclosure url="https://assets.leetcode.com/uploads/2020/07/01/sample_1_1875.png" type="image/png"/>
+    </item>
+    <item>
       <title>9. Palindrome Number</title>
       <link>https://leetcode.innenu.com/9-palindrome-number/</link>
       <guid>https://leetcode.innenu.com/9-palindrome-number/</guid>
@@ -1955,42 +1991,6 @@ The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>1518. Water Bottles</title>
-      <link>https://leetcode.innenu.com/1518-Wate-Bottles/</link>
-      <guid>https://leetcode.innenu.com/1518-Wate-Bottles/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">1518. Water Bottles</source>
-      <pubDate>Mon, 30 Nov 2020 08:39:20 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="_1518-water-bottles"> <a href="https://leetcode.com/problems/water-bottles/" target="_blank" rel="noopener noreferrer">1518. Water Bottles<i>Content not supported</i></a></h1>
-<p>Given <code>numBottles</code> full water bottles, you can exchange <code>numExchange</code> empty water bottles for one full water bottle.</p>
-<p>The operation of drinking a full water bottle turns it into an empty bottle.</p>
-<p>Return the <strong>maximum</strong> number of water bottles you can drink.</p>
-<p><strong>Example 1:</strong></p>
-<p><strong><img src="https://assets.leetcode.com/uploads/2020/07/01/sample_1_1875.png" alt="LeetCode Image"></strong></p>
-<p><strong>Input:</strong> numBottles = 9, numExchange = 3</p>
-<p><strong>Output:</strong> 13</p>
-<p><strong>Explanation:</strong> You can exchange 3 empty bottles to get 1 full water bottle.
-Number of water bottles you can drink: 9 + 3 + 1 = 13.</p>
-<p><strong>Example 2:</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2020/07/01/sample_2_1875.png" alt="LeetCode Image"></p>
-<p><strong>Input:</strong> numBottles = 15, numExchange = 4</p>
-<p><strong>Output:</strong> 19</p>
-<p><strong>Explanation:</strong> You can exchange 4 empty bottles to get 1 full water bottle.
-Number of water bottles you can drink: 15 + 3 + 1 = 19.</p>
-<p><strong>Example 3:</strong></p>
-<p><strong>Input:</strong> numBottles = 5, numExchange = 5</p>
-<p><strong>Output:</strong> 6</p>
-<p><strong>Example 4:</strong></p>
-<p><strong>Input:</strong> numBottles = 2, numExchange = 3</p>
-<p><strong>Output:</strong> 2</p>
-<h2 id="constraints"> Constraints</h2>
-<ul>
-<li><code>1 &lt;= numBottles &lt;= 100</code></li>
-<li><code>2 &lt;= numExchange &lt;= 100</code></li>
-</ul>
-]]></content:encoded>
-      <enclosure url="https://assets.leetcode.com/uploads/2020/07/01/sample_1_1875.png" type="image/png"/>
-    </item>
-    <item>
       <title>C++</title>
       <link>https://leetcode.innenu.com/1-two-sum/C++/</link>
       <guid>https://leetcode.innenu.com/1-two-sum/C++/</guid>
@@ -2069,34 +2069,6 @@ Number of water bottles you can drink: 15 + 3 + 1 = 19.</p>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>JavaScript</title>
-      <link>https://leetcode.innenu.com/1-two-sum/JavaScript/</link>
-      <guid>https://leetcode.innenu.com/1-two-sum/JavaScript/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">JavaScript</source>
-      <category>JavaScript</category>
-      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
-<div><pre><code><span>/*
- * Runtime: 112 ms, faster than 48.98% of JavaScript online submissions for Two Sum.
- *
- * Memory Usage: 48.3 MB, less than 5.73% of JavaScript online submissions for Two Sum.
- */</span>
-
-<span>const</span> <span>twoSum</span> <span>=</span> <span>(</span><span>nums<span>,</span> target</span><span>)</span> <span>=></span> <span>{</span>
-  <span>const</span> arr <span>=</span> <span>[</span><span>]</span><span>;</span>
-
-  <span>for</span> <span>(</span><span>let</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> nums<span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
-    <span>let</span> j <span>=</span> arr<span>[</span>target <span>-</span> nums<span>[</span>i<span>]</span><span>]</span><span>;</span>
-    <span>if</span> <span>(</span>j <span>!==</span> <span>undefined</span><span>)</span> <span>return</span> <span>[</span>j<span>,</span> i<span>]</span><span>;</span>
-    arr<span>[</span>nums<span>[</span>i<span>]</span><span>]</span> <span>=</span> i<span>;</span>
-  <span>}</span>
-
-  <span>throw</span> <span>new</span> <span>Error</span><span>(</span><span>"No solution"</span><span>)</span><span>;</span>
-<span>}</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>Java</title>
       <link>https://leetcode.innenu.com/1-two-sum/Java/</link>
       <guid>https://leetcode.innenu.com/1-two-sum/Java/</guid>
@@ -2161,6 +2133,34 @@ Number of water bottles you can drink: 15 + 3 + 1 = 19.</p>
 
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>JavaScript</title>
+      <link>https://leetcode.innenu.com/1-two-sum/JavaScript/</link>
+      <guid>https://leetcode.innenu.com/1-two-sum/JavaScript/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">JavaScript</source>
+      <category>JavaScript</category>
+      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
+<div><pre><code><span>/*
+ * Runtime: 112 ms, faster than 48.98% of JavaScript online submissions for Two Sum.
+ *
+ * Memory Usage: 48.3 MB, less than 5.73% of JavaScript online submissions for Two Sum.
+ */</span>
+
+<span>const</span> <span>twoSum</span> <span>=</span> <span>(</span><span>nums<span>,</span> target</span><span>)</span> <span>=></span> <span>{</span>
+  <span>const</span> arr <span>=</span> <span>[</span><span>]</span><span>;</span>
+
+  <span>for</span> <span>(</span><span>let</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> nums<span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
+    <span>let</span> j <span>=</span> arr<span>[</span>target <span>-</span> nums<span>[</span>i<span>]</span><span>]</span><span>;</span>
+    <span>if</span> <span>(</span>j <span>!==</span> <span>undefined</span><span>)</span> <span>return</span> <span>[</span>j<span>,</span> i<span>]</span><span>;</span>
+    arr<span>[</span>nums<span>[</span>i<span>]</span><span>]</span> <span>=</span> i<span>;</span>
+  <span>}</span>
+
+  <span>throw</span> <span>new</span> <span>Error</span><span>(</span><span>"No solution"</span><span>)</span><span>;</span>
+<span>}</span><span>;</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>Mister-Hope</title>
