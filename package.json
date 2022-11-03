@@ -59,7 +59,7 @@
     "husky": "7.0.4",
     "lint-staged": "13.0.3",
     "markdownlint-cli": "0.32.2",
-    "prettier": "2.4.1",
+    "prettier": "2.7.1",
     "sort-package-json": "2.0.0",
     "ts-node": "10.4.0",
     "turndown": "7.1.1",
