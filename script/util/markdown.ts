@@ -1,3 +1,4 @@
+import { exec } from "node:child_process";
 import {
   existsSync,
   readdirSync,
@@ -5,12 +6,12 @@ import {
   unlinkSync,
   writeFile,
   writeFileSync,
-} from "fs";
-import { basename, resolve } from "path";
-import * as Turndown from "turndown";
-import { exec } from "child_process";
-import { FileInfo, groupFiles } from "./file";
-import { capitalizeSentence } from "./string";
+} from "node:fs";
+import { basename, resolve } from "node:path";
+import { default as Turndown } from "turndown";
+
+import { FileInfo, groupFiles } from "./file.js";
+import { capitalizeSentence } from "./string.js";
 
 const turndown = new Turndown({
   bulletListMarker: "-",
@@ -46,7 +47,7 @@ interface FrontMatterOption {
   tags: string[];
 }
 
-const genFrontMatter = ({
+const generateFrontmatter = ({
   title,
   author,
   category,
@@ -63,15 +64,15 @@ const genFrontMatter = ({
       : ""
   }---\n\n`;
 
-const genMarkdownList = (list: string[]): string =>
+const generateMarkdownList = (list: string[]): string =>
   list
     .map(
       (title) =>
-        `- [${getExerciseName(title)}](${decodeURI(title)}/readme.md)\n`
+        `- [${getExerciseName(title)}](${decodeURI(title)}/README.md)\n`
     )
     .join("\n");
 
-const genContent = (
+const generateContent = (
   fileInfoList: FileInfo[],
   key: "author" | "language"
 ): string => {
@@ -105,7 +106,7 @@ interface GenerateInfo {
   files: FileInfo[];
 }
 
-export const genPersonMarkdown = ({
+export const generatePersonMarkdown = ({
   title,
   path,
   files,
@@ -120,12 +121,12 @@ export const genPersonMarkdown = ({
       new Promise((resolve2) => {
         writeFile(
           resolve(path, `${author}.md`),
-          genFrontMatter({
+          generateFrontmatter({
             title: author,
             author: title,
             category: author,
             tags,
-          }) + genContent(files, "language"),
+          }) + generateContent(files, "language"),
           { encoding: "utf-8", flag: "w" },
           () => resolve2()
         );
@@ -153,13 +154,13 @@ export const genLanguageMarkdown = ({
       new Promise((resolve2) => {
         writeFile(
           resolve(path, `${language}.md`),
-          genFrontMatter({
+          generateFrontmatter({
             title: language,
             icon: files[0].icon,
             author: title,
             category: language,
             tags,
-          }) + genContent(files, "author"),
+          }) + generateContent(files, "author"),
           { encoding: "utf-8", flag: "w" },
           () => resolve2()
         );
@@ -183,8 +184,10 @@ export const getExercise = (dir: string): string[] =>
 
 export const genExerciseList = (dir: string, folderList: string[]): void => {
   writeFileSync(
-    resolve(dir, "readme.md"),
-    `---\ntitle: 题目列表\nicon: list\n---\n\n${genMarkdownList(folderList)}`
+    resolve(dir, "README.md"),
+    `---\ntitle: 题目列表\nicon: list\n---\n\n${generateMarkdownList(
+      folderList
+    )}`
   );
 };
 
@@ -204,7 +207,7 @@ export const getProblemMarkdown = (exerciseName: string): Promise<string> =>
     const [, id] = /(.*?)[.|-].*/u.exec(exerciseName) || [];
 
     if (isNaN(Number(id)))
-      console.error(`folderName ${exerciseName} is illigeal!`);
+      console.error(`folderName ${exerciseName} is illegal!`);
     else {
       let retryTimes = 0;
 
@@ -239,7 +242,7 @@ export const genProblemMarkdown = (
 ): Promise<void[]> =>
   Promise.all(
     folderList.map((folderName) => {
-      const readmePath = resolve(dir, folderName, "readme.md");
+      const readmePath = resolve(dir, folderName, "README.md");
 
       if (existsSync(readmePath)) return Promise.resolve();
 

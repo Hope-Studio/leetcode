@@ -1,32 +1,30 @@
 {
   "name": "leetcode-exercise",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "repository": "git@github.com:Hope-Studio/leetcode.git",
   "license": "MIT",
   "author": {
     "name": "Mr.Hope",
-    "email": "zhangbowang1998@gmail.com",
+    "email": "mister-hope@outlook.com",
     "url": "https://mrhope.site"
   },
+  "type": "module",
   "scripts": {
     "build": "vuepress build leetcode",
-    "build:super": "node --max_old_space_size=8192 ./node_modules/vuepress/cli.js build leetcode",
+    "dev": "vuepress dev leetcode",
     "postinstall": "husky install",
-    "lint": "yarn run lint-prettier && yarn run lint-eslint && yarn run lint-markdown && yarn run lint-clang",
+    "lint": "pnpm lint-prettier && pnpm lint-eslint && pnpm lint-markdown && pnpm lint-clang",
     "lint-clang": "clang-format -i --glob=**/*.{c,csharp,cpp,java}",
     "lint-clang:check": "clang-format -i -n --glob=**/*.{c,csharp,cpp,java}",
-    "lint-eslint": "yarn run lint-eslint:check --fix",
+    "lint-eslint": "pnpm lint-eslint:check --fix",
     "lint-eslint:check": "eslint . --ext .ts,.js",
-    "lint-markdown": "yarn run lint-markdown:check --fix",
+    "lint-markdown": "pnpm lint-markdown:check --fix",
     "lint-markdown:check": "markdownlint **/*.md --ignore node_modules",
-    "lint-prettier": "yarn run lint-prettier:check --write",
+    "lint-prettier": "pnpm lint-prettier:check --write",
     "lint-prettier:check": "prettier --check .",
-    "lint:check": "yarn run lint-prettier:check && yarn run lint-eslint:checl && yarn run lint-markdown:check && yarn run lint-clang:check",
-    "md:clean": "ts-node ./script/clean.ts",
-    "md:generate": "ts-node ./script/generate.ts",
-    "serve": "vuepress dev leetcode",
-    "serve:clean": "vuepress dev leetcode --no-cache",
-    "test": "ts-node ./script/test.ts"
+    "lint:check": "pnpm lint-prettier:check && pnpm lint-eslint:check && pnpm lint-markdown:check && pnpm lint-clang:check",
+    "md:clean": "ts-node --esm ./script/clean.ts",
+    "md:generate": "ts-node --esm ./script/generate.ts"
   },
   "lint-staged": {
     "*.{c,csharp,cpp,java}": [
@@ -44,8 +42,10 @@
     ]
   },
   "dependencies": {
-    "vuepress": "1.9.7",
-    "vuepress-theme-hope": "1.30.0"
+    "@vuepress/client": "2.0.0-beta.53",
+    "vue": "3.2.41",
+    "vuepress": "2.0.0-beta.53",
+    "vuepress-theme-hope": "2.0.0-beta.120"
   },
   "devDependencies": {
     "@types/node": "18.11.9",
@@ -63,6 +63,7 @@
     "sort-package-json": "2.0.0",
     "ts-node": "10.9.1",
     "turndown": "7.1.1",
-    "typescript": "4.4.4"
-  }
+    "typescript": "4.8.4"
+  },
+  "packageManager": "pnpm@7.14.2"
 }

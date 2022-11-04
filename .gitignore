@@ -6,8 +6,9 @@ target/
 
 .project
 
-leetcode/.vuepress/sidebar.js
+**/.vuepress/.cache/**
+**/.vuepress/.temp/**
+
+leetcode/.vuepress/sidebar.ts
 leetcode/**/*.md
-!leetcode/*/readme.md
 !leetcode/*/README.md
-script/*.js

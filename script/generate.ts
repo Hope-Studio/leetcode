@@ -1,14 +1,15 @@
-import { statSync, readdirSync, writeFileSync } from "fs";
-import { resolve } from "path";
-import { getFiles } from "./util/file";
+import { statSync, readdirSync, writeFileSync } from "node:fs";
+import { resolve } from "node:path";
+
+import { getFiles } from "./util/file.js";
 import {
   getExercise,
   getExerciseName,
   genExerciseList,
   genLanguageMarkdown,
-  genPersonMarkdown,
+  generatePersonMarkdown,
   genProblemMarkdown,
-} from "./util/markdown";
+} from "./util/markdown.js";
 
 const folderList = getExercise("leetcode");
 
@@ -25,25 +26,24 @@ void Promise.all(
       const title = getExerciseName(folderName);
 
       return Promise.all([
-        genPersonMarkdown({ path: folderPath, files, title }),
+        generatePersonMarkdown({ path: folderPath, files, title }),
         genLanguageMarkdown({ path: folderPath, files, title }),
       ]).then(([authors, languages]) =>
         Promise.resolve({
-          title: getExerciseName(folderName),
+          text: getExerciseName(folderName),
           icon: "exercise",
           prefix: `${folderName}/`,
+          collapsable: true,
           children: [
             "",
             {
-              title: "作者",
+              text: "作者",
               icon: "people",
-              collapsable: false,
               children: authors,
             },
             {
-              title: "语言",
+              text: "语言",
               icon: "code",
-              collapsable: false,
               children: languages,
             },
           ],
@@ -53,8 +53,12 @@ void Promise.all(
   })
 ).then((sidebarList) => {
   writeFileSync(
-    "leetcode/.vuepress/sidebar.js",
-    `module.exports = ${JSON.stringify(["", ...sidebarList])};\n`
+    "leetcode/.vuepress/sidebar.ts",
+    `\
+import { sidebar } from 'vuepress-theme-hope';
+
+export default sidebar(${JSON.stringify(["", ...sidebarList])});
+`
   );
 });
 

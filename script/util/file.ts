@@ -1,5 +1,5 @@
-import { readFile } from "fs";
-import { resolve } from "path";
+import { readFile } from "node:fs";
+import { resolve } from "node:path";
 
 export interface FileInfo {
   author: string;

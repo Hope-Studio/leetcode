@@ -12,53 +12,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          persist-credentials: false
           fetch-depth: 0
 
-      - uses: actions/cache@v3.0.11
-        id: node-modules
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          path: node_modules/
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-
+          version: 7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
 
       - name: Install Deps
-        if: steps.node-modules.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Generate Markdown
-        run: yarn run md:generate
+        run: pnpm md:generate
 
       - name: Build Website
-        run: yarn run build:super
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+        run: pnpm build
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: dist
-
-  deploy-server:
-    runs-on: ubuntu-latest
-    needs: deploy-gh-pages
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          ref: gh-pages
-          fetch-depth: 0
-
-      - name: Configuration environment
-        run: |
-          mkdir -p ~/.ssh/
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan leetcode.innenu.com >> ~/.ssh/known_hosts
-          git config --global user.name 'Mr.Hope'
-          git config --global user.email 'zhangbowang1998@gmail.com'
-
-      - name: Deploy
-        run: |
-          git push -f git@leetcode.innenu.com:/www/wwwroot/leetcode gh-pages
-          ssh git@leetcode.innenu.com "cd /www/wwwroot/leetcode && git reset --hard HEAD"
