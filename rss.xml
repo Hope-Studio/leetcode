@@ -6,14 +6,14 @@
     <link>https://leetcode.innenu.com/</link>
     <description>LeetCode 练习</description>
     <language>en-US</language>
-    <pubDate>Fri, 04 Nov 2022 02:49:07 GMT</pubDate>
-    <lastBuildDate>Fri, 04 Nov 2022 02:49:07 GMT</lastBuildDate>
+    <pubDate>Fri, 04 Nov 2022 05:04:33 GMT</pubDate>
+    <lastBuildDate>Fri, 04 Nov 2022 05:04:33 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright © 2017-present Hope Studio</copyright>
+    <category>Java</category>
     <category>C++</category>
     <category>JavaScript</category>
-    <category>Java</category>
     <category>Mister-Hope</category>
     <category>Python3</category>
     <category>TypeScript</category>
@@ -1229,44 +1229,6 @@ This problem was inspired by <a href="https://twitter.com/mxcl/status/6086820162
 ]]></content:encoded>
     </item>
     <item>
-      <title>237. Delete Node in a Linked List</title>
-      <link>https://leetcode.innenu.com/237-Delete-Node-in-a-Linked-List/</link>
-      <guid>https://leetcode.innenu.com/237-Delete-Node-in-a-Linked-List/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">237. Delete Node in a Linked List</source>
-      <pubDate>Mon, 30 Nov 2020 08:39:20 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="_237-delete-node-in-a-linked-list"> <a href="https://leetcode.com/problems/delete-node-in-a-linked-list/" target="_blank" rel="noopener noreferrer">237. Delete Node in a Linked List<i>Content not supported</i></a></h1>
-<p>Write a function to <strong>delete a node</strong> in a singly-linked list. You will <strong>not</strong> be given access to the <code>head</code> of the list, instead you will be given access to <strong>the node to be deleted</strong> directly.</p>
-<p>It is <strong>guaranteed</strong> that the node to be deleted is <strong>not a tail node</strong> in the list.</p>
-<p><strong>Example 1:</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2020/09/01/node1.jpg" alt="LeetCode Image"></p>
-<p><strong>Input:</strong> head = [4,5,1,9], node = 5</p>
-<p><strong>Output:</strong> [4,1,9]</p>
-<p><strong>Explanation:</strong> You are given the second node with value 5, the linked list should become 4 -&gt; 1 -&gt; 9 after calling your function.</p>
-<p><strong>Example 2:</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2020/09/01/node2.jpg" alt="LeetCode Image"></p>
-<p><strong>Input:</strong> head = [4,5,1,9], node = 1</p>
-<p><strong>Output:</strong> [4,5,9]</p>
-<p><strong>Explanation:</strong> You are given the third node with value 1, the linked list should become 4 -&gt; 5 -&gt; 9 after calling your function.</p>
-<p><strong>Example 3:</strong></p>
-<p><strong>Input:</strong> head = [1,2,3,4], node = 3</p>
-<p><strong>Output:</strong> [1,2,4]</p>
-<p><strong>Example 4:</strong></p>
-<p><strong>Input:</strong> head = [0,1], node = 0</p>
-<p><strong>Output:</strong> [1]</p>
-<p><strong>Example 5:</strong></p>
-<p><strong>Input:</strong> head = [-3,5,-99], node = -3</p>
-<p><strong>Output:</strong> [5,-99]</p>
-<h2 id="constraints"> Constraints</h2>
-<ul>
-<li>The number of the nodes in the given list is in the range <code>[2, 1000]</code>.</li>
-<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
-<li>The value of each node in the list is <strong>unique</strong>.</li>
-<li>The <code>node</code> to be deleted is <strong>in the list</strong> and is <strong>not a tail</strong> node</li>
-</ul>
-]]></content:encoded>
-      <enclosure url="https://assets.leetcode.com/uploads/2020/09/01/node1.jpg" type="image/jpeg"/>
-    </item>
-    <item>
       <title>242. Valid Anagram</title>
       <link>https://leetcode.innenu.com/242-valid-anagram/</link>
       <guid>https://leetcode.innenu.com/242-valid-anagram/</guid>
@@ -1339,6 +1301,44 @@ What if the inputs contain unicode characters? How would you adapt your solution
 ]]></content:encoded>
     </item>
     <item>
+      <title>237. Delete Node in a Linked List</title>
+      <link>https://leetcode.innenu.com/237-Delete-Node-in-a-Linked-List/</link>
+      <guid>https://leetcode.innenu.com/237-Delete-Node-in-a-Linked-List/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">237. Delete Node in a Linked List</source>
+      <pubDate>Mon, 30 Nov 2020 08:39:20 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="_237-delete-node-in-a-linked-list"> <a href="https://leetcode.com/problems/delete-node-in-a-linked-list/" target="_blank" rel="noopener noreferrer">237. Delete Node in a Linked List<i>Content not supported</i></a></h1>
+<p>Write a function to <strong>delete a node</strong> in a singly-linked list. You will <strong>not</strong> be given access to the <code>head</code> of the list, instead you will be given access to <strong>the node to be deleted</strong> directly.</p>
+<p>It is <strong>guaranteed</strong> that the node to be deleted is <strong>not a tail node</strong> in the list.</p>
+<p><strong>Example 1:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/01/node1.jpg" alt="LeetCode Image"></p>
+<p><strong>Input:</strong> head = [4,5,1,9], node = 5</p>
+<p><strong>Output:</strong> [4,1,9]</p>
+<p><strong>Explanation:</strong> You are given the second node with value 5, the linked list should become 4 -&gt; 1 -&gt; 9 after calling your function.</p>
+<p><strong>Example 2:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/01/node2.jpg" alt="LeetCode Image"></p>
+<p><strong>Input:</strong> head = [4,5,1,9], node = 1</p>
+<p><strong>Output:</strong> [4,5,9]</p>
+<p><strong>Explanation:</strong> You are given the third node with value 1, the linked list should become 4 -&gt; 5 -&gt; 9 after calling your function.</p>
+<p><strong>Example 3:</strong></p>
+<p><strong>Input:</strong> head = [1,2,3,4], node = 3</p>
+<p><strong>Output:</strong> [1,2,4]</p>
+<p><strong>Example 4:</strong></p>
+<p><strong>Input:</strong> head = [0,1], node = 0</p>
+<p><strong>Output:</strong> [1]</p>
+<p><strong>Example 5:</strong></p>
+<p><strong>Input:</strong> head = [-3,5,-99], node = -3</p>
+<p><strong>Output:</strong> [5,-99]</p>
+<h2 id="constraints"> Constraints</h2>
+<ul>
+<li>The number of the nodes in the given list is in the range <code>[2, 1000]</code>.</li>
+<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
+<li>The value of each node in the list is <strong>unique</strong>.</li>
+<li>The <code>node</code> to be deleted is <strong>in the list</strong> and is <strong>not a tail</strong> node</li>
+</ul>
+]]></content:encoded>
+      <enclosure url="https://assets.leetcode.com/uploads/2020/09/01/node1.jpg" type="image/jpeg"/>
+    </item>
+    <item>
       <title>292. Nim Game</title>
       <link>https://leetcode.innenu.com/292-Nim-Game/</link>
       <guid>https://leetcode.innenu.com/292-Nim-Game/</guid>
@@ -1373,24 +1373,6 @@ What if the inputs contain unicode characters? How would you adapt your solution
 <ul>
 <li><code>1 &lt;= n &lt;= 231 - 1</code></li>
 </ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>344. Reverse String</title>
-      <link>https://leetcode.innenu.com/344-Reverse-String/</link>
-      <guid>https://leetcode.innenu.com/344-Reverse-String/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">344. Reverse String</source>
-      <pubDate>Mon, 30 Nov 2020 08:39:20 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="_344-reverse-string"> <a href="https://leetcode.com/problems/reverse-string/" target="_blank" rel="noopener noreferrer">344. Reverse String<i>Content not supported</i></a></h1>
-<p>Write a function that reverses a string. The input string is given as an array of characters <code>char[]</code>.</p>
-<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank" rel="noopener noreferrer">in-place<i>Content not supported</i></a></strong> with O(1) extra memory.</p>
-<p>You may assume all the characters consist of <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters" target="_blank" rel="noopener noreferrer">printable ascii characters<i>Content not supported</i></a>.</p>
-<p><strong>Example 1:</strong></p>
-<p><strong>Input:</strong> [&quot;h&quot;,&quot;e&quot;,&quot;l&quot;,&quot;l&quot;,&quot;o&quot;]</p>
-<p><strong>Output:</strong> [&quot;o&quot;,&quot;l&quot;,&quot;l&quot;,&quot;e&quot;,&quot;h&quot;]</p>
-<p><strong>Example 2:</strong></p>
-<p><strong>Input:</strong> [&quot;H&quot;,&quot;a&quot;,&quot;n&quot;,&quot;n&quot;,&quot;a&quot;,&quot;h&quot;]</p>
-<p><strong>Output:</strong> [&quot;h&quot;,&quot;a&quot;,&quot;n&quot;,&quot;n&quot;,&quot;a&quot;,&quot;H&quot;]</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -1454,6 +1436,24 @@ return 2.</p>
 <li><code>t.length == s.length + 1</code></li>
 <li><code>s</code> and <code>t</code> consist of lower-case English letters.</li>
 </ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>344. Reverse String</title>
+      <link>https://leetcode.innenu.com/344-Reverse-String/</link>
+      <guid>https://leetcode.innenu.com/344-Reverse-String/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">344. Reverse String</source>
+      <pubDate>Mon, 30 Nov 2020 08:39:20 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="_344-reverse-string"> <a href="https://leetcode.com/problems/reverse-string/" target="_blank" rel="noopener noreferrer">344. Reverse String<i>Content not supported</i></a></h1>
+<p>Write a function that reverses a string. The input string is given as an array of characters <code>char[]</code>.</p>
+<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank" rel="noopener noreferrer">in-place<i>Content not supported</i></a></strong> with O(1) extra memory.</p>
+<p>You may assume all the characters consist of <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters" target="_blank" rel="noopener noreferrer">printable ascii characters<i>Content not supported</i></a>.</p>
+<p><strong>Example 1:</strong></p>
+<p><strong>Input:</strong> [&quot;h&quot;,&quot;e&quot;,&quot;l&quot;,&quot;l&quot;,&quot;o&quot;]</p>
+<p><strong>Output:</strong> [&quot;o&quot;,&quot;l&quot;,&quot;l&quot;,&quot;e&quot;,&quot;h&quot;]</p>
+<p><strong>Example 2:</strong></p>
+<p><strong>Input:</strong> [&quot;H&quot;,&quot;a&quot;,&quot;n&quot;,&quot;n&quot;,&quot;a&quot;,&quot;h&quot;]</p>
+<p><strong>Output:</strong> [&quot;h&quot;,&quot;a&quot;,&quot;n&quot;,&quot;n&quot;,&quot;a&quot;,&quot;H&quot;]</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -1836,6 +1836,42 @@ Assume we are dealing with an environment that could only store integers within 
       <enclosure url="https://assets.leetcode.com/uploads/2019/10/20/hint_transpose.png" type="image/png"/>
     </item>
     <item>
+      <title>1518. Water Bottles</title>
+      <link>https://leetcode.innenu.com/1518-Wate-Bottles/</link>
+      <guid>https://leetcode.innenu.com/1518-Wate-Bottles/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">1518. Water Bottles</source>
+      <pubDate>Mon, 30 Nov 2020 08:39:20 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="_1518-water-bottles"> <a href="https://leetcode.com/problems/water-bottles/" target="_blank" rel="noopener noreferrer">1518. Water Bottles<i>Content not supported</i></a></h1>
+<p>Given <code>numBottles</code> full water bottles, you can exchange <code>numExchange</code> empty water bottles for one full water bottle.</p>
+<p>The operation of drinking a full water bottle turns it into an empty bottle.</p>
+<p>Return the <strong>maximum</strong> number of water bottles you can drink.</p>
+<p><strong>Example 1:</strong></p>
+<p><strong><img src="https://assets.leetcode.com/uploads/2020/07/01/sample_1_1875.png" alt="LeetCode Image"></strong></p>
+<p><strong>Input:</strong> numBottles = 9, numExchange = 3</p>
+<p><strong>Output:</strong> 13</p>
+<p><strong>Explanation:</strong> You can exchange 3 empty bottles to get 1 full water bottle.
+Number of water bottles you can drink: 9 + 3 + 1 = 13.</p>
+<p><strong>Example 2:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/07/01/sample_2_1875.png" alt="LeetCode Image"></p>
+<p><strong>Input:</strong> numBottles = 15, numExchange = 4</p>
+<p><strong>Output:</strong> 19</p>
+<p><strong>Explanation:</strong> You can exchange 4 empty bottles to get 1 full water bottle.
+Number of water bottles you can drink: 15 + 3 + 1 = 19.</p>
+<p><strong>Example 3:</strong></p>
+<p><strong>Input:</strong> numBottles = 5, numExchange = 5</p>
+<p><strong>Output:</strong> 6</p>
+<p><strong>Example 4:</strong></p>
+<p><strong>Input:</strong> numBottles = 2, numExchange = 3</p>
+<p><strong>Output:</strong> 2</p>
+<h2 id="constraints"> Constraints</h2>
+<ul>
+<li><code>1 &lt;= numBottles &lt;= 100</code></li>
+<li><code>2 &lt;= numExchange &lt;= 100</code></li>
+</ul>
+]]></content:encoded>
+      <enclosure url="https://assets.leetcode.com/uploads/2020/07/01/sample_1_1875.png" type="image/png"/>
+    </item>
+    <item>
       <title>88. Merge Sorted Array</title>
       <link>https://leetcode.innenu.com/88-merge-sorted-array/</link>
       <guid>https://leetcode.innenu.com/88-merge-sorted-array/</guid>
@@ -1955,40 +1991,70 @@ The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>1518. Water Bottles</title>
-      <link>https://leetcode.innenu.com/1518-Wate-Bottles/</link>
-      <guid>https://leetcode.innenu.com/1518-Wate-Bottles/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">1518. Water Bottles</source>
-      <pubDate>Mon, 30 Nov 2020 08:39:20 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="_1518-water-bottles"> <a href="https://leetcode.com/problems/water-bottles/" target="_blank" rel="noopener noreferrer">1518. Water Bottles<i>Content not supported</i></a></h1>
-<p>Given <code>numBottles</code> full water bottles, you can exchange <code>numExchange</code> empty water bottles for one full water bottle.</p>
-<p>The operation of drinking a full water bottle turns it into an empty bottle.</p>
-<p>Return the <strong>maximum</strong> number of water bottles you can drink.</p>
-<p><strong>Example 1:</strong></p>
-<p><strong><img src="https://assets.leetcode.com/uploads/2020/07/01/sample_1_1875.png" alt="LeetCode Image"></strong></p>
-<p><strong>Input:</strong> numBottles = 9, numExchange = 3</p>
-<p><strong>Output:</strong> 13</p>
-<p><strong>Explanation:</strong> You can exchange 3 empty bottles to get 1 full water bottle.
-Number of water bottles you can drink: 9 + 3 + 1 = 13.</p>
-<p><strong>Example 2:</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2020/07/01/sample_2_1875.png" alt="LeetCode Image"></p>
-<p><strong>Input:</strong> numBottles = 15, numExchange = 4</p>
-<p><strong>Output:</strong> 19</p>
-<p><strong>Explanation:</strong> You can exchange 4 empty bottles to get 1 full water bottle.
-Number of water bottles you can drink: 15 + 3 + 1 = 19.</p>
-<p><strong>Example 3:</strong></p>
-<p><strong>Input:</strong> numBottles = 5, numExchange = 5</p>
-<p><strong>Output:</strong> 6</p>
-<p><strong>Example 4:</strong></p>
-<p><strong>Input:</strong> numBottles = 2, numExchange = 3</p>
-<p><strong>Output:</strong> 2</p>
-<h2 id="constraints"> Constraints</h2>
-<ul>
-<li><code>1 &lt;= numBottles &lt;= 100</code></li>
-<li><code>2 &lt;= numExchange &lt;= 100</code></li>
-</ul>
-]]></content:encoded>
-      <enclosure url="https://assets.leetcode.com/uploads/2020/07/01/sample_1_1875.png" type="image/png"/>
+      <title>Java</title>
+      <link>https://leetcode.innenu.com/1-two-sum/Java/</link>
+      <guid>https://leetcode.innenu.com/1-two-sum/Java/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">Java</source>
+      <category>Java</category>
+      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
+<div><pre><code><span>/*
+ * Runtime: 10 ms, faster than 41.97% of Java online submissions for Two Sum.
+ *
+ * Memory Usage: 56.5 MB, less than 6.02% of Java online submissions for Two Sum.
+ */</span>
+
+<span>import</span> <span>java<span>.</span>util<span>.</span></span><span>HashMap</span><span>;</span>
+
+<span>class</span> <span>Solution</span> <span>{</span>
+  <span>public</span> <span>int</span><span>[</span><span>]</span> <span>twoSum</span><span>(</span><span>int</span><span>[</span><span>]</span> nums<span>,</span> <span>int</span> target<span>)</span> <span>{</span>
+    <span>HashMap</span><span><span>&lt;</span><span>Integer</span><span>,</span> <span>Integer</span><span>></span></span> map <span>=</span> <span>new</span> <span>HashMap</span><span><span>&lt;</span><span>Integer</span><span>,</span> <span>Integer</span><span>></span></span><span>(</span><span>)</span><span>;</span>
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> nums<span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
+      <span>int</span> j <span>=</span> target <span>-</span> nums<span>[</span>i<span>]</span><span>;</span>
+
+      <span>if</span> <span>(</span>map<span>.</span><span>containsKey</span><span>(</span>j<span>)</span><span>)</span>
+        <span>return</span> <span>new</span> <span>int</span><span>[</span><span>]</span> <span>{</span>map<span>.</span><span>get</span><span>(</span>j<span>)</span><span>,</span> i<span>}</span><span>;</span>
+
+      map<span>.</span><span>put</span><span>(</span>nums<span>[</span>i<span>]</span><span>,</span> i<span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"No solution"</span><span>)</span><span>;</span>
+  <span>}</span>
+<span>}</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div><h2 id="lizncu"> lizncu</h2>
+<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
+  <span>public</span> <span>int</span><span>[</span><span>]</span> <span>twoSum</span><span>(</span><span>int</span><span>[</span><span>]</span> nums<span>,</span> <span>int</span> target<span>)</span> <span>{</span>
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> nums<span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
+      <span>for</span> <span>(</span><span>int</span> j <span>=</span> i <span>+</span> <span>1</span><span>;</span> j <span>&lt;</span> nums<span>.</span>length<span>;</span> j<span>++</span><span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>nums<span>[</span>i<span>]</span> <span>+</span> nums<span>[</span>j<span>]</span> <span>==</span> target<span>)</span> <span>{</span>
+          <span>return</span> <span>new</span> <span>int</span><span>[</span><span>]</span> <span>{</span>i<span>,</span> j<span>}</span><span>;</span>
+        <span>}</span>
+      <span>}</span>
+    <span>}</span>
+
+    <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"No two sum solution"</span><span>)</span><span>;</span>
+  <span>}</span>
+<span>}</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><h2 id="lmy"> lmy</h2>
+<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
+  <span>public</span> <span>int</span><span>[</span><span>]</span> <span>twoSum</span><span>(</span><span>int</span><span>[</span><span>]</span> nums<span>,</span> <span>int</span> target<span>)</span> <span>{</span>
+    <span>int</span> n <span>=</span> nums<span>.</span>length<span>;</span>
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> n<span>;</span> <span>++</span>i<span>)</span> <span>{</span>
+      <span>for</span> <span>(</span><span>int</span> j <span>=</span> i <span>+</span> <span>1</span><span>;</span> j <span>&lt;</span> n<span>;</span> <span>++</span>j<span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>nums<span>[</span>i<span>]</span> <span>+</span> nums<span>[</span>j<span>]</span> <span>==</span> target<span>)</span> <span>{</span>
+          <span>return</span> <span>new</span> <span>int</span><span>[</span><span>]</span> <span>{</span>i<span>,</span> j<span>}</span><span>;</span>
+        <span>}</span>
+      <span>}</span>
+    <span>}</span>
+    <span>return</span> <span>new</span> <span>int</span><span>[</span><span>0</span><span>]</span><span>;</span>
+  <span>}</span>
+<span>}</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>C++</title>
@@ -2095,72 +2161,6 @@ Number of water bottles you can drink: 15 + 3 + 1 = 19.</p>
 
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Java</title>
-      <link>https://leetcode.innenu.com/1-two-sum/Java/</link>
-      <guid>https://leetcode.innenu.com/1-two-sum/Java/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">Java</source>
-      <category>Java</category>
-      <content:encoded><![CDATA[<h2 id="mister-hope"> Mister-Hope</h2>
-<div><pre><code><span>/*
- * Runtime: 10 ms, faster than 41.97% of Java online submissions for Two Sum.
- *
- * Memory Usage: 56.5 MB, less than 6.02% of Java online submissions for Two Sum.
- */</span>
-
-<span>import</span> <span>java<span>.</span>util<span>.</span></span><span>HashMap</span><span>;</span>
-
-<span>class</span> <span>Solution</span> <span>{</span>
-  <span>public</span> <span>int</span><span>[</span><span>]</span> <span>twoSum</span><span>(</span><span>int</span><span>[</span><span>]</span> nums<span>,</span> <span>int</span> target<span>)</span> <span>{</span>
-    <span>HashMap</span><span><span>&lt;</span><span>Integer</span><span>,</span> <span>Integer</span><span>></span></span> map <span>=</span> <span>new</span> <span>HashMap</span><span><span>&lt;</span><span>Integer</span><span>,</span> <span>Integer</span><span>></span></span><span>(</span><span>)</span><span>;</span>
-    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> nums<span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
-      <span>int</span> j <span>=</span> target <span>-</span> nums<span>[</span>i<span>]</span><span>;</span>
-
-      <span>if</span> <span>(</span>map<span>.</span><span>containsKey</span><span>(</span>j<span>)</span><span>)</span>
-        <span>return</span> <span>new</span> <span>int</span><span>[</span><span>]</span> <span>{</span>map<span>.</span><span>get</span><span>(</span>j<span>)</span><span>,</span> i<span>}</span><span>;</span>
-
-      map<span>.</span><span>put</span><span>(</span>nums<span>[</span>i<span>]</span><span>,</span> i<span>)</span><span>;</span>
-    <span>}</span>
-
-    <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"No solution"</span><span>)</span><span>;</span>
-  <span>}</span>
-<span>}</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div><h2 id="lizncu"> lizncu</h2>
-<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
-  <span>public</span> <span>int</span><span>[</span><span>]</span> <span>twoSum</span><span>(</span><span>int</span><span>[</span><span>]</span> nums<span>,</span> <span>int</span> target<span>)</span> <span>{</span>
-    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> nums<span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
-      <span>for</span> <span>(</span><span>int</span> j <span>=</span> i <span>+</span> <span>1</span><span>;</span> j <span>&lt;</span> nums<span>.</span>length<span>;</span> j<span>++</span><span>)</span> <span>{</span>
-        <span>if</span> <span>(</span>nums<span>[</span>i<span>]</span> <span>+</span> nums<span>[</span>j<span>]</span> <span>==</span> target<span>)</span> <span>{</span>
-          <span>return</span> <span>new</span> <span>int</span><span>[</span><span>]</span> <span>{</span>i<span>,</span> j<span>}</span><span>;</span>
-        <span>}</span>
-      <span>}</span>
-    <span>}</span>
-
-    <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"No two sum solution"</span><span>)</span><span>;</span>
-  <span>}</span>
-<span>}</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><h2 id="lmy"> lmy</h2>
-<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
-  <span>public</span> <span>int</span><span>[</span><span>]</span> <span>twoSum</span><span>(</span><span>int</span><span>[</span><span>]</span> nums<span>,</span> <span>int</span> target<span>)</span> <span>{</span>
-    <span>int</span> n <span>=</span> nums<span>.</span>length<span>;</span>
-    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> n<span>;</span> <span>++</span>i<span>)</span> <span>{</span>
-      <span>for</span> <span>(</span><span>int</span> j <span>=</span> i <span>+</span> <span>1</span><span>;</span> j <span>&lt;</span> n<span>;</span> <span>++</span>j<span>)</span> <span>{</span>
-        <span>if</span> <span>(</span>nums<span>[</span>i<span>]</span> <span>+</span> nums<span>[</span>j<span>]</span> <span>==</span> target<span>)</span> <span>{</span>
-          <span>return</span> <span>new</span> <span>int</span><span>[</span><span>]</span> <span>{</span>i<span>,</span> j<span>}</span><span>;</span>
-        <span>}</span>
-      <span>}</span>
-    <span>}</span>
-    <span>return</span> <span>new</span> <span>int</span><span>[</span><span>0</span><span>]</span><span>;</span>
-  <span>}</span>
-<span>}</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>Mister-Hope</title>
