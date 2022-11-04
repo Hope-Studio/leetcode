@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-yarn run md:generate && yarn lint-staged
+pnpm md:generate && pnpm lint-staged
