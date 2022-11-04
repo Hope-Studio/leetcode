@@ -6,8 +6,8 @@
     <link>https://leetcode.innenu.com/</link>
     <description>LeetCode 练习</description>
     <language>en-US</language>
-    <pubDate>Thu, 03 Nov 2022 14:12:38 GMT</pubDate>
-    <lastBuildDate>Thu, 03 Nov 2022 14:12:38 GMT</lastBuildDate>
+    <pubDate>Fri, 04 Nov 2022 02:47:06 GMT</pubDate>
+    <lastBuildDate>Fri, 04 Nov 2022 02:47:06 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright © 2017-present Hope Studio</copyright>
@@ -1836,68 +1836,6 @@ Assume we are dealing with an environment that could only store integers within 
       <enclosure url="https://assets.leetcode.com/uploads/2019/10/20/hint_transpose.png" type="image/png"/>
     </item>
     <item>
-      <title>88. Merge Sorted Array</title>
-      <link>https://leetcode.innenu.com/88-merge-sorted-array/</link>
-      <guid>https://leetcode.innenu.com/88-merge-sorted-array/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">88. Merge Sorted Array</source>
-      <pubDate>Mon, 30 Nov 2020 08:39:20 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="_88-merge-sorted-array"> <a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank" rel="noopener noreferrer">88. Merge Sorted Array<i>Content not supported</i></a></h1>
-<p>Given two sorted integer arrays <em>nums1</em> and <em>nums2</em>, merge <em>nums2</em> into <em>nums1</em> as one sorted array.</p>
-<p><strong>Note:</strong></p>
-<ul>
-<li>The number of elements initialized in <em>nums1</em> and <em>nums2</em> are <span><span><i>Content not supported</i></span><span aria-hidden="true"><span><span style="height:0.4306em;"></span><span>m</span></span></span></span> and <span><span><i>Content not supported</i></span><span aria-hidden="true"><span><span style="height:0.4306em;"></span><span>n</span></span></span></span> respectively.</li>
-<li>You may assume that <em>nums1</em> has enough space (size that is <strong>equal</strong> to <span><span><i>Content not supported</i></span><span aria-hidden="true"><span><span style="height:0.4306em;"></span><span>m</span></span></span></span> + <span><span><i>Content not supported</i></span><span aria-hidden="true"><span><span style="height:0.4306em;"></span><span>n</span></span></span></span>) to hold additional elements from <em>nums2</em>.</li>
-</ul>
-<p><strong>Example:</strong></p>
-<p><strong>Input:</strong></p>
-<p>nums1 = [1,2,3,0,0,0], m = 3</p>
-<p>nums2 = [2,5,6], n = 3</p>
-<p><strong>Output:</strong> [1,2,2,3,5,6]</p>
-<h2 id="constraints"> Constraints</h2>
-<ul>
-<li>-10<sup>9</sup> &lt;= nums1[i], nums2[i] &lt;= 10<sup>9</sup></li>
-<li><code>nums1.length == m + n</code></li>
-<li><code>nums2.length == n</code></li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>1518. Water Bottles</title>
-      <link>https://leetcode.innenu.com/1518-Wate-Bottles/</link>
-      <guid>https://leetcode.innenu.com/1518-Wate-Bottles/</guid>
-      <source url="https://leetcode.innenu.com/rss.xml">1518. Water Bottles</source>
-      <pubDate>Mon, 30 Nov 2020 08:39:20 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="_1518-water-bottles"> <a href="https://leetcode.com/problems/water-bottles/" target="_blank" rel="noopener noreferrer">1518. Water Bottles<i>Content not supported</i></a></h1>
-<p>Given <code>numBottles</code> full water bottles, you can exchange <code>numExchange</code> empty water bottles for one full water bottle.</p>
-<p>The operation of drinking a full water bottle turns it into an empty bottle.</p>
-<p>Return the <strong>maximum</strong> number of water bottles you can drink.</p>
-<p><strong>Example 1:</strong></p>
-<p><strong><img src="https://assets.leetcode.com/uploads/2020/07/01/sample_1_1875.png" alt="LeetCode Image"></strong></p>
-<p><strong>Input:</strong> numBottles = 9, numExchange = 3</p>
-<p><strong>Output:</strong> 13</p>
-<p><strong>Explanation:</strong> You can exchange 3 empty bottles to get 1 full water bottle.
-Number of water bottles you can drink: 9 + 3 + 1 = 13.</p>
-<p><strong>Example 2:</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2020/07/01/sample_2_1875.png" alt="LeetCode Image"></p>
-<p><strong>Input:</strong> numBottles = 15, numExchange = 4</p>
-<p><strong>Output:</strong> 19</p>
-<p><strong>Explanation:</strong> You can exchange 4 empty bottles to get 1 full water bottle.
-Number of water bottles you can drink: 15 + 3 + 1 = 19.</p>
-<p><strong>Example 3:</strong></p>
-<p><strong>Input:</strong> numBottles = 5, numExchange = 5</p>
-<p><strong>Output:</strong> 6</p>
-<p><strong>Example 4:</strong></p>
-<p><strong>Input:</strong> numBottles = 2, numExchange = 3</p>
-<p><strong>Output:</strong> 2</p>
-<h2 id="constraints"> Constraints</h2>
-<ul>
-<li><code>1 &lt;= numBottles &lt;= 100</code></li>
-<li><code>2 &lt;= numExchange &lt;= 100</code></li>
-</ul>
-]]></content:encoded>
-      <enclosure url="https://assets.leetcode.com/uploads/2020/07/01/sample_1_1875.png" type="image/png"/>
-    </item>
-    <item>
       <title>9. Palindrome Number</title>
       <link>https://leetcode.innenu.com/9-palindrome-number/</link>
       <guid>https://leetcode.innenu.com/9-palindrome-number/</guid>
@@ -1989,6 +1927,68 @@ The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.</p>
 <li><code>A</code> is sorted in non-decreasing order.</li>
 </ol>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>88. Merge Sorted Array</title>
+      <link>https://leetcode.innenu.com/88-merge-sorted-array/</link>
+      <guid>https://leetcode.innenu.com/88-merge-sorted-array/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">88. Merge Sorted Array</source>
+      <pubDate>Mon, 30 Nov 2020 08:39:20 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="_88-merge-sorted-array"> <a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank" rel="noopener noreferrer">88. Merge Sorted Array<i>Content not supported</i></a></h1>
+<p>Given two sorted integer arrays <em>nums1</em> and <em>nums2</em>, merge <em>nums2</em> into <em>nums1</em> as one sorted array.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>The number of elements initialized in <em>nums1</em> and <em>nums2</em> are <span><span><i>Content not supported</i></span><span aria-hidden="true"><span><span style="height:0.4306em;"></span><span>m</span></span></span></span> and <span><span><i>Content not supported</i></span><span aria-hidden="true"><span><span style="height:0.4306em;"></span><span>n</span></span></span></span> respectively.</li>
+<li>You may assume that <em>nums1</em> has enough space (size that is <strong>equal</strong> to <span><span><i>Content not supported</i></span><span aria-hidden="true"><span><span style="height:0.4306em;"></span><span>m</span></span></span></span> + <span><span><i>Content not supported</i></span><span aria-hidden="true"><span><span style="height:0.4306em;"></span><span>n</span></span></span></span>) to hold additional elements from <em>nums2</em>.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p><strong>Input:</strong></p>
+<p>nums1 = [1,2,3,0,0,0], m = 3</p>
+<p>nums2 = [2,5,6], n = 3</p>
+<p><strong>Output:</strong> [1,2,2,3,5,6]</p>
+<h2 id="constraints"> Constraints</h2>
+<ul>
+<li>-10<sup>9</sup> &lt;= nums1[i], nums2[i] &lt;= 10<sup>9</sup></li>
+<li><code>nums1.length == m + n</code></li>
+<li><code>nums2.length == n</code></li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>1518. Water Bottles</title>
+      <link>https://leetcode.innenu.com/1518-Wate-Bottles/</link>
+      <guid>https://leetcode.innenu.com/1518-Wate-Bottles/</guid>
+      <source url="https://leetcode.innenu.com/rss.xml">1518. Water Bottles</source>
+      <pubDate>Mon, 30 Nov 2020 08:39:20 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="_1518-water-bottles"> <a href="https://leetcode.com/problems/water-bottles/" target="_blank" rel="noopener noreferrer">1518. Water Bottles<i>Content not supported</i></a></h1>
+<p>Given <code>numBottles</code> full water bottles, you can exchange <code>numExchange</code> empty water bottles for one full water bottle.</p>
+<p>The operation of drinking a full water bottle turns it into an empty bottle.</p>
+<p>Return the <strong>maximum</strong> number of water bottles you can drink.</p>
+<p><strong>Example 1:</strong></p>
+<p><strong><img src="https://assets.leetcode.com/uploads/2020/07/01/sample_1_1875.png" alt="LeetCode Image"></strong></p>
+<p><strong>Input:</strong> numBottles = 9, numExchange = 3</p>
+<p><strong>Output:</strong> 13</p>
+<p><strong>Explanation:</strong> You can exchange 3 empty bottles to get 1 full water bottle.
+Number of water bottles you can drink: 9 + 3 + 1 = 13.</p>
+<p><strong>Example 2:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/07/01/sample_2_1875.png" alt="LeetCode Image"></p>
+<p><strong>Input:</strong> numBottles = 15, numExchange = 4</p>
+<p><strong>Output:</strong> 19</p>
+<p><strong>Explanation:</strong> You can exchange 4 empty bottles to get 1 full water bottle.
+Number of water bottles you can drink: 15 + 3 + 1 = 19.</p>
+<p><strong>Example 3:</strong></p>
+<p><strong>Input:</strong> numBottles = 5, numExchange = 5</p>
+<p><strong>Output:</strong> 6</p>
+<p><strong>Example 4:</strong></p>
+<p><strong>Input:</strong> numBottles = 2, numExchange = 3</p>
+<p><strong>Output:</strong> 2</p>
+<h2 id="constraints"> Constraints</h2>
+<ul>
+<li><code>1 &lt;= numBottles &lt;= 100</code></li>
+<li><code>2 &lt;= numExchange &lt;= 100</code></li>
+</ul>
+]]></content:encoded>
+      <enclosure url="https://assets.leetcode.com/uploads/2020/07/01/sample_1_1875.png" type="image/png"/>
     </item>
     <item>
       <title>C++</title>
