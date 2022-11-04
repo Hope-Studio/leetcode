@@ -1,7 +1,7 @@
 import { statSync, readdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-import { getFiles } from "./util/file.js";
+import { getFiles } from "./utils/file.js";
 import {
   getExercise,
   getExerciseName,
@@ -9,7 +9,7 @@ import {
   genLanguageMarkdown,
   generatePersonMarkdown,
   genProblemMarkdown,
-} from "./util/markdown.js";
+} from "./utils/markdown.js";
 
 const folderList = getExercise("leetcode");
 

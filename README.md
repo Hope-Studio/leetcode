@@ -1,6 +1,6 @@
 # Leetcode 练习合集
 
-本项目部署在 <https://leetcode.innenu.com>。使用 [VuePress](https://v1.vuepress.vuejs.org/zh/guide/) 和 [vuepress-theme-hope](https://vuepress-theme.mrhope.site/) 自动生成。
+本项目部署在 <https://leetcode.innenu.com>。使用 [VuePress](https://v2.vuepress.vuejs.org/) 和 [vuepress-theme-hope](https://vuepress-theme-hope.github.io/v2//) 自动生成。
 
 ## 项目说明
 

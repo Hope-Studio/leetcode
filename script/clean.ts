@@ -1,3 +1,3 @@
-import { cleanMarkdown } from "./util/markdown.js";
+import { cleanMarkdown } from "./utils/markdown.js";
 
 cleanMarkdown("leetcode");
