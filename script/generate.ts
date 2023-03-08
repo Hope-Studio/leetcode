@@ -33,7 +33,7 @@ void Promise.all(
           text: getExerciseName(folderName),
           icon: "exercise",
           prefix: `${folderName}/`,
-          collapsable: true,
+          collapsible: true,
           children: [
             "",
             {

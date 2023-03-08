@@ -4,6 +4,7 @@ import sidebar from "./sidebar.js";
 export default hopeTheme({
   logo: "/logo.png",
 
+  favicon: '/favicon.ico',
   hostname: "https://leetcode.innenu.com",
   author: "LeetCode",
 
@@ -37,38 +38,9 @@ export default hopeTheme({
 
   plugins: {
     mdEnhance: {
-      katex: true,
+      mathjax: true,
       sup: true,
       sub: true,
-    },
-
-    pwa: {
-      manifest: {
-        icons: [
-          {
-            src: "/assets/icon/chrome-192.png",
-            sizes: "192x192",
-            type: "image/png",
-          },
-          {
-            src: "/assets/icon/chrome-512.png",
-            sizes: "512x512",
-            type: "image/png",
-          },
-          {
-            src: "/assets/icon/chrome-mask-192.png",
-            sizes: "192x192",
-            purpose: "maskable",
-            type: "image/png",
-          },
-          {
-            src: "/assets/icon/chrome-mask-512.png",
-            sizes: "512x512",
-            purpose: "maskable",
-            type: "image/png",
-          },
-        ],
-      },
     },
   },
 });
