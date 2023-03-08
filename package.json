@@ -23,10 +23,10 @@
     "lint-prettier": "pnpm lint-prettier:check --write",
     "lint-prettier:check": "prettier --check .",
     "lint:check": "pnpm lint-prettier:check && pnpm lint-eslint:check && pnpm lint-markdown:check && pnpm lint-clang:check",
-    "md:clean": "ts-node --esm ./script/clean.ts",
-    "md:generate": "ts-node --esm ./script/generate.ts"
+    "md:clean": "tsx ./script/clean.ts",
+    "md:generate": "tsx ./script/generate.ts"
   },
-  "lint-staged": {
+  "nano-staged": {
     "*.{c,csharp,cpp,java}": [
       "clang-format -i"
     ],
@@ -42,28 +42,28 @@
     ]
   },
   "dependencies": {
-    "@vuepress/client": "2.0.0-beta.53",
-    "vue": "3.2.45",
-    "vuepress": "2.0.0-beta.53",
-    "vuepress-theme-hope": "2.0.0-beta.135"
+    "@vuepress/client": "2.0.0-beta.61",
+    "vue": "3.2.47",
+    "vuepress": "2.0.0-beta.61",
+    "vuepress-theme-hope": "2.0.0-beta.190"
   },
   "devDependencies": {
-    "@types/node": "18.11.9",
+    "@types/node": "18.14.6",
     "@types/turndown": "5.0.1",
-    "@typescript-eslint/eslint-plugin": "5.44.0",
-    "@typescript-eslint/parser": "5.44.0",
+    "@typescript-eslint/eslint-plugin": "5.54.1",
+    "@typescript-eslint/parser": "5.54.1",
     "clang-format": "1.8.0",
-    "eslint": "8.30.0",
-    "eslint-config-prettier": "8.5.0",
+    "eslint": "8.35.0",
+    "eslint-config-prettier": "8.7.0",
     "eslint-plugin-prettier": "4.2.1",
-    "husky": "8.0.2",
-    "lint-staged": "13.1.0",
-    "markdownlint-cli": "0.32.2",
-    "prettier": "2.8.1",
-    "sort-package-json": "2.1.0",
-    "ts-node": "10.9.1",
+    "husky": "8.0.3",
+    "markdownlint-cli": "0.33.0",
+    "nano-staged": "0.8.0",
+    "prettier": "2.8.4",
+    "sort-package-json": "2.4.1",
+    "tsx": "3.12.3",
     "turndown": "7.1.1",
-    "typescript": "4.8.4"
+    "typescript": "4.9.5"
   },
-  "packageManager": "pnpm@7.20.0"
+  "packageManager": "pnpm@7.29.1"
 }

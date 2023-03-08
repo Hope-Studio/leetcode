@@ -1,10 +1,11 @@
 dist/
 node_modules/
 
-
 **/.vuepress/.cache/**
 **/.vuepress/.temp/**
 
 leetcode/.vuepress/sidebar.ts
 leetcode/**/*.md
 !leetcode/*/README.md
+
+pnpm-lock.yaml

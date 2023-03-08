@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-pnpm md:generate && pnpm lint-staged
+pnpm md:generate && pnpm nano-staged
