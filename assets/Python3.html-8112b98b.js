@@ -1,0 +1,16 @@
+import{_ as n,W as s,X as a,a1 as t}from"./framework-45146e23.js";const e={},p=t(`<h2 id="mister-hope" tabindex="-1"><a class="header-anchor" href="#mister-hope" aria-hidden="true">#</a> Mister-Hope</h2><div class="language-python line-numbers-mode" data-ext="py"><pre class="language-python"><code><span class="token comment"># Runtime: 476 ms, faster than 32.13% of Python3 online submissions for Two Sum.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Memory Usage: 27.9 MB, less than 17.63% of Python3 online submissions for Two Sum.</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    prevMap <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    
+    <span class="token keyword">for</span> i<span class="token punctuation">,</span> v <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      j <span class="token operator">=</span> target <span class="token operator">-</span> v
+      <span class="token keyword">if</span> j <span class="token keyword">in</span> prevMap<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>prevMap<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> i<span class="token punctuation">]</span>
+      prevMap<span class="token punctuation">[</span>v<span class="token punctuation">]</span> <span class="token operator">=</span> i
+    <span class="token keyword">return</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,2),o=[p];function i(c,l){return s(),a("div",null,o)}const r=n(e,[["render",i],["__file","Python3.html.vue"]]);export{r as default};
