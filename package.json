@@ -59,7 +59,7 @@
     "husky": "8.0.3",
     "markdownlint-cli": "0.33.0",
     "nano-staged": "0.8.0",
-    "prettier": "2.8.4",
+    "prettier": "2.8.8",
     "sort-package-json": "2.4.1",
     "tsx": "3.12.4",
     "turndown": "7.1.1",
