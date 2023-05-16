@@ -4,7 +4,7 @@ import sidebar from "./sidebar.js";
 export default hopeTheme({
   logo: "/logo.png",
 
-  favicon: '/favicon.ico',
+  favicon: "/favicon.ico",
   hostname: "https://leetcode.innenu.com",
   author: "LeetCode",
 

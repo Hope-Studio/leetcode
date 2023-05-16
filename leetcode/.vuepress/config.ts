@@ -8,7 +8,6 @@ export default defineUserConfig({
 
   dest: "./dist",
 
-
   theme,
 
   shouldPrefetch: false,
