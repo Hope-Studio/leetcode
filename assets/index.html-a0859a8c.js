@@ -1,0 +1,6 @@
+import{_ as r}from"./plugin-vue_export-helper-c27b6911.js";import{r as a,o,c as i,a as e,d as n,b as s,e as d}from"./app-b54447e7.js";const l={},c={id:"_104-maximum-depth-of-binary-tree",tabindex:"-1"},m=e("a",{class:"header-anchor",href:"#_104-maximum-depth-of-binary-tree","aria-hidden":"true"},"#",-1),p={href:"https://leetcode.com/problems/maximum-depth-of-binary-tree/",target:"_blank",rel:"noopener noreferrer"},h=d(`<p>Given a binary tree, find its maximum depth.</p><p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</p><p><strong>Note:</strong> A leaf is a node with no children.</p><p><strong>Example:</strong></p><p>Given binary tree <code>[3,9,20,null,null,15,7]</code>,</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>    3
+   / \\\\
+  9  20
+    /  \\\\
+   15   7
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>return its depth = 3.</p>`,7);function u(_,f){const t=a("ExternalLinkIcon");return o(),i("div",null,[e("h1",c,[m,n(),e("a",p,[n("104. Maximum Depth of Binary Tree"),s(t)])]),h])}const b=r(l,[["render",u],["__file","index.html.vue"]]);export{b as default};
